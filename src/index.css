@@ -80,3 +80,22 @@
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
+
+.slick-dots li button:before {
+  
+  font-size: 12px;
+  opacity: 1;
+}
+
+.slick-dots li.slick-active button:before {
+  font-size: 15px;
+  color: #FFAE00;
+}
+select {
+  background-color: transparent; /* Make select background transparent */
+}
+
+option {
+  background-color: transparent; /* Make options background transparent */
+  color: white; /* Ensure text color is white */
+}

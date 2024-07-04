@@ -108,11 +108,12 @@ function ServicesSection() {
             {services.map((item, index) => (
               <ServiceCard
                 key={index}
-                icon={item.icon}
-                title={item.title}
-                description={item.description}
-                bgStart={item.bgStart}
-                bgEnd={item.bgEnd} 
+                // icon={item.icon}
+                // title={item.title}
+                // description={item.description}
+                // bgStart={item.bgStart}
+                // bgEnd={item.bgEnd}
+                item={item} 
               />
             ))}
           </div>

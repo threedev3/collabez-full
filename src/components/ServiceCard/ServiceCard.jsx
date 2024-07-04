@@ -3,17 +3,18 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
 function ServiceCard({
-  icon,
-  title,
-  spanTitle,
-  description,
-  bgStart,
-  bgEnd,
+  // icon,
+  // title,
+  // spanTitle,
+  // description,
+  // bgStart,
+  // bgEnd,
   item,
 }) {
   //   const cardRef = useRef(null);
@@ -64,8 +65,9 @@ function ServiceCard({
 
   const cardRef = useRef(null);
   const serviceCard = useRef(null);
+  const navigate = useNavigate();
 
-  const slug = title.toLowerCase().replace(/\s+/g, "-").replace(/\//g, "");
+  const slug = item.title.toLowerCase().replace(/\s+/g, "-").replace(/\//g, "");
 
   useEffect(() => {
     const card = cardRef.current;
@@ -102,6 +104,11 @@ function ServiceCard({
     });
   });
 
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    navigate(`/services/${slug}`);
+  };
+
   return (
     // <div
     //   className={`py-12  min-h-[490px] bg-gradient-to-b from-${bgStart} from-0% to-${bgEnd} to-100% flex flex-col justify-start gap-12 items-center overflow-x-hidden`}
@@ -127,52 +134,56 @@ function ServiceCard({
     // </div>
 
     <div className="min-h-[490px] perspective-1000" ref={serviceCard}>
-      <div
-        ref={cardRef}
-        className="relative w-full h-full transform-style-3d transition-transform duration-500"
-      >
+      
         <div
-          className={`py-12 absolute w-full h-full backface-hidden bg-gradient-to-b from-${bgStart} from-0% to-${bgEnd} to-100% text-white flex flex-col justify-center gap-12 items-center overflow-x-hidden`}
+          ref={cardRef}
+          className="relative w-full h-full transform-style-3d transition-transform duration-500 cursor-pointer"
+          onClick={handleClick}
         >
-          <div className="bg-serviceRound p-6 rounded-full">
-            <img src={icon} alt="" />
-          </div>
+          <div
+            className={`py-12 absolute w-full h-full backface-hidden text-white flex flex-col justify-center gap-12 items-center overflow-x-hidden`}
+            style={{
+              background: `linear-gradient(to bottom, ${item.bgStart}, ${item.bgEnd})`,
+            }}
+          >
+            <div className="bg-serviceRound p-6 rounded-full">
+              <img src={item.icon} alt="" />
+            </div>
 
-          <div className="">
-            <p className="text-center text-white text-xl">
-              {title} 
-            </p>
-          </div>
+            <div className="">
+              <p className="text-center text-white text-xl">{item.title}</p>
+            </div>
 
-          {/* <div>
+            {/* <div>
             <p className="text-center text-heroColor uppercase border-b-2 border-heroColor cursor-pointer">
               Read More
             </p>
           </div> */}
-        </div>
-        <div className="py-12 px-6 absolute w-full h-full backface-hidden bg-gradient-to-b from-heroColor from-0% to-anotherColor to-100% flex flex-col justify-start gap-5 items-center overflow-hidden transform rotate-y-180">
-          <div className="bg-serviceRound p-6 rounded-full">
-            <img src={icon} alt="" />
           </div>
+          <div className="py-12 px-6 absolute w-full h-full backface-hidden bg-gradient-to-b from-heroColor from-0% to-anotherColor to-100% flex flex-col justify-start gap-5 items-center overflow-hidden transform rotate-y-180">
+            <div className="bg-serviceRound p-6 rounded-full">
+              <img src={item.icon} alt="" />
+            </div>
 
-          <div className="">
-            <p className="text-center text-serviceRound text-xl">
-              {title} 
-            </p>
-          </div>
-          <div className="">
-            <p className="text-center text-serviceRound text-base line-clamp-4">
-              {description}
-            </p>
-          </div>
+            <div className="">
+              <p className="text-center text-serviceRound text-xl">
+                {item.title}
+              </p>
+            </div>
+            <div className="">
+              <p className="text-center text-serviceRound text-base line-clamp-4">
+                {item.description}
+              </p>
+            </div>
 
-          <Link to={`/services/${slug}`}>
-            <button className="text-center text-black uppercase border-b-2 border-black cursor-pointer">
-              Read More
-            </button>
-          </Link>
+            <Link to={`/services/${slug}`}>
+              <button className="text-center text-black uppercase border-b-2 border-black cursor-pointer">
+                Read More
+              </button>
+            </Link>
+          </div>
         </div>
-      </div>
+      
     </div>
   );
 }
