@@ -2,30 +2,37 @@ import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
-function ServiceCard({ icon, title, spanTitle, description, bgStart, bgEnd }) {
-//   const cardRef = useRef(null);
+function ServiceCard({
+  icon,
+  title,
+  spanTitle,
+  description,
+  bgStart,
+  bgEnd,
+  item,
+}) {
+  //   const cardRef = useRef(null);
 
-//   useGSAP(() => {
-//     gsap.from(cardRef.current, {
-//       opacity: 0,
-//       y: 100,
-//       x: 100,
-//       duration: 0.5,
-//       stagger: 0.2,
-//       scrollTrigger: {
-//         trigger: cardRef.current,
-//         toggleActions: "play none none none",
-//         start: "top 70%",
-//         end: "top 40%",
-//       },
-//     });
-//   });
-
- 
+  //   useGSAP(() => {
+  //     gsap.from(cardRef.current, {
+  //       opacity: 0,
+  //       y: 100,
+  //       x: 100,
+  //       duration: 0.5,
+  //       stagger: 0.2,
+  //       scrollTrigger: {
+  //         trigger: cardRef.current,
+  //         toggleActions: "play none none none",
+  //         start: "top 70%",
+  //         end: "top 40%",
+  //       },
+  //     });
+  //   });
 
   //   const handleAnimateEnter = () => {
   //     gsap.to(cardRef.current, {
@@ -55,43 +62,45 @@ function ServiceCard({ icon, title, spanTitle, description, bgStart, bgEnd }) {
   //     });
   //   };
 
-    const cardRef = useRef(null);
-    const serviceCard = useRef(null);
+  const cardRef = useRef(null);
+  const serviceCard = useRef(null);
 
-    useEffect(() => {
-      const card = cardRef.current;
+  const slug = title.toLowerCase().replace(/\s+/g, "-").replace(/\//g, "");
 
-      const onHover = () => {
-        gsap.to(card, { rotationY: 180, duration: 0.5, ease: "circ.inOut" });
-      };
+  useEffect(() => {
+    const card = cardRef.current;
 
-      const onLeave = () => {
-        gsap.to(card, { rotationY: 0, duration: 0.5, ease: "circ.inOut" });
-      };
+    const onHover = () => {
+      gsap.to(card, { rotationY: 180, duration: 0.5, ease: "circ.inOut" });
+    };
 
-      card.addEventListener("mouseenter", onHover);
-      card.addEventListener("mouseleave", onLeave);
+    const onLeave = () => {
+      gsap.to(card, { rotationY: 0, duration: 0.5, ease: "circ.inOut" });
+    };
 
-      return () => {
-        card.removeEventListener("mouseenter", onHover);
-        card.removeEventListener("mouseleave", onLeave);
-      };
-    }, []);
+    card.addEventListener("mouseenter", onHover);
+    card.addEventListener("mouseleave", onLeave);
 
-    useGSAP(() => {
-      gsap.from(serviceCard.current, {
-        opacity: 0,
-        y: 100,
-        duration: 0.5,
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: serviceCard.current,
-          toggleActions: "play none none none",
-          start: "top 70%",
-          end: "top 40%",
-        },
-      });
+    return () => {
+      card.removeEventListener("mouseenter", onHover);
+      card.removeEventListener("mouseleave", onLeave);
+    };
+  }, []);
+
+  useGSAP(() => {
+    gsap.from(serviceCard.current, {
+      opacity: 0,
+      y: 100,
+      duration: 0.5,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: serviceCard.current,
+        toggleActions: "play none none none",
+        start: "top 70%",
+        end: "top 40%",
+      },
     });
+  });
 
   return (
     // <div
@@ -117,7 +126,6 @@ function ServiceCard({ icon, title, spanTitle, description, bgStart, bgEnd }) {
     //   </div>
     // </div>
 
-
     <div className="min-h-[490px] perspective-1000" ref={serviceCard}>
       <div
         ref={cardRef}
@@ -132,7 +140,7 @@ function ServiceCard({ icon, title, spanTitle, description, bgStart, bgEnd }) {
 
           <div className="">
             <p className="text-center text-white text-xl">
-              {title} <span className="block">{spanTitle}</span>
+              {title} 
             </p>
           </div>
 
@@ -142,27 +150,27 @@ function ServiceCard({ icon, title, spanTitle, description, bgStart, bgEnd }) {
             </p>
           </div> */}
         </div>
-        <div className="py-12 absolute w-full h-full backface-hidden bg-gradient-to-b from-heroColor from-0% to-anotherColor to-100% flex flex-col justify-start gap-5 items-center overflow-hidden transform rotate-y-180">
+        <div className="py-12 px-6 absolute w-full h-full backface-hidden bg-gradient-to-b from-heroColor from-0% to-anotherColor to-100% flex flex-col justify-start gap-5 items-center overflow-hidden transform rotate-y-180">
           <div className="bg-serviceRound p-6 rounded-full">
             <img src={icon} alt="" />
           </div>
 
           <div className="">
             <p className="text-center text-serviceRound text-xl">
-              {title} <span className="block">{spanTitle}</span>
+              {title} 
             </p>
           </div>
           <div className="">
-            <p className="text-center text-serviceRound text-base">
-              {description} 
+            <p className="text-center text-serviceRound text-base line-clamp-4">
+              {description}
             </p>
           </div>
 
-          <div>
-            <p className="text-center text-black uppercase border-b-2 border-black cursor-pointer">
+          <Link to={`/services/${slug}`}>
+            <button className="text-center text-black uppercase border-b-2 border-black cursor-pointer">
               Read More
-            </p>
-          </div>
+            </button>
+          </Link>
         </div>
       </div>
     </div>

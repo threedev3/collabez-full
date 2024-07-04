@@ -1,69 +1,15 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import ServiceCard from "../ServiceCard/ServiceCard";
-import UIUXIcon from "../../assets/img/UIUXIcon.png";
-import webdevIcon from "../../assets/img/webdevIcon.png";
-import appdevIcon from "../../assets/img/appdevIcon.png";
-import iconMarketing from "../../assets/img/iconMarketing.png";
-import ecommerceIcon from "../../assets/img/ecommerceIcon.png";
-import socialIcon from "../../assets/img/socialIcon.png";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import { services } from "../../data/data.js";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
 function ServicesSection() {
-  const serviceDetails = [
-    {
-      icon: UIUXIcon,
-      title: "UI/UX and",
-      spanTitle: "Brand Identity",
-      description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates in ullam porro aut ad corrupti quas dolorum, recusandae, quidem saepe esse blanditiis natus. ",
-      bgStart: "serviceCardOneFrom",
-      bgEnd: "serviceCardOneTo",
-    },
-    {
-      icon: appdevIcon,
-      title: "App",
-      spanTitle: "Development",
-      description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates in ullam porro aut ad corrupti quas dolorum, recusandae, quidem saepe esse blanditiis natus. ",
-      bgStart: "serviceCardTwoFrom",
-      bgEnd: "serviceCardTwoTo",
-    },
-    {
-      icon: socialIcon,
-      title: "SEO & SMM",
-      spanTitle: "Optimization",
-      description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates in ullam porro aut ad corrupti quas dolorum, recusandae, quidem saepe esse blanditiis natus. ",
-      bgStart: "serviceCardOneFrom",
-      bgEnd: "serviceCardOneTo",
-    },
-    {
-      icon: webdevIcon,
-      title: "Web",
-      spanTitle: "Development",
-      description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates in ullam porro aut ad corrupti quas dolorum, recusandae, quidem saepe esse blanditiis natus. ",
-      bgStart: "serviceCardTwoFrom",
-      bgEnd: "serviceCardTwoTo",
-    },
-    {
-      icon: ecommerceIcon,
-      title: "E-Commerce",
-      spanTitle: "Development",
-      description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates in ullam porro aut ad corrupti quas dolorum, recusandae, quidem saepe esse blanditiis natus.",
-      bgStart: "serviceCardOneFrom",
-      bgEnd: "serviceCardOneTo",
-    },
-    {
-      icon: iconMarketing,
-      title: "Marketing",
-      spanTitle: "Strategy",
-      description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates in ullam porro aut ad corrupti quas dolorum, recusandae, quidem saepe esse blanditiis natus.",
-      bgStart: "serviceCardTwoFrom",
-      bgEnd: "serviceCardTwoTo",
-    },
-  ];
+  
 
   const serviceHead = useRef(null);
   const borderRef = useRef(null);
@@ -145,7 +91,7 @@ function ServicesSection() {
               ref={serviceHead}
             >
               Unleashing Your Brand's Digital{" "}
-              <span className="text-heroColor">Potential</span>
+              <span className="text-heroColor">Potential.</span>
             </h3>
 
             <p className="text-white" ref={textRef}>
@@ -157,18 +103,19 @@ function ServicesSection() {
           </div>
         </div>
 
-        <div className="lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 grid grid-cols-1 shadow-sm">
-          {serviceDetails.map((item, index) => (
-            <ServiceCard
-              key={index}
-              icon={item.icon}
-              title={item.title}
-              spanTitle={item.spanTitle}
-              description={item.description}
-              bgStart={item.bgStart}
-              bgEnd={item.bgEnd}
-            />
-          ))}
+        <div>
+          <div className="lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 grid grid-cols-1 shadow-sm">
+            {services.map((item, index) => (
+              <ServiceCard
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+                bgStart={item.bgStart}
+                bgEnd={item.bgEnd} 
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

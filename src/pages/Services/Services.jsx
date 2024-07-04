@@ -8,7 +8,7 @@ function Services() {
   return (
     <div className='bg-wholeBg'>
         <SubHeroSection title="Services" />
-        <ServicesSection />
+        <ServicesSection  />
         <Faq />
         <TextSlide />
     </div>
