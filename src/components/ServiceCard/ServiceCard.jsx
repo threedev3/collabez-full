@@ -66,6 +66,8 @@ function ServiceCard({
   const cardRef = useRef(null);
   const serviceCard = useRef(null);
   const navigate = useNavigate();
+  const [isHovered, setisHovered] = useState(false);
+  const [zIndex, setZIndex] = useState(1);
 
   const slug = item.title.toLowerCase().replace(/\s+/g, "-").replace(/\//g, "");
 
@@ -73,11 +75,23 @@ function ServiceCard({
     const card = cardRef.current;
 
     const onHover = () => {
-      gsap.to(card, { rotationY: 180, duration: 0.5, ease: "circ.inOut" });
+      setisHovered(true);
+      setZIndex(10000);
+      gsap.to(serviceCard.current, {
+        scale: 1.1,
+        duration: 0.5,
+        ease: "circ.inOut",
+      });
     };
 
     const onLeave = () => {
-      gsap.to(card, { rotationY: 0, duration: 0.5, ease: "circ.inOut" });
+      setisHovered(false);
+      setZIndex(1);
+      gsap.to(serviceCard.current, {
+        scale: 1,
+        duration: 0.5,
+        ease: "circ.inOut",
+      });
     };
 
     card.addEventListener("mouseenter", onHover);
@@ -87,7 +101,7 @@ function ServiceCard({
       card.removeEventListener("mouseenter", onHover);
       card.removeEventListener("mouseleave", onLeave);
     };
-  }, []);
+  }, [item.bgEnd, item.bgStart]);
 
   useGSAP(() => {
     gsap.from(serviceCard.current, {
@@ -105,7 +119,7 @@ function ServiceCard({
   });
 
   const handleClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
     navigate(`/services/${slug}`);
   };
 
@@ -133,34 +147,62 @@ function ServiceCard({
     //   </div>
     // </div>
 
-    <div className="min-h-[490px] perspective-1000" ref={serviceCard}>
-      
+    <div className="h-[490px] card" ref={serviceCard}>
+      <div
+        ref={cardRef}
+        className="relative w-full h-full transition-transform duration-500 cursor-pointer z-10 fade-in"
+        style={{ zIndex: zIndex }}
+        onClick={handleClick}
+      >
         <div
-          ref={cardRef}
-          className="relative w-full h-full transform-style-3d transition-transform duration-500 cursor-pointer"
-          onClick={handleClick}
+          className={`py-12 px-4 absolute w-full h-full text-white flex flex-col justify-center gap-8 items-center overflow-hidden `}
+          style={{
+            background: `linear-gradient(to bottom, ${item.bgStart}, ${item.bgEnd})`,
+          }}
         >
-          <div
-            className={`py-12 absolute w-full h-full backface-hidden text-white flex flex-col justify-center gap-12 items-center overflow-x-hidden`}
-            style={{
-              background: `linear-gradient(to bottom, ${item.bgStart}, ${item.bgEnd})`,
-            }}
-          >
-            <div className="bg-serviceRound p-6 rounded-full">
-              <img src={item.icon} alt="" />
-            </div>
+          {isHovered ? (
+            <div className="fade-in flex flex-col justify-center gap-8 items-center">
+              <div className="bg-serviceRound p-6 rounded-full">
+                <img src={item.icon} alt="" />
+              </div>
 
-            <div className="">
-              <p className="text-center text-white text-xl">{item.title}</p>
-            </div>
+              <div className="">
+                <p className="text-center text-white text-xl">{item.title}</p>
+              </div>
 
-            {/* <div>
+              <div className=" flex flex-col justify-center gap-8 items-center">
+                <div className="">
+                  <p className="text-center text-white text-base line-clamp-4">
+                    {item.description}
+                  </p>
+                </div>
+
+                <Link to={`/services/${slug}`}>
+                  <button className="text-center text-heroColor uppercase border-b-2 border-heroColor cursor-pointer">
+                    Read More
+                  </button>
+                </Link>
+              </div>
+            </div>
+          ) : (
+            <div className="flex flex-col justify-center gap-8 items-center">
+              <div className="bg-serviceRound p-6 rounded-full">
+                <img src={item.icon} alt="" />
+              </div>
+
+              <div className="">
+                <p className="text-center text-white text-xl">{item.title}</p>
+              </div>
+            </div>
+          )}
+
+          {/* <div>
             <p className="text-center text-heroColor uppercase border-b-2 border-heroColor cursor-pointer">
               Read More
             </p>
           </div> */}
-          </div>
-          <div className="py-12 px-6 absolute w-full h-full backface-hidden bg-gradient-to-b from-heroColor from-0% to-anotherColor to-100% flex flex-col justify-start gap-5 items-center overflow-hidden transform rotate-y-180">
+        </div>
+        {/* <div className="py-12 px-6 absolute w-full h-full backface-hidden bg-gradient-to-b from-heroColor from-0% to-anotherColor to-100% flex flex-col justify-start gap-5 items-center overflow-hidden transform rotate-y-180">
             <div className="bg-serviceRound p-6 rounded-full">
               <img src={item.icon} alt="" />
             </div>
@@ -181,9 +223,8 @@ function ServiceCard({
                 Read More
               </button>
             </Link>
-          </div>
-        </div>
-      
+          </div> */}
+      </div>
     </div>
   );
 }

@@ -31,7 +31,7 @@ const ScrollToTop = () => {
     <div>
       {showButton && (
         <button
-          className="fixed bottom-10 right-10 w-16 h-16 bg-heroColor text-white rounded-full flex items-center justify-center shadow-lg transition-opacity duration-300 z-50"
+          className="fixed bottom-4 right-4 w-16 h-16 bg-heroColor text-white rounded-full flex items-center justify-center shadow-lg transition-opacity duration-300 z-50"
           onClick={scrollToTop}
         >
           <svg

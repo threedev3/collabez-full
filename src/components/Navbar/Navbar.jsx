@@ -160,9 +160,9 @@ function Navbar() {
         aria-label="Global"
       >
         <div className="flex lg:flex-1 cursor-pointer z-20" ref={headerRef}>
-          <a href="#" className="-m-1.5 p-1.5 h-20 w-auto ">
+          <Link to="/" className="-m-1.5 p-1.5 h-20 w-auto ">
             <img className="object-cover" src={Logo} alt="" />
-          </a>
+          </Link>
         </div>
         <div className="flex">
           <button
@@ -203,18 +203,18 @@ function Navbar() {
         className="fixed left-0 top-0 w-full h-screen z-50 hidden "
         ref={fullpageMenu}
       >
-        <div className="flex justify-center items-center h-full py-20 px-12">
+        <div className="flex justify-center items-center h-full px-12">
           <div
             className="h-full w-full absolute left-0 top-0 bg-black/50 backdrop-blur-lg z-40 opacity-0"
             ref={menuBg}
           ></div>
-          <nav className="relative z-50 text-center opacity-0" ref={navRef}>
+          <nav className="absolute top-40 z-50 text-center opacity-0" ref={navRef}>
             <ul className="list-none flex flex-col justify-center items-center">
               {navigation.map((item, index) => (
                 <li className="overflow-hidden mt-5 " key={index}>
                   <Link
                     // to={item.link}
-                    className="inline-block lg:text-[12vh] sm:text-[10vh] text-[6vh] uppercase font-bold leading-none tracking-wide text-transparent stroke-2 stroke-white menu-item opacity-0 cursor-pointer"
+                    className="inline-block lg:text-[12vh] sm:text-[10vh] text-[6vh] text-center uppercase font-bold leading-none tracking-wide text-transparent stroke-2 stroke-white menu-item opacity-0 cursor-pointer"
                     ref={(el) => (menuItems.current[index] = el)}
                     onClick={() => handleNavClick(item.link)}
                   >

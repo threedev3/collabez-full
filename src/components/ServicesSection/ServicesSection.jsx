@@ -104,7 +104,7 @@ function ServicesSection() {
         </div>
 
         <div>
-          <div className="lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 grid grid-cols-1 shadow-sm">
+          <div className="lg:grid lg:grid-cols-3 lg:gap-7 md:grid md:grid-cols-2 md:gap-7 grid grid-cols-1 gap-7 shadow-sm">
             {services.map((item, index) => (
               <ServiceCard
                 key={index}

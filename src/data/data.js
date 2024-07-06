@@ -55,10 +55,12 @@ export const services = [
       "Plannig & Strategy",
       "Design & Development",
       "Testing & Launch",
+      "Testing & Launch",
     ],
     workingPara: [
       "We will help you to outperform your competitors.",
       "Your product will look  attractive to customers.",
+      "Your product is finished. It is time to make money.",
       "Your product is finished. It is time to make money.",
     ],
     workingDetails:
