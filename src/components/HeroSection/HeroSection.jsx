@@ -111,7 +111,8 @@ export default function HeroSection({
         ease: "power1.out",
         scrollTrigger: {
           trigger: viewBtn.current,
-          start: "top 80%",
+          start: "top 90%",
+          end: "top 70%",
           toggleActions: "play none none none",
           scrub: true,
         },

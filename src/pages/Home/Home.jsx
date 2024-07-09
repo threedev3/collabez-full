@@ -6,6 +6,7 @@ import Portfolio from "../../components/Portfolio/Portfolio";
 import Features from "../../components/Features/Features";
 import TextSlide from "../../components/TextSlide/TextSlide";
 import Contact from "../../components/Contact/Contact";
+import Footer from "../../components/Footer/Footer";
 
 function Home() {
   const homeRef = useRef(null);
@@ -36,6 +37,7 @@ function Home() {
           homeRef={homeRef}
         />
       </div>
+     
       {/* <Contact /> */}
     </div>
   );

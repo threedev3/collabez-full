@@ -106,7 +106,6 @@ function ServiceCard({
   useGSAP(() => {
     gsap.from(serviceCard.current, {
       opacity: 0,
-      y: 100,
       duration: 0.5,
       stagger: 0.2,
       scrollTrigger: {

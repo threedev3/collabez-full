@@ -12,9 +12,34 @@ function Portfolio() {
   const portfolioRef = useRef(null);
   const portHeading = useRef(null);
   const portPara = useRef(null);
+  const tagRefs = useRef([]);
   const projectRefs = useRef([]);
   const imgContainerRefs = useRef([]);
-  
+
+  const projects = [
+    {
+      title: "Work Dock",
+      tags: ["NextJS", "ReactJS", "NodeJS", "ExpressJS", "MongoDB"],
+      img: projectImg,
+    },
+    {
+      title: "CollabEZ",
+      tags: ["NextJS", "ReactJS", "Tailwind CSS", "GSAP"],
+      img: projectImg,
+    },
+    {
+      title: "Tuition Highway",
+      tags: ["ReactJS", "NodeJS", "ExpressJS", "MongoDB"],
+      img: projectImg,
+    },
+  ];
+
+  // Initialize tagRefs.current as an array of arrays
+  if (!tagRefs.current.length) {
+    projects.forEach(() => {
+      tagRefs.current.push([]);
+    });
+  }
 
   console.log(projectRefs);
 
@@ -59,30 +84,30 @@ function Portfolio() {
         scrollTrigger: {
           trigger: ref,
           start: "top 90%",
+          end: "top 60%",
           toggleActions: "play resume none none",
-          // scrub: true,
+          scrub: true,
+        },
+      });
+    });
+
+    tagRefs.current.forEach((tags, index) => {
+      gsap.from(tags, {
+        y: 100,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.3,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: tags[0], // Trigger based on the first tag in the current project
+          start: "top 90%",
+          end: "top 70%",
+          toggleActions: "play none none none",
+          scrub: true,
         },
       });
     });
   });
-
-  const projects = [
-    {
-      title: "Work Dock",
-      tags: ["NextJS", "ReactJS", "NodeJS", "ExpressJS", "MongoDB"],
-      img: projectImg,
-    },
-    {
-      title: "CollabEZ",
-      tags: ["NextJS", "ReactJS", "Tailwind CSS", "GSAP", ],
-      img: projectImg,
-    },
-    {
-      title: "Tuition Highway",
-      tags: ["ReactJS", "NodeJS", "ExpressJS", "MongoDB" ],
-      img: projectImg,
-    },
-  ];
 
   // Initialize an array with false values for each project
   const [hovered, setHovered] = useState([false, false, false]);
@@ -114,7 +139,7 @@ function Portfolio() {
 
   return (
     <div
-      className="lg:py-12 lg:px-8 py-8 px-4 max-w-full"
+      className="lg:py-12 lg:px-8 py-8 px-4 max-w-full overflow-x-hidden"
       ref={portfolioRef}
     >
       <div className="max-w-[1400px] mx-auto">
@@ -157,6 +182,12 @@ function Portfolio() {
                       <span
                         key={tagIndex}
                         className="bg-transparent border-2 border-heroColor text-white px-2 py-1 rounded-full text-xs"
+                        ref={(el) => {
+                          if (!tagRefs.current[index]) {
+                            tagRefs.current[index] = [];
+                          }
+                          tagRefs.current[index][tagIndex] = el;
+                        }}
                       >
                         {tag}
                       </span>
@@ -164,7 +195,7 @@ function Portfolio() {
                   </div>
                 </div>
                 <div
-                  className={`absolute z-30 xl:right-80 lg:right-30 md:right-5 sm:right-2 right-0 lg:h-72 lg:w-96 md:h-56 md:w-64 sm:h-48 sm:w-56 h-48 w-60 overflow-x-hidden overflow-y-auto no-scrollbar transition-transform duration-300 ease-in-out border-2 border-heroColor rounded-md ${
+                  className={`absolute z-30 xl:right-80 lg:right-30 md:right-5 sm:right-2 right-0 lg:h-72 lg:w-96 md:h-52 md:w-64 sm:h-48 sm:w-56 h-48 w-60 overflow-x-hidden overflow-y-auto no-scrollbar transition-transform duration-300 ease-in-out border-2 border-heroColor rounded-md ${
                     hovered[index] ? "scale-200" : "scale-0"
                   }`}
                   ref={(el) => (imgContainerRefs.current[index] = el)}

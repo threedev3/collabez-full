@@ -67,7 +67,7 @@ function Stats({borders}) {
   }, [stats]);
 
   return (
-    <div className={`lg:py-12 lg:px-8 px-4 sm:py-8 py-3 max-w-full ${borders}`}>
+    <div className={`lg:py-12 lg:px-8 px-4 sm:py-8 py-3 max-w-full ${borders} overflow-x-hidden`}>
       <div className="max-w-[1400px] mx-auto">
         <div className="max-w-full lg:flex lg:flex-row lg:justify-between flex flex-row justify-center flex-wrap ">
           {stats.map((stat, index) => (

@@ -3,6 +3,8 @@ import footerLogo from "../../assets/img/footerlogo.png";
 import { useGSAP } from "@gsap/react"; // Import useGSAP from @gsap/react
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Link, useNavigate } from "react-router-dom";
+import footerGrad from '../../assets/img/footerGrad.png'
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -10,6 +12,8 @@ gsap.registerPlugin(ScrollTrigger);
 function Footer({ portfolioRef, featuresRef, contactRef, homeRef }) {
   const currentYear = new Date().getFullYear();
   const footerRef = useRef(null);
+
+  const navigate = useNavigate();
 
   useGSAP(() => {
     gsap.from(footerRef.current, {
@@ -29,10 +33,9 @@ function Footer({ portfolioRef, featuresRef, contactRef, homeRef }) {
   });
 
   const navigation = [
-    { name: "Home", href: "#" },
-    { name: "Portfolio", href: "#" },
-    { name: "Features", href: "#" },
-    { name: "Contact", href: "#" },
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+    { name: "About", href: "/about" },
   ];
 
   const sections = {
@@ -42,35 +45,48 @@ function Footer({ portfolioRef, featuresRef, contactRef, homeRef }) {
     Contact: contactRef,
   };
 
-  const handleNavClick = (section) => {
-    const targetRef = sections[section];
+  const handleNavClick = (href) => {
+    navigate(href);
 
-    if (targetRef && targetRef.current) {
-      window.scrollTo({
-        top: targetRef.current.offsetTop,
-        behavior: "smooth",
-      });
-    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  const handleHomeRedirect = (href) => {
+    navigate(href);
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <div className="pt-16 max-w-full relative shadow-inner ">
-      <div className="md:grid md:grid-cols-3 md:gap-6 grid grid-cols-1 gap-6 max-w-[1400px] mx-auto pb-24">
+    <div className="pt-16 max-w-full relative lg:px-8 px-4 ">
+      <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute bottom-0 left-0 w-[450px] h-[450px]">
+            {/* <div
+            className="w-full h-full"
+            style={{
+              background:
+                "radial-gradient(circle at bottom left, #fce077, transparent 60%)",
+              opacity: "0.7",
+            }}
+          /> */}
+            <img src={footerGrad} alt="" className="w-full h-full" />
+          </div>
+        </div>
+      <div className="md:grid md:grid-cols-3 md:gap-6 md:items-start grid grid-cols-1 gap-6 max-w-[1400px] mx-auto pb-24">
         <div className="">
-          <img src={footerLogo} alt="" className="" />
+          <img src={footerLogo} alt="" className="cursor-pointer" onClick={() => handleHomeRedirect('/')} />
         </div>
 
         <div className="md:flex md:justify-center md:items-center text-white">
           <ul className="leading-8">
             {navigation.map((item, index) => (
-              <a
+              <button
                 className="block"
                 onClick={() => {
-                  handleNavClick(item.name);
+                  handleNavClick(item.href);
                 }}
               >
                 {item.name}
-              </a>
+              </button>
             ))}
           </ul>
         </div>
@@ -88,12 +104,12 @@ function Footer({ portfolioRef, featuresRef, contactRef, homeRef }) {
         </div>
       </div>
 
-      <div className="absolute bottom-0 w-full">
+      <div className="absolute bottom-0 left-0 w-full">
         <div className="flex justify-center text-white w-full text-base">
           <p>Copyright © {currentYear} Collabez</p>
         </div>
-        <div className="flex justify-center">
-          <div className="w-[1150px] max-[1180px]:w-[1000px] max-[1024px]:w-[800px] max-[825px]:w-[600px] max-[625px]:w-[400px] max-[425px]:w-[260px] sm:h-[20px] h-[15px]  bg-heroColor rounded-t-full " />
+        <div className="max-w-full mx-auto flex justify-center">
+          <div className="w-[1150px] max-[1180px]:w-[1000px] max-[1024px]:w-[800px] max-[825px]:w-[600px] max-[625px]:w-[400px] max-[425px]:w-[260px] sm:h-[20px] h-[15px] bg-heroColor rounded-t-full " />
         </div>
       </div>
     </div>

@@ -31,7 +31,7 @@ const ScrollToTop = () => {
     <div>
       {showButton && (
         <button
-          className="fixed bottom-4 right-4 w-16 h-16 bg-heroColor text-white rounded-full flex items-center justify-center shadow-lg transition-opacity duration-300 z-50"
+          className="fixed bottom-4 right-4 sm:w-16 sm:h-16 w-12 h-12 bg-heroColor text-white rounded-full flex items-center justify-center shadow-lg transition-opacity duration-300 z-50"
           onClick={scrollToTop}
         >
           <svg
@@ -40,7 +40,7 @@ const ScrollToTop = () => {
             viewBox="0 0 24 24"
             strokeWidth={5.5}
             stroke="currentColor"
-            className="size-6"
+            className="sm:size-6 size-5"
           >
             <path
               strokeLinecap="round"

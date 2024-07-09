@@ -92,7 +92,7 @@ function Features() {
   ];
 
   return (
-    <div className="lg:py-16 lg:px-8 px-4 py-8 max-w-full">
+    <div className="lg:py-16 lg:px-8 px-4 py-8 max-w-full overflow-x-hidden">
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-col gap-5">
           <div className="lg:flex lg:flex-row lg:justify-between lg:items-center">

@@ -10,6 +10,7 @@ import personImg from "../../assets/img/person.png";
 import sendIcon from "../../assets/img/sendIcon.png";
 // import serviceDemo from "../../assets/img/demoService.png";
 import Slider from "react-slick";
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -30,6 +31,7 @@ function ServiceDetailSection() {
   const tabsRef = useRef(null);
 
   const { slug } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const service = services.find(
@@ -37,13 +39,22 @@ function ServiceDetailSection() {
         s.title.toLowerCase().replace(/\s+/g, "-").replace(/\//g, "") === slug
     );
     setSelectedService(service);
+    window.scrollTo(0, 0);
+    // window.location.reload();
   }, [slug]);
 
   const handleTabClick = (service) => {
-    setSelectedService(service);
-    if (topRef.current) {
-      topRef.current.scrollIntoView({ behavior: "smooth" });
-    }
+    // setSelectedService(service);
+    // if (topRef.current) {
+    //   topRef.current.scrollIntoView({ behavior: "smooth" });
+    // }
+    const serviceSlug = service.title
+      .toLowerCase()
+      .replace(/\s+/g, "-")
+      .replace(/\//g, "");
+    navigate(`/services/${serviceSlug}`);
+    window.scrollTo(0, 0); // Scrolls to top on tab click
+    window.location.reload(); // Forces a full page reload
   };
 
   const workingDetailsLines = selectedService?.workingDetails
@@ -108,7 +119,7 @@ function ServiceDetailSection() {
         toggleActions: "play none none none",
         start: "top 50%",
         end: "top 30%",
-        scrub: true,
+        // scrub: true,
       },
     });
     gsap.from(descRef.current, {
@@ -119,7 +130,7 @@ function ServiceDetailSection() {
         toggleActions: "play none none none",
         start: "top 50%",
         end: "top 30%",
-        scrub: true,
+        // scrub: true,
       },
     });
     gsap.from(workHeadRef.current, {
@@ -131,7 +142,7 @@ function ServiceDetailSection() {
         toggleActions: "play none none none",
         start: "top 50%",
         end: "top 30%",
-        scrub: true,
+        // scrub: true,
       },
     });
     gsap.from(workCardRef.current, {
@@ -144,7 +155,7 @@ function ServiceDetailSection() {
         toggleActions: "play none none none",
         start: "top 50%",
         end: "top 30%",
-        scrub: true,
+        // scrub: true,
       },
     });
     gsap.from(detailsRef.current, {
@@ -157,7 +168,7 @@ function ServiceDetailSection() {
         toggleActions: "play none none none",
         start: "top 70%",
         end: "top 50%",
-        scrub: true,
+        // scrub: true,
       },
     });
     gsap.from(listRef.current, {
@@ -170,10 +181,9 @@ function ServiceDetailSection() {
         toggleActions: "play none none none",
         start: "top 70%",
         end: "top 50%",
-        scrub: true,
+        // scrub: true,
       },
     });
-    
   });
 
   console.log(workCardRef);
@@ -279,7 +289,10 @@ function ServiceDetailSection() {
                 </Slider>
               </div>
               <div className="">
-                <p className="text-white sm:text-lg text-base leading-8" ref={descRef}>
+                <p
+                  className="text-white sm:text-lg text-base leading-8"
+                  ref={descRef}
+                >
                   {selectedService.description}
                 </p>
               </div>
@@ -289,12 +302,17 @@ function ServiceDetailSection() {
 
                 <div className="sm:flex sm:flex-col sm:gap-12 flex flex-col gap-6 relative z-40">
                   <div>
-                    <h3 className="text-white text-4xl" ref={workHeadRef}>Working Process</h3>
+                    <h3 className="text-white text-4xl" ref={workHeadRef}>
+                      Working Process
+                    </h3>
                   </div>
 
-                  <div className="md:flex md:flex-row md:justify-start md:items-center md:flex-wrap md:gap-2 " ref={workCardRef}>
+                  <div
+                    className="md:flex md:flex-row md:justify-start md:items-center md:flex-wrap md:gap-2 "
+                    ref={workCardRef}
+                  >
                     {selectedService.workingHead.map((item, index) => (
-                      <div className="md:w-[32%] w-full min-h-[260px] flex flex-col gap-8 items-center justify-center p-4 border-2 border-borderColor rounded-lg mb-3" >
+                      <div className="md:w-[32%] w-full min-h-[260px] flex flex-col gap-8 items-center justify-center p-4 border-2 border-borderColor rounded-lg mb-3">
                         <div>
                           <h3 className="uppercase text-heroColor text-xl">{`Step ${
                             index + 1
@@ -319,7 +337,6 @@ function ServiceDetailSection() {
                       <p
                         key={index}
                         className="text-white sm:text-lg text-base mb-3"
-                        
                       >
                         {line.trim()}{" "}
                       </p>
@@ -327,9 +344,12 @@ function ServiceDetailSection() {
                   </div>
 
                   <div>
-                    <ul className="flex flex-col gap-5 text-white sm:text-base text-sm" ref={listRef}>
+                    <ul
+                      className="flex flex-col gap-5 text-white sm:text-base text-sm"
+                      ref={listRef}
+                    >
                       {selectedService.workingItems.map((item, index) => (
-                        <div className="flex flex-row gap-5 items-center" >
+                        <div className="flex flex-row gap-5 items-center">
                           <div className="w-2 h-2 rounded-full bg-heroColor"></div>
                           <li key={index}>{item}</li>
                         </div>
@@ -342,7 +362,10 @@ function ServiceDetailSection() {
           )}
 
           <div className="lg:flex lg:flex-col lg:gap-8 lg:max-w-[30%] flex flex-col justify-center items-center gap-5 max-w-[100%]">
-            <div className="bg-tabsColor py-16 px-6 rounded-lg lg:w-72 w-full lg:block hidden" ref={tabsRef}>
+            <div
+              className="bg-tabsColor py-16 px-6 rounded-lg lg:w-72 w-full lg:block hidden"
+              ref={tabsRef}
+            >
               <ul className="flex flex-col gap-8">
                 {services.map((item, index) => (
                   <li
