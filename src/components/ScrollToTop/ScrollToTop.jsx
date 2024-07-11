@@ -6,7 +6,7 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.pageYOffset > 300) {
+      if (window.scrollY > 300) {
         setShowButton(true);
       } else {
         setShowButton(false);
@@ -28,10 +28,10 @@ const ScrollToTop = () => {
   };
 
   return (
-    <div>
+    <div className="relative z-50">
       {showButton && (
         <button
-          className="fixed bottom-4 right-4 sm:w-16 sm:h-16 w-12 h-12 bg-heroColor text-white rounded-full flex items-center justify-center shadow-lg transition-opacity duration-300 z-50"
+          className="fixed bottom-4 right-4 sm:w-16 sm:h-16 w-12 h-12 bg-heroColor text-white rounded-full flex items-center justify-center shadow-lg transition-opacity duration-300 z-[1000]"
           onClick={scrollToTop}
         >
           <svg

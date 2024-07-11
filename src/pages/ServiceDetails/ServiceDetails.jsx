@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import SubHeroSection from "../../components/SubHeroSection/SubHeroSection";
 import ServicesSection from "../../components/ServicesSection/ServicesSection";
 import Faq from "../../components/Faq/Faq";
@@ -6,12 +6,16 @@ import TextSlide from "../../components/TextSlide/TextSlide";
 import ServiceDetailSection from "../../components/ServiceDetailSection/ServiceDetailSection";
 
 function ServiceDetails() {
+  const contactRef = useRef(null);
+
   return (
     <div className="bg-wholeBg">
       <SubHeroSection title="Services" />
-      <ServiceDetailSection />
+      <ServiceDetailSection contactRef={contactRef} />
       <Faq />
-      <TextSlide />
+      <div ref={contactRef}>
+        <TextSlide contactRef={contactRef} />
+      </div>
     </div>
   );
 }

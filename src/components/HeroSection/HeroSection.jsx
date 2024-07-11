@@ -6,7 +6,7 @@ import starImg from "../../assets/img/star.png";
 import circleImg from "../../assets/img/circleimg.png";
 import ellipseImg from "../../assets/img/ellipse.png";
 import arrowImg from "../../assets/img/arrow.png";
-import { useGSAP } from "@gsap/react"; // Import useGSAP from @gsap/react
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import HeroCircle from "../HeroCircle/HeroCircle";
@@ -22,7 +22,6 @@ export default function HeroSection({
   contactRef,
   homeRef,
 }) {
-  // const gsapInstance = useGSAP(gsap); // Initialize GSAP useGSAP hook with gsap instance
   const mainContainer = useRef(null);
 
   const viewAnimate = useRef(null);
@@ -76,49 +75,50 @@ export default function HeroSection({
     });
   });
 
-  const viewProjText = gsap.timeline({ paused: true });
+  // const viewProjText = gsap.timeline({ paused: true });
 
-  useGSAP(() => {
-    viewProjText
-      .from(introHead.current, {
-        duration: 1,
-        opacity: 0,
-        y: -50,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: introHead.current,
-          start: "top 70%",
-          toggleActions: "play none none none",
-          scrub: true,
-        },
-      })
-      .from(introPara.current, {
-        duration: 1,
-        opacity: 0,
-        y: -50,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: introPara.current,
-          start: "top 80%",
-          toggleActions: "play none none none",
-          scrub: true,
-        },
-      })
-      .from(viewBtn.current, {
-        duration: 1,
-        opacity: 0,
-        y: 100,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: viewBtn.current,
-          start: "top 90%",
-          end: "top 70%",
-          toggleActions: "play none none none",
-          scrub: true,
-        },
-      });
-  });
-  // const headerAnimate = gsap.timeline({ paused: true });
+  // useGSAP(() => {
+  //   viewProjText
+  //     .from(introHead.current, {
+  //       duration: 1,
+  //       opacity: 0,
+  //       y: -50,
+  //       ease: "power1.out",
+  //       scrollTrigger: {
+  //         trigger: introHead.current,
+  //         start: "top 60%",
+  //         end: "top 40%",
+  //         toggleActions: "play none none none",
+  //         scrub: true,
+  //       },
+  //     })
+  //     .from(introPara.current, {
+  //       duration: 1,
+  //       opacity: 0,
+  //       y: -50,
+  //       ease: "power1.out",
+  //       scrollTrigger: {
+  //         trigger: introPara.current,
+  //         start: "top 60%",
+  //         end: "top 40%",
+  //         toggleActions: "play none none none",
+  //         scrub: true,
+  //       },
+  //     })
+  //     .from(viewBtn.current, {
+  //       duration: 1,
+  //       opacity: 0,
+  //       y: 100,
+  //       ease: "power1.out",
+  //       scrollTrigger: {
+  //         trigger: viewBtn.current,
+  //         start: "top 60%",
+  //         end: "top 40%",
+  //         toggleActions: "play none none none",
+  //         scrub: true,
+  //       },
+  //     });
+  // });
 
   const handleNavClick = (section) => {
     const targetRef = sections[section];
@@ -129,12 +129,6 @@ export default function HeroSection({
         behavior: "smooth",
       });
     }
-
-    // Close the menu
-    navTl.reverse();
-    menuBar.reverse();
-
-    document.body.style.overflow = ""; // Restore scrolling
   };
 
   let animationRef = null;
@@ -160,8 +154,6 @@ export default function HeroSection({
         rotationY: 360,
         duration: 1.3,
         ease: "linear",
-        // repeat: -1,
-        // yoyo: true,
         transformOrigin: "center center",
       })
       .to(

@@ -1,19 +1,93 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
 
-function Intro() {
+gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger);
+
+function Intro({pageTitle, mainTitle, para}) {
+
+    const serviceHead = useRef(null);
+  const borderRef = useRef(null);
+  const serviceRef = useRef(null);
+  const textRef = useRef(null);
+
+  //   const serviceTime = gsap.timeline({ paused: true });
+
+  useGSAP(() => {
+    gsap.from(borderRef.current, {
+      x: 100,
+      opacity: 0,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: borderRef.current,
+        toggleActions: "play none none none",
+        start: "top 50%",
+        end: "top 30%",
+      },
+    });
+    gsap.from(serviceRef.current, {
+      x: -100,
+      opacity: 0,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: serviceRef.current,
+        toggleActions: "play none none none",
+        start: "top 50%",
+        end: "top 30%",
+      },
+    });
+
+    gsap.from(serviceHead.current, {
+      y: -100,
+      opacity: 0,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: serviceHead.current,
+        toggleActions: "play none none none",
+        start: "top 50%",
+        end: "top 30%",
+      },
+    });
+    gsap.from(textRef.current, {
+      y: 100,
+      opacity: 0,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: textRef.current,
+        toggleActions: "play none none none",
+        start: "top 50%",
+        end: "top 30%",
+      },
+    });
+  });
+
   return (
-    <div className="bg-wholeBg max-w-full lg:py-16">
-      <div className="max-w-[1400px] mx-auto lg:flex lg:flex-row lg:justify-between lg:items-center">
-        <div className="flex flex-col gap-4 max-w-4xl">
-          <h2 className="text-white lg:text-6xl font-bold">
-            Where Digital Dreams <span className="lg:block">Take Flight</span>
-          </h2>
-          <p className="text-introColor lg:text-xl">
-            We are your creative partner in the digital realm. We're not just a
-            company, we're a team of dreamers, creators, and innovators
-            dedicated to bringing your digital dreams to life.
-          </p>
+    <div className="flex flex-col gap-5 mb-12">
+      <div className="flex flex-row items-center gap-4">
+        <div
+          className="w-16 h-0 border-2 border-serviceText"
+          ref={borderRef}
+        ></div>
+        <div>
+          <h3 className="text-serviceText text-xl uppercase" ref={serviceRef}>
+            {pageTitle}
+          </h3>
         </div>
+      </div>
+
+      <div className="flex flex-col gap-8 max-w-xl">
+        <h3
+          className="lg:text-6xl md:text-5xl sm:text-4xl text-2xl text-white font-bold capitalize"
+          ref={serviceHead}
+        >
+          {mainTitle}
+        </h3>
+
+        <p className="text-serviceText text-lg" ref={textRef}>
+          {para}
+        </p>
       </div>
     </div>
   );

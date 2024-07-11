@@ -104,12 +104,12 @@ option {
   --endColor: #434858; /* End color */
   position: relative;
   overflow: hidden;
-  z-index: 10000;
+  /* z-index: 10000; */
   transition: transform 0.3s ease, z-index 0s 0.3s;
 }
 
 .card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -120,13 +120,40 @@ option {
   transition: transform 0.8s ease;
   transform: translateY(100%);
 }
-
 .card:hover {
   z-index: 10; /* Bring the card to the top on hover */
   transition: transform 0.3s ease, z-index 0s 0s; /* Remove z-index transition delay */
 }
 
 .card:hover::before {
+  transform: translateY(0);
+}
+.priceCard {
+  position: relative;
+  overflow: hidden;
+  /* z-index: 10000; */
+  transition: transform 0.3s ease, z-index 0s 0.3s;
+}
+
+.priceCard::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, #493b1c, #080a1200 );
+  z-index: 1;
+  transition: transform 0.8s ease;
+  transform: translateY(-100%);
+}
+
+.priceCard:hover {
+  z-index: 10; /* Bring the card to the top on hover */
+  transition: transform 0.3s ease, z-index 0s 0s; /* Remove z-index transition delay */
+}
+
+.priceCard:hover::before {
   transform: translateY(0);
 }
 

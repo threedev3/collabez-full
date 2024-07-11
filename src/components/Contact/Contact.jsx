@@ -99,7 +99,7 @@ function Contact({ portfolioRef, featuresRef, contactRef, homeRef }) {
 
   return (
     <>
-      <div className="bg-[url('/src/assets/img/contactbg.png')] bg-no-repeat bg-cover xl:bg-bottom bg-moveupfooter max-w-full relative overflow-hidden lg:py-32 lg:px-8 px-4 py-8">
+      <div className="bg-[url('/src/assets/img/contactbg.png')] bg-no-repeat bg-cover xl:bg-bottom bg-moveupfooter max-w-full relative overflow-x-hidden lg:py-32 lg:px-8 px-4 py-8">
         
         <div className="max-w-[1400px] mx-auto relative z-50 flex flex-col gap-8">
           <div className="flex flex-col gap-3 max-w-2xl ">

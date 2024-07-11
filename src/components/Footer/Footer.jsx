@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react"; // Import useGSAP from @gsap/react
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link, useNavigate } from "react-router-dom";
-import footerGrad from '../../assets/img/footerGrad.png'
+import footerGrad from "../../assets/img/footerGrad.png";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -57,10 +57,10 @@ function Footer({ portfolioRef, featuresRef, contactRef, homeRef }) {
   };
 
   return (
-    <div className="pt-16 max-w-full relative lg:px-8 px-4 ">
+    <div className="pt-16 max-w-full relative lg:px-8 px-4 overflow-hidden ">
       <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute bottom-0 left-0 w-[450px] h-[450px]">
-            {/* <div
+        <div className="absolute bottom-0 left-0 w-[450px] h-[300px]">
+          {/* <div
             className="w-full h-full"
             style={{
               background:
@@ -68,18 +68,24 @@ function Footer({ portfolioRef, featuresRef, contactRef, homeRef }) {
               opacity: "0.7",
             }}
           /> */}
-            <img src={footerGrad} alt="" className="w-full h-full" />
-          </div>
+          <img src={footerGrad} alt="" className="w-full h-full" />
         </div>
+      </div>
       <div className="md:grid md:grid-cols-3 md:gap-6 md:items-start grid grid-cols-1 gap-6 max-w-[1400px] mx-auto pb-24">
         <div className="">
-          <img src={footerLogo} alt="" className="cursor-pointer" onClick={() => handleHomeRedirect('/')} />
+          <img
+            src={footerLogo}
+            alt=""
+            className="cursor-pointer"
+            onClick={() => handleHomeRedirect("/")}
+          />
         </div>
 
         <div className="md:flex md:justify-center md:items-center text-white">
           <ul className="leading-8">
             {navigation.map((item, index) => (
               <button
+                key={index}
                 className="block"
                 onClick={() => {
                   handleNavClick(item.href);

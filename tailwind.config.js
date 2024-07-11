@@ -27,7 +27,8 @@ export default {
         serviceCardTwoFrom: "#080A12",
         serviceCardTwoTo: "#080a1200",
         tabsColor: "#111319",
-        tabsText: "#88898c"
+        tabsText: "#88898c",
+        priceBg: "#493b1c"
       },
       backgroundSize: {
         auto: "auto",

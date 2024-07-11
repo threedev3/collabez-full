@@ -1,16 +1,15 @@
 import React, { useRef, useState } from "react";
-import ServiceCard from "../ServiceCard/ServiceCard";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
-import { services } from "../../data/data.js";
 
+import ServiceCard from "../ServiceCard/ServiceCard";
+
+import { services } from "../../data/data.js";
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
 function ServicesSection() {
-  
-
   const serviceHead = useRef(null);
   const borderRef = useRef(null);
   const serviceRef = useRef(null);
@@ -102,7 +101,6 @@ function ServicesSection() {
             </p>
           </div>
         </div>
-
         <div>
           <div className="lg:grid lg:grid-cols-3 lg:gap-7 md:grid md:grid-cols-2 md:gap-7 grid grid-cols-1 gap-7 shadow-sm">
             {services.map((item, index) => (
@@ -113,7 +111,7 @@ function ServicesSection() {
                 // description={item.description}
                 // bgStart={item.bgStart}
                 // bgEnd={item.bgEnd}
-                item={item} 
+                item={item}
               />
             ))}
           </div>

@@ -139,7 +139,7 @@ function Portfolio() {
 
   return (
     <div
-      className="lg:py-12 lg:px-8 py-8 px-4 max-w-full overflow-x-hidden"
+      className="lg:py-12 lg:px-8 py-8 px-4 max-w-full overflow-hidden"
       ref={portfolioRef}
     >
       <div className="max-w-[1400px] mx-auto">

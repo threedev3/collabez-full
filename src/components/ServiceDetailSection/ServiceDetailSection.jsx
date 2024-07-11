@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
-function ServiceDetailSection() {
+function ServiceDetailSection({ contactRef }) {
   const [selectedService, setSelectedService] = useState(null);
   const serviceHead = useRef(null);
   const borderRef = useRef(null);
@@ -43,6 +43,8 @@ function ServiceDetailSection() {
     // window.location.reload();
   }, [slug]);
 
+  console.log("Slug", slug);
+
   const handleTabClick = (service) => {
     // setSelectedService(service);
     // if (topRef.current) {
@@ -55,6 +57,21 @@ function ServiceDetailSection() {
     navigate(`/services/${serviceSlug}`);
     window.scrollTo(0, 0); // Scrolls to top on tab click
     window.location.reload(); // Forces a full page reload
+  };
+
+  const sections = {
+    Contact: contactRef,
+  };
+
+  const handleNavClick = (section) => {
+    const targetRef = sections[section];
+
+    if (targetRef && targetRef.current) {
+      window.scrollTo({
+        top: targetRef.current.offsetTop,
+        behavior: "smooth",
+      });
+    }
   };
 
   const workingDetailsLines = selectedService?.workingDetails
@@ -110,83 +127,85 @@ function ServiceDetailSection() {
   });
 
   useEffect(() => {
-    gsap.from(sliderRef.current, {
-      y: -200,
-      opacity: 0,
-      duration: 0.75,
-      scrollTrigger: {
-        trigger: sliderRef.current,
-        toggleActions: "play none none none",
-        start: "top 50%",
-        end: "top 30%",
-        // scrub: true,
-      },
-    });
-    gsap.from(descRef.current, {
-      opacity: 0,
-      duration: 0.5,
-      scrollTrigger: {
-        trigger: descRef.current,
-        toggleActions: "play none none none",
-        start: "top 50%",
-        end: "top 30%",
-        // scrub: true,
-      },
-    });
-    gsap.from(workHeadRef.current, {
-      x: 100,
-      opacity: 0,
-      duration: 0.5,
-      scrollTrigger: {
-        trigger: workHeadRef.current,
-        toggleActions: "play none none none",
-        start: "top 50%",
-        end: "top 30%",
-        // scrub: true,
-      },
-    });
-    gsap.from(workCardRef.current, {
-      y: -100,
-      opacity: 0,
-      duration: 0.5,
-      ease: "back.inOut",
-      scrollTrigger: {
-        trigger: workCardRef.current,
-        toggleActions: "play none none none",
-        start: "top 50%",
-        end: "top 30%",
-        // scrub: true,
-      },
-    });
-    gsap.from(detailsRef.current, {
-      x: -100,
-      opacity: 0,
-      duration: 0.5,
-      ease: "back.inOut",
-      scrollTrigger: {
-        trigger: detailsRef.current,
-        toggleActions: "play none none none",
-        start: "top 70%",
-        end: "top 50%",
-        // scrub: true,
-      },
-    });
-    gsap.from(listRef.current, {
-      x: -100,
-      opacity: 0,
-      duration: 0.5,
-      ease: "back.inOut",
-      scrollTrigger: {
-        trigger: listRef.current,
-        toggleActions: "play none none none",
-        start: "top 70%",
-        end: "top 50%",
-        // scrub: true,
-      },
-    });
-  });
+    if (selectedService) {
+      gsap.from(sliderRef.current, {
+        y: -200,
+        opacity: 0,
+        duration: 0.75,
+        scrollTrigger: {
+          trigger: sliderRef.current,
+          toggleActions: "play none none none",
+          start: "top 50%",
+          end: "top 30%",
+          // scrub: true,
+        },
+      });
+      gsap.from(descRef.current, {
+        opacity: 0,
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: descRef.current,
+          toggleActions: "play none none none",
+          start: "top 50%",
+          end: "top 30%",
+          // scrub: true,
+        },
+      });
+      gsap.from(workHeadRef.current, {
+        x: 100,
+        opacity: 0,
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: workHeadRef.current,
+          toggleActions: "play none none none",
+          start: "top 50%",
+          end: "top 30%",
+          // scrub: true,
+        },
+      });
+      gsap.from(workCardRef.current, {
+        y: -100,
+        opacity: 0,
+        duration: 0.5,
+        ease: "back.inOut",
+        scrollTrigger: {
+          trigger: workCardRef.current,
+          toggleActions: "play none none none",
+          start: "top 50%",
+          end: "top 30%",
+          // scrub: true,
+        },
+      });
+      gsap.from(detailsRef.current, {
+        x: -100,
+        opacity: 0,
+        duration: 0.5,
+        ease: "back.inOut",
+        scrollTrigger: {
+          trigger: detailsRef.current,
+          toggleActions: "play none none none",
+          start: "top 70%",
+          end: "top 50%",
+          // scrub: true,
+        },
+      });
+      gsap.from(listRef.current, {
+        x: -100,
+        opacity: 0,
+        duration: 0.5,
+        ease: "back.inOut",
+        scrollTrigger: {
+          trigger: listRef.current,
+          toggleActions: "play none none none",
+          start: "top 70%",
+          end: "top 50%",
+          // scrub: true,
+        },
+      });
+    }
+  }, [selectedService]);
 
-  console.log(workCardRef);
+  // console.log(workCardRef);
 
   var settings = {
     dots: true,
@@ -258,8 +277,8 @@ function ServiceDetailSection() {
                 <select
                   id="country"
                   name="country"
-                  autocomplete="country-name"
-                  class="block w-full rounded-md p-2 bg-transparent text-white shadow-sm sm:text-sm sm:leading-6 border-2 border-borderColor outline-none"
+                  autoComplete="country-name"
+                  className="block w-full rounded-md p-2 bg-transparent text-white shadow-sm sm:text-sm sm:leading-6 border-2 border-borderColor outline-none"
                   onChange={handleChange}
                 >
                   {services.map((item, index) => (
@@ -278,7 +297,10 @@ function ServiceDetailSection() {
                 {/* <img src={serviceDemo} alt="" className="w-full" /> */}
                 <Slider {...settings}>
                   {selectedService.sliderImages.map((img, index) => (
-                    <div className="md:h-[500px] sm:h-[400px] h-[300px] w-full">
+                    <div
+                      className="md:h-[500px] sm:h-[400px] h-[300px] w-full"
+                      key={index}
+                    >
                       <img
                         src={img}
                         alt="sliderImg"
@@ -312,7 +334,10 @@ function ServiceDetailSection() {
                     ref={workCardRef}
                   >
                     {selectedService.workingHead.map((item, index) => (
-                      <div className="md:w-[32%] w-full min-h-[260px] flex flex-col gap-8 items-center justify-center p-4 border-2 border-borderColor rounded-lg mb-3">
+                      <div
+                        className="md:w-[32%] w-full min-h-[260px] flex flex-col gap-8 items-center justify-center p-4 border-2 border-borderColor rounded-lg mb-3"
+                        key={index}
+                      >
                         <div>
                           <h3 className="uppercase text-heroColor text-xl">{`Step ${
                             index + 1
@@ -349,7 +374,10 @@ function ServiceDetailSection() {
                       ref={listRef}
                     >
                       {selectedService.workingItems.map((item, index) => (
-                        <div className="flex flex-row gap-5 items-center">
+                        <div
+                          className="flex flex-row gap-5 items-center"
+                          key={index}
+                        >
                           <div className="w-2 h-2 rounded-full bg-heroColor"></div>
                           <li key={index}>{item}</li>
                         </div>
@@ -397,7 +425,10 @@ function ServiceDetailSection() {
                 </div>
 
                 <div className="cursor-pointer z-30">
-                  <button className="text-heroColor border-b-2 border-heroColor uppercase ">
+                  <button
+                    className="text-heroColor border-b-2 border-heroColor uppercase "
+                    onClick={() => handleNavClick("Contact")}
+                  >
                     Contact Us
                   </button>
                 </div>
