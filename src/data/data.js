@@ -41,6 +41,7 @@ export const services = [
       "Reusable business logic",
     ],
     sliderImages: [uiux, webDev],
+    slug: "uiux-and-brand-identity",
   },
   {
     icon: appdevIcon,
@@ -72,6 +73,7 @@ export const services = [
       "Reusable business logic",
     ],
     sliderImages: [appDev, smm],
+    slug: "app-development",
   },
   {
     icon: socialIcon,
@@ -101,6 +103,7 @@ export const services = [
       "Reusable business logic",
     ],
     sliderImages: [smm, webDev],
+    slug: "seo-&-smm-optimization",
   },
   {
     icon: webdevIcon,
@@ -130,6 +133,7 @@ export const services = [
       "Reusable business logic",
     ],
     sliderImages: [webDev, webDev2],
+    slug: "web-development",
   },
   {
     icon: ecommerceIcon,
@@ -159,6 +163,7 @@ export const services = [
       "Reusable business logic",
     ],
     sliderImages: [eCommerce, webDev2],
+    slug: "e-commerce-development",
   },
   {
     icon: iconMarketing,
@@ -188,5 +193,6 @@ export const services = [
       "Reusable business logic",
     ],
     sliderImages: [marketing, webDev],
+    slug: "marketing-strategy",
   },
 ];

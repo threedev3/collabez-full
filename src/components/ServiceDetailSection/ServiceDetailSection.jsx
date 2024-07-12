@@ -36,7 +36,8 @@ function ServiceDetailSection({ contactRef }) {
   useEffect(() => {
     const service = services.find(
       (s) =>
-        s.title.toLowerCase().replace(/\s+/g, "-").replace(/\//g, "") === slug
+        // s.title.toLowerCase().replace(/\s+/g, "-").replace(/\//g, "") === slug
+        s.slug === slug
     );
     setSelectedService(service);
     window.scrollTo(0, 0);
@@ -50,10 +51,12 @@ function ServiceDetailSection({ contactRef }) {
     // if (topRef.current) {
     //   topRef.current.scrollIntoView({ behavior: "smooth" });
     // }
-    const serviceSlug = service.title
-      .toLowerCase()
-      .replace(/\s+/g, "-")
-      .replace(/\//g, "");
+    // const serviceSlug = service.title
+    //   .toLowerCase()
+    //   .replace(/\s+/g, "-")
+    //   .replace(/\//g, "");
+
+    const serviceSlug = service.slug;
     navigate(`/services/${serviceSlug}`);
     window.scrollTo(0, 0); // Scrolls to top on tab click
     window.location.reload(); // Forces a full page reload
