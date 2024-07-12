@@ -20,17 +20,16 @@ function PricingCard({ mode, price, duration, features }) {
 
   useGSAP(() => {
     gsap.from(priceCardRef.current, {
-    //   x: 0,
+      //   x: 0,
       opacity: 0,
       duration: 1,
       ease: "back.inOut",
-    //   stagger: 0.2,
+      //   stagger: 0.2,
       scrollTrigger: {
         trigger: priceCardRef.current,
         toggleActions: "play none none none",
         start: "top 70%",
         end: "top 50%",
-        
       },
     });
   });
@@ -54,16 +53,20 @@ function PricingCard({ mode, price, duration, features }) {
         }`}
       >
         <div>
-          <h3 className="text-white text-3xl">{mode}</h3>
+          <h3 className="text-white xl:text-2xl lg:text-xl sm:text-xl text-xl">
+            {mode}
+          </h3>
         </div>
         <div className="flex flex-col items-center justify-center gap-1">
           <div className="text-white flex flex-row gap-2">
-            <sup className="text-2xl">$</sup>
-            <h3 className="text-7xl font-bold tracking-wide">{price}</h3>
-            <sup className="text-2xl">.99</sup>
+            <sup className="text-xl">$</sup>
+            <h3 className="xl:text-5xl lg:text-4xl md:text-4xl sm:text-5xl text-5xl font-bold tracking-wide">
+              {price}
+            </h3>
+            <sup className="text-xl">.99</sup>
           </div>
           <div>
-            <h3 className="text-white text-lg">{duration}</h3>
+            <h3 className="text-white lg:text-base text-sm">{duration}</h3>
           </div>
         </div>
       </div>
@@ -76,13 +79,13 @@ function PricingCard({ mode, price, duration, features }) {
       >
         <ul className="flex flex-col gap-5 text-white items-center z-10">
           {features.map((item, index) => (
-            <li key={index} className="text-lg">
+            <li key={index} className="text-base">
               {item}
             </li>
           ))}
         </ul>
 
-        <div className="py-4 px-8 text-white border-2 border-heroColor rounded-full bg-transparent hover:bg-heroColor transition-all duration-300 cursor-pointer text-lg z-10">
+        <div className="py-3 px-8 text-white border-2 border-heroColor rounded-full bg-transparent hover:bg-heroColor transition-all duration-300 cursor-pointer text-base z-10">
           <button>Buy Now</button>
         </div>
       </div>

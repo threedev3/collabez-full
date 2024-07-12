@@ -37,7 +37,6 @@ function Team() {
   const teamHead = useRef(null);
   const teamPara = useRef(null);
 
-
   // const heading = "OUR EXPERTS Friendly Team";
   // const splitHeading = heading.split("");
   // const joinHeading = splitHeading.map((item, index) => (
@@ -76,7 +75,6 @@ function Team() {
         // markers: true,
       },
     });
-    
   });
 
   const splitText = (text) => {
@@ -95,19 +93,19 @@ function Team() {
   };
 
   return (
-    <div className="lg:py-12 lg:px-8 py-8 px-4 max-w-full min-h-[87vh]">
+    <div className="lg:py-12 lg:px-8 py-8 px-4 max-w-full min-h-[78vh]">
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-col gap-12">
           <div className="flex flex-col gap-3">
             <h3
-              className="text-white lg:text-5xl sm:text-4xl text-3xl font-bold"
+              className="text-white xl:text-4xl lg:text-4xl md:text-4xl sm:text-3xl text-2xl font-bold"
               ref={teamHead}
             >
               {splitText("OUR EXPERTS ")}
               <span className="inline-block">{splitText("Friendly ")}</span>
               <span className="inline-block">{splitText("Team ")}</span>
             </h3>
-            <p className="text-introColor sm:text-base text-sm" ref={teamPara}>
+            <p className="text-introColor sm:text-sm text-sm" ref={teamPara}>
               At the heart of CollabEz is our team—a diverse group of dreamers,
               doers, and digital enthusiasts who live and breathe creativity.
               We're designers, developers, marketers, and social media gurus,
@@ -117,7 +115,7 @@ function Team() {
             </p>
           </div>
 
-          <div className="flex flex-row justify-between items-start flex-wrap gap-5" >
+          <div className="flex flex-row justify-between items-start flex-wrap gap-5">
             {members.map((member, index) => (
               <TeamCard
                 imgMember={member.imgMember}
@@ -129,9 +127,6 @@ function Team() {
           </div>
         </div>
       </div>
-
-
-      
     </div>
   );
 }

@@ -96,11 +96,14 @@ function Features() {
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-col gap-5">
           <div className="lg:flex lg:flex-row lg:justify-between lg:items-center">
-            <div className="flex flex-col gap-3" >
-              <p className="text-white lg:text-6xl text-4xl font-bold" ref={headRef}>
+            <div className="flex flex-col gap-3">
+              <p
+                className="text-white xl:text-4xl lg:text-4xl md:text-3xl sm:text-2xl text-2xl font-bold"
+                ref={headRef}
+              >
                 Why CollabEz ?
               </p>
-              <p className="text-introColor text-xl" ref={textRef}>
+              <p className="text-introColor lg:text-base text-sm" ref={textRef}>
                 We never faill to deliver desired result with E4!!{" "}
               </p>
             </div>

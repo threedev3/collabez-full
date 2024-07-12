@@ -146,13 +146,13 @@ function Portfolio() {
         <div className="flex flex-col gap-5">
           <div className="flex flex-col gap-5">
             <h3
-              className="lg:text-6xl text-white text-4xl font-bold"
+              className="xl:text-4xl lg:text-4xl md:text-3xl text-3xl text-white font-bold"
               ref={portHeading}
             >
               Our Portfolio
             </h3>
             <p
-              className="text-introColor lg:text-xl md:text-lg text-base "
+              className="text-introColor xl:text-base lg:text-sm md:text-sm text-sm "
               ref={portPara}
             >
               Don't just take our word for it see for yourself. Our portfolio is
@@ -174,7 +174,7 @@ function Portfolio() {
                   className="flex flex-col gap-2"
                   ref={(el) => (projectRefs.current[index] = el)}
                 >
-                  <h3 className="lg:text-6xl sm:text-4xl text-2xl text-white">
+                  <h3 className="xl:text-4xl lg:text-4xl md:text-3xl sm:text-2xl text-2xl text-white">
                     {project.title}
                   </h3>
                   <div className="flex flex-wrap gap-2 mt-4">

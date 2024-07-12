@@ -6,9 +6,8 @@ import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
-function Intro({pageTitle, mainTitle, para}) {
-
-    const serviceHead = useRef(null);
+function Intro({ pageTitle, mainTitle, para }) {
+  const serviceHead = useRef(null);
   const borderRef = useRef(null);
   const serviceRef = useRef(null);
   const textRef = useRef(null);
@@ -67,11 +66,14 @@ function Intro({pageTitle, mainTitle, para}) {
     <div className="flex flex-col gap-5 mb-12">
       <div className="flex flex-row items-center gap-4">
         <div
-          className="w-16 h-0 border-2 border-serviceText"
+          className="w-16 h-0 border-[1px] border-serviceText"
           ref={borderRef}
         ></div>
         <div>
-          <h3 className="text-serviceText text-xl uppercase" ref={serviceRef}>
+          <h3
+            className="text-serviceText lg:text-lg text-sm uppercase"
+            ref={serviceRef}
+          >
             {pageTitle}
           </h3>
         </div>
@@ -79,13 +81,13 @@ function Intro({pageTitle, mainTitle, para}) {
 
       <div className="flex flex-col gap-8 max-w-xl">
         <h3
-          className="lg:text-6xl md:text-5xl sm:text-4xl text-2xl text-white font-bold capitalize"
+          className="xl:text-5xl lg:text-4xl md:text-4xl sm:text-3xl text-3xl text-white font-bold capitalize"
           ref={serviceHead}
         >
           {mainTitle}
         </h3>
 
-        <p className="text-serviceText text-lg" ref={textRef}>
+        <p className="text-serviceText lg:text-base text-sm" ref={textRef}>
           {para}
         </p>
       </div>

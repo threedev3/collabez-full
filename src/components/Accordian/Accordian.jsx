@@ -34,7 +34,7 @@ function Accordian({ question, answer, isOpen, onClick }) {
           start: "top 80%",
           end: "top 60%",
           scrub: true,
-        //   markers: true,
+          //   markers: true,
         },
       })
       .from(quesRef.current, {
@@ -62,7 +62,7 @@ function Accordian({ question, answer, isOpen, onClick }) {
         onClick={onClick}
       >
         <span
-          className="sm:text-lg text-base text-white font-semibold"
+          className="sm:text-base text-sm text-white font-semibold"
           ref={quesRef}
         >
           {question}

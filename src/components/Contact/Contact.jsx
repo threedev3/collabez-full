@@ -99,49 +99,48 @@ function Contact({ portfolioRef, featuresRef, contactRef, homeRef }) {
 
   return (
     <>
-      <div className="bg-[url('/src/assets/img/contactbg.png')] bg-no-repeat bg-cover xl:bg-bottom bg-moveupfooter max-w-full relative overflow-x-hidden lg:py-32 lg:px-8 px-4 py-8">
-        
+      <div className="bg-[url('/src/assets/img/contactbg.png')] bg-no-repeat bg-cover xl:bg-bottom bg-moveupfooter max-w-full relative overflow-x-hidden overflow-y-hidden lg:py-32 lg:px-8 px-4 py-8">
         <div className="max-w-[1400px] mx-auto relative z-50 flex flex-col gap-8">
           <div className="flex flex-col gap-3 max-w-2xl ">
             <h3
-              className="lg:text-6xl md:text-5xl text-4xl text-white font-bold"
+              className="xl:text-4xl lg:text-4xl md:text-3xl sm:text-3xl text-3xl text-white font-bold"
               ref={headContact}
             >
               Contact <span className="text-heroColor">CollabEz</span>
             </h3>
-            <p className="text-white md:text-xl text-base" ref={textContact}>
+            <p className="text-white lg:text-base text-sm" ref={textContact}>
               We always try to implement our creative ideas at the highest
               level. Tell us about your project and we will make it work.
             </p>
           </div>
 
           <form
-            className="lg:flex lg:flex-col lg:gap-10 flex flex-col gap-8 mt-10 max-w-full"
+            className="lg:flex lg:flex-col lg:gap-10 flex flex-col gap-8 lg:mt-10 max-w-full"
             onSubmit={handleSubmit}
             ref={formRef}
           >
             <div className="lg:flex lg:flex-row lg:justify-between lg:gap-10 flex flex-col gap-8 max-w-full">
               <div className="flex flex-col gap-3 w-full">
-                <label htmlFor="" className="text-white lg:text-2xl md:text-xl text-lg">
+                <label htmlFor="" className="text-white text-base">
                   First Name
                 </label>
                 <input
                   required
                   type="text"
-                  className="p-3 rounded-lg bg-transparent border-2 border-heroColor text-white"
+                  className="p-3 rounded-lg bg-transparent border-2 border-heroColor text-white placeholder:text-sm text-sm"
                   placeholder="Your First Name"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                 />
               </div>
               <div className="flex flex-col gap-3 w-full">
-                <label htmlFor="" className="text-white lg:text-2xl md:text-xl text-lg">
+                <label htmlFor="" className="text-white text-base">
                   Last Name
                 </label>
                 <input
                   required
                   type="text"
-                  className="p-3 rounded-lg bg-transparent border-2 border-heroColor text-white"
+                  className="p-3 rounded-lg bg-transparent border-2 border-heroColor text-white placeholder:text-sm text-sm"
                   placeholder="Your Last Name"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
@@ -150,26 +149,26 @@ function Contact({ portfolioRef, featuresRef, contactRef, homeRef }) {
             </div>
             <div className="lg:flex lg:flex-row lg:justify-between lg:gap-10 flex flex-col gap-8 max-w-full text-white">
               <div className="flex flex-col gap-3 w-full">
-                <label htmlFor="" className="text-white lg:text-2xl md:text-xl text-lg">
+                <label htmlFor="" className="text-white text-base">
                   Phone
                 </label>
                 <input
                   required
                   type="number"
-                  className="p-3 rounded-lg bg-transparent border-2 border-heroColor text-white remove-arrow"
+                  className="p-3 rounded-lg bg-transparent border-2 border-heroColor text-white remove-arrow placeholder:text-sm text-sm"
                   placeholder="+11 8282 xxx"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                 />
               </div>
               <div className="flex flex-col gap-3 w-full">
-                <label htmlFor="" className="text-white lg:text-2xl md:text-xl text-lg">
+                <label htmlFor="" className="text-white text-base">
                   Email
                 </label>
                 <input
                   required
                   type="email"
-                  className="p-3 rounded-lg bg-transparent border-2 border-heroColor text-white"
+                  className="p-3 rounded-lg bg-transparent border-2 border-heroColor text-white placeholder:text-sm text-sm"
                   placeholder="email@domain.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -178,14 +177,14 @@ function Contact({ portfolioRef, featuresRef, contactRef, homeRef }) {
             </div>
             <div className="lg:flex lg:flex-row lg:justify-between lg:gap-4 max-w-full">
               <div className="flex flex-col gap-3 w-full">
-                <label htmlFor="" className="text-white lg:text-2xl md:text-xl text-lg">
+                <label htmlFor="" className="text-white text-base">
                   Message
                 </label>
                 <textarea
                   required
                   rows={10}
                   type="text"
-                  className="p-3 rounded-lg bg-transparent border-2 border-heroColor text-white"
+                  className="p-3 rounded-lg bg-transparent border-2 border-heroColor text-white placeholder:text-sm text-sm"
                   placeholder="Your Message"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
@@ -195,7 +194,7 @@ function Contact({ portfolioRef, featuresRef, contactRef, homeRef }) {
 
             <div className="">
               <button
-                className="py-3 px-10 bg-heroColor rounded-full text-white text-base"
+                className="sm:py-3 py-2 sm:px-10 px-6 bg-heroColor rounded-full text-white text-base"
                 type="submit"
               >
                 Send Message{" "}

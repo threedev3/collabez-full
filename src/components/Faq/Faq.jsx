@@ -78,7 +78,7 @@ function Faq() {
         <div className="flex flex-col gap-5">
           <div>
             <h3
-              className="text-white lg:text-5xl sm:text-4xl text-3xl font-bold"
+              className="text-white xl:text-4xl lg:text-4xl md:text-3xl text-2xl font-bold"
               ref={faqHead}
             >
               Frequently Asked Question

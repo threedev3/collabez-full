@@ -73,17 +73,17 @@ function Footer({ portfolioRef, featuresRef, contactRef, homeRef }) {
         </div>
       </div>
       <div className="md:grid md:grid-cols-3 md:gap-6 md:items-start grid grid-cols-1 gap-6 max-w-[1400px] mx-auto pb-24">
-        <div className="mx-auto">
+        <div className="md:mx-auto w-72">
           <img
             src={footerLogo}
             alt=""
-            className="cursor-pointer"
+            className="cursor-pointer object-cover"
             onClick={() => handleHomeRedirect("/")}
           />
         </div>
 
         <div className="md:flex md:justify-center md:items-center text-white">
-          <ul className="leading-8">
+          <ul className="leading-8 text-sm">
             {navigation.map((item, index) => (
               <button
                 key={index}
@@ -100,10 +100,10 @@ function Footer({ portfolioRef, featuresRef, contactRef, homeRef }) {
 
         <div className="flex flex-col text-white gap-4">
           <div>
-            <h3 className="lg:text-3xl text-2xl font-bold">Contact Us</h3>
+            <h3 className="lg:text-2xl text-xl font-bold">Contact Us</h3>
           </div>
 
-          <ul className="leading-8">
+          <ul className="leading-8 text-sm">
             <li>hello@collabez.co.uk</li>
             <li>+1 845 631 78 49</li>
             <li>20-22, Wenlock Road, N1 7GU, London, UK</li>
@@ -112,11 +112,11 @@ function Footer({ portfolioRef, featuresRef, contactRef, homeRef }) {
       </div>
 
       <div className="absolute bottom-0 left-0 w-full">
-        <div className="flex justify-center text-white w-full text-base">
+        <div className="flex justify-center text-white w-full text-sm mb-2">
           <p>Copyright © {currentYear} Collabez</p>
         </div>
         <div className="max-w-full mx-auto flex justify-center">
-          <div className="w-[1150px] max-[1180px]:w-[1000px] max-[1024px]:w-[800px] max-[825px]:w-[600px] max-[625px]:w-[400px] max-[425px]:w-[260px] sm:h-[20px] h-[15px] bg-heroColor rounded-t-full " />
+          <div className="w-[1150px] max-[1180px]:w-[1000px] max-[1024px]:w-[800px] max-[825px]:w-[600px] max-[625px]:w-[400px] max-[425px]:w-[260px] sm:h-[15px] h-[12px] bg-heroColor rounded-t-full " />
         </div>
       </div>
     </div>

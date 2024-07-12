@@ -80,24 +80,24 @@ function ServiceCard({ item }) {
           }}
         >
           {isHovered ? (
-            <div className="fade-in flex flex-col justify-center gap-8 items-center">
+            <div className="flex flex-col justify-center gap-8 items-center">
               <div className="bg-serviceRound p-6 rounded-full">
                 <img src={item.icon} alt="" />
               </div>
 
               <div className="">
-                <p className="text-center text-white text-xl">{item.title}</p>
+                <p className="text-center text-white text-lg">{item.title}</p>
               </div>
 
               <div className=" flex flex-col justify-center gap-8 items-center">
                 <div className="">
-                  <p className="text-center text-white text-base line-clamp-4">
+                  <p className="text-center text-white text-sm line-clamp-4">
                     {item.description}
                   </p>
                 </div>
 
                 <Link to={`/services/${slug}`}>
-                  <button className="text-center text-heroColor uppercase border-b-2 border-heroColor cursor-pointer">
+                  <button className="text-center text-heroColor uppercase border-b-2 border-heroColor cursor-pointer text-sm">
                     Read More
                   </button>
                 </Link>
@@ -110,7 +110,7 @@ function ServiceCard({ item }) {
               </div>
 
               <div className="">
-                <p className="text-center text-white text-xl">{item.title}</p>
+                <p className="text-center text-white text-lg">{item.title}</p>
               </div>
             </div>
           )}

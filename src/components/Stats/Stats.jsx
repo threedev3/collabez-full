@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Stats({borders}) {
+function Stats({ borders }) {
   const stats = [
     {
       title: "Project Done",
@@ -37,11 +37,12 @@ function Stats({borders}) {
     statRefs.current.forEach((el, index) => {
       gsap.fromTo(
         el,
-        { innerText: 0,
+        {
+          innerText: 0,
           opacity: 0,
           // y: -50,
           // duration: 1
-         },
+        },
         {
           innerText: stats[index].count,
           duration: 0.5,
@@ -54,7 +55,7 @@ function Stats({borders}) {
             end: "top 50%",
             toggleActions: "play none none none",
             // markers: true,
-            scrub: true
+            scrub: true,
           },
           snap: { innerText: 1 },
           stagger: 0.2,
@@ -67,7 +68,9 @@ function Stats({borders}) {
   }, [stats]);
 
   return (
-    <div className={`lg:py-12 lg:px-8 px-4 sm:py-8 py-3 max-w-full ${borders} overflow-x-hidden`}>
+    <div
+      className={`lg:py-12 lg:px-8 px-4 sm:py-8 py-3 max-w-full ${borders} overflow-x-hidden`}
+    >
       <div className="max-w-[1400px] mx-auto">
         <div className="max-w-full lg:flex lg:flex-row lg:justify-between flex flex-row justify-center flex-wrap ">
           {stats.map((stat, index) => (
@@ -75,9 +78,9 @@ function Stats({borders}) {
               key={index}
               className="flex flex-col gap-7 sm:p-5 p-2 text-center min-w-[250px]"
             >
-              <h3 className="text-white lg:text-3xl text-3xl">{stat.title}</h3>
+              <h3 className="text-white sm:text-2xl text-2xl">{stat.title}</h3>
               <p
-                className="text-heroColor lg:text-6xl text-6xl font-bold"
+                className="text-heroColor lg:text-5xl md:text-4xl text-3xl font-bold"
                 ref={addToRefs}
               >
                 0+

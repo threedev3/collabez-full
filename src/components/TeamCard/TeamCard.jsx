@@ -88,8 +88,8 @@ function TeamCard({ imgMember, name, role, socialIcons }) {
           ref={cardDetail}
           className="absolute bottom-5 text-white w-full text-center py-2"
         >
-          <h3 className="text-2xl font-bold">{name}</h3>
-          <h3 className="text-base">{role}</h3>
+          <h3 className="text-xl font-bold">{name}</h3>
+          <h3 className="text-sm">{role}</h3>
         </div>
         <div
           ref={overlayRef}

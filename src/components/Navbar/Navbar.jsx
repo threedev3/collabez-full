@@ -217,7 +217,7 @@ function Navbar() {
                 <li className="overflow-hidden mt-5 " key={index}>
                   <Link
                     // to={item.link}
-                    className="inline-block lg:text-[11vh] sm:text-[9vh] text-[6vh] text-center uppercase font-bold leading-none tracking-wide text-transparent stroke-2 stroke-white menu-item opacity-0 cursor-pointer"
+                    className="inline-block lg:text-[10vh] sm:text-[9vh] text-[6vh] text-center uppercase font-bold leading-none tracking-wide text-transparent stroke-2 stroke-white menu-item opacity-0 cursor-pointer"
                     ref={(el) => (menuItems.current[index] = el)}
                     onClick={() => handleNavClick(item.link)}
                   >

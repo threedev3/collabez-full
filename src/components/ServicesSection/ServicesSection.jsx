@@ -71,12 +71,12 @@ function ServicesSection() {
         <div className="flex flex-col gap-5 mb-12">
           <div className="flex flex-row items-center gap-4">
             <div
-              className="w-16 h-0 border-2 border-serviceText"
+              className="w-16 h-0 border-[1px] border-serviceText"
               ref={borderRef}
             ></div>
             <div>
               <h3
-                className="text-serviceText text-xl uppercase"
+                className="text-serviceText text-lg uppercase"
                 ref={serviceRef}
               >
                 Our Services
@@ -84,16 +84,16 @@ function ServicesSection() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 max-w-3xl">
+          <div className="flex flex-col gap-4 max-w-2xl">
             <h3
-              className="lg:text-6xl md:text-5xl sm:text-4xl text-2xl text-white font-bold"
+              className="xl:text-4xl lg:text-4xl md:text-4xl sm:text-3xl text-2xl text-white font-bold"
               ref={serviceHead}
             >
               Unleashing Your Brand's Digital{" "}
               <span className="text-heroColor">Potential.</span>
             </h3>
 
-            <p className="text-white" ref={textRef}>
+            <p className="text-white lg:text-sm text-sm" ref={textRef}>
               At <span className="text-heroColor">CollabEZ</span>, we offer a
               suite of digital services designed to take your brand from
               ordinary to extraordinary. From logo design to social media

@@ -241,12 +241,12 @@ function ServiceDetailSection({ contactRef }) {
           <div className="flex flex-col gap-5 mb-12">
             <div className="flex flex-row items-center gap-4">
               <div
-                className="w-16 h-0 border-2 border-serviceText"
+                className="w-16 h-0 border-[1px] border-serviceText"
                 ref={borderRef}
               ></div>
               <div>
                 <h3
-                  className="text-serviceText text-xl uppercase"
+                  className="text-serviceText lg:text-lg text-sm uppercase"
                   ref={serviceRef}
                 >
                   Creative ideas
@@ -256,7 +256,7 @@ function ServiceDetailSection({ contactRef }) {
 
             <div className="flex flex-col gap-4 max-w-3xl">
               <h3
-                className="lg:text-6xl md:text-5xl sm:text-4xl text-4xl text-white font-bold"
+                className="xl:text-4xl lg:text-4xl md:text-4xl sm:text-3xl text-3xl text-white font-bold"
                 ref={serviceHead}
               >
                 {selectedService?.serviceName}{" "}
@@ -268,8 +268,13 @@ function ServiceDetailSection({ contactRef }) {
             </div>
           </div>
 
-          <div className="lg:block flex justify-end">
-            <img src={personImg} alt="" ref={imgRef} />
+          <div className="lg:block lg:w-96 flex justify-end">
+            <img
+              src={personImg}
+              alt=""
+              ref={imgRef}
+              className="object-cover lg:w-full w-72"
+            />
           </div>
         </div>
 
@@ -281,13 +286,13 @@ function ServiceDetailSection({ contactRef }) {
                   id="country"
                   name="country"
                   autoComplete="country-name"
-                  className="block w-full rounded-md p-2 bg-transparent text-white shadow-sm sm:text-sm sm:leading-6 border-2 border-borderColor outline-none"
+                  className="block w-full rounded-md p-2 bg-transparent text-white shadow-sm sm:text-sm sm:leading-6 border-2 border-borderColor outline-none text-sm"
                   onChange={handleChange}
                 >
                   {services.map((item, index) => (
                     <option
                       key={index}
-                      className={`cursor-pointer text-white bg-borderColor w-full`}
+                      className={`cursor-pointer text-white bg-borderColor w-full text-sm`}
                       onClick={() => handleTabClick(item)}
                     >
                       {item.title}
@@ -301,7 +306,7 @@ function ServiceDetailSection({ contactRef }) {
                 <Slider {...settings}>
                   {selectedService.sliderImages.map((img, index) => (
                     <div
-                      className="md:h-[500px] sm:h-[400px] h-[300px] w-full"
+                      className="md:h-[500px] sm:h-[400px] h-[270px] w-full"
                       key={index}
                     >
                       <img
@@ -315,7 +320,7 @@ function ServiceDetailSection({ contactRef }) {
               </div>
               <div className="">
                 <p
-                  className="text-white sm:text-lg text-base leading-8"
+                  className="text-white xl:text-base text-sm md:leading-8 leading-6"
                   ref={descRef}
                 >
                   {selectedService.description}
@@ -327,7 +332,10 @@ function ServiceDetailSection({ contactRef }) {
 
                 <div className="sm:flex sm:flex-col sm:gap-12 flex flex-col gap-6 relative z-40">
                   <div>
-                    <h3 className="text-white text-4xl" ref={workHeadRef}>
+                    <h3
+                      className="text-white md:text-3xl text-2xl font-bold"
+                      ref={workHeadRef}
+                    >
                       Working Process
                     </h3>
                   </div>
@@ -347,12 +355,12 @@ function ServiceDetailSection({ contactRef }) {
                           }`}</h3>
                         </div>
                         <div>
-                          <h3 className="text-white text-xl text-center">
+                          <h3 className="text-white text-lg text-center">
                             {item}
                           </h3>
                         </div>
                         <div>
-                          <p className="text-white text-base text-center">
+                          <p className="text-white text-sm text-center">
                             {selectedService.workingPara[index]}
                           </p>
                         </div>
@@ -364,7 +372,7 @@ function ServiceDetailSection({ contactRef }) {
                     {workingDetailsLines.map((line, index) => (
                       <p
                         key={index}
-                        className="text-white sm:text-lg text-base mb-3"
+                        className="text-white xl:text-base text-sm mb-3"
                       >
                         {line.trim()}{" "}
                       </p>
@@ -373,7 +381,7 @@ function ServiceDetailSection({ contactRef }) {
 
                   <div>
                     <ul
-                      className="flex flex-col gap-5 text-white sm:text-base text-sm"
+                      className="flex flex-col gap-5 text-white xl:text-base text-sm"
                       ref={listRef}
                     >
                       {selectedService.workingItems.map((item, index) => (
@@ -401,7 +409,7 @@ function ServiceDetailSection({ contactRef }) {
                 {services.map((item, index) => (
                   <li
                     key={index}
-                    className={`cursor-pointer ${
+                    className={`cursor-pointer xl:text-base text-sm ${
                       selectedService?.title === item.title
                         ? "text-white"
                         : "text-tabsText"
@@ -416,20 +424,20 @@ function ServiceDetailSection({ contactRef }) {
             <div className="bg-black py-16 px-6 rounded-lg lg:w-72 w-full">
               <div className="flex flex-col gap-12">
                 <div>
-                  <h3 className="text-white text-2xl capitalize">
+                  <h3 className="text-white xl:text-xl lg:text-lg md:text-xl text-lg capitalize font-bold">
                     How Can we help you?
                   </h3>
                 </div>
 
                 <div>
-                  <p className="text-white text-base">
+                  <p className="text-white md:text-base text-sm">
                     Don't know where to start? We'll help you.
                   </p>
                 </div>
 
                 <div className="cursor-pointer z-30">
                   <button
-                    className="text-heroColor border-b-2 border-heroColor uppercase "
+                    className="text-heroColor border-b-2 border-heroColor uppercase text-sm"
                     onClick={() => handleNavClick("Contact")}
                   >
                     Contact Us
@@ -440,7 +448,9 @@ function ServiceDetailSection({ contactRef }) {
             <div className="bg-tabsColor py-16 px-6 rounded-lg lg:w-72 w-full">
               <div className="flex flex-col gap-12">
                 <div>
-                  <h3 className="text-white text-2xl capitalize">Newsletter</h3>
+                  <h3 className="text-white xl:text-xl lg:text-lg md:text-xl text-lg capitalize">
+                    Newsletter
+                  </h3>
                 </div>
 
                 <div className="relative flex">
@@ -456,7 +466,7 @@ function ServiceDetailSection({ contactRef }) {
                   />
                 </div>
 
-                <div className="flex gap-5 items-center text-white">
+                <div className="flex gap-5 items-center text-white text-sm">
                   <div className="uppercase">fb</div>
                   <div className="w-2 h-2 rounded-full bg-heroColor"></div>
                   <div className="uppercase">lin</div>

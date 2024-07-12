@@ -5,7 +5,7 @@ import HeroCircle from "../HeroCircle/HeroCircle";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-function SubHeroSection({title}) {
+function SubHeroSection({ title }) {
   const headRef = useRef(null);
 
   const heading = `${title}`;
@@ -41,7 +41,7 @@ function SubHeroSection({title}) {
             <div className="mx-auto">
               <h1
                 ref={headRef}
-                className="text-5xl lg:max-w-2xl text-center font-bold tracking-tight text-white sm:text-6xl md:text-6xl xl:text-7xl uppercase"
+                className="text-3xl lg:max-w-2xl text-center font-bold tracking-tight text-white sm:text-4xl md:text-4xl xl:text-5xl uppercase"
               >
                 {joinHeading}
               </h1>

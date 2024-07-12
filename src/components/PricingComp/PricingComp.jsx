@@ -47,14 +47,20 @@ function PricingComp() {
       <div className="max-w-[1400px] mx-auto">
         <Intro
           pageTitle="how much does it cost"
-          mainTitle="prices packages."
+          mainTitle="prices packages"
           para="We've got a lot of awards for our products and services that became popular in the world."
         />
 
         <div>
           <div className="lg:grid lg:grid-cols-3  md:grid md:grid-cols-2  grid grid-cols-1  shadow-sm">
             {pricing.map((item, index) => (
-              <PricingCard key={index} mode={item.mode} price={item.price} duration={item.duration} features={item.features} />
+              <PricingCard
+                key={index}
+                mode={item.mode}
+                price={item.price}
+                duration={item.duration}
+                features={item.features}
+              />
             ))}
           </div>
         </div>

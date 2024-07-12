@@ -224,7 +224,7 @@ export default function HeroSection({
             <div className="max-w-[1400px] mx-auto px-3 pt-32 sm:pt-32 lg:pt-32 lg:flex lg:flex-row lg:justify-between">
               <div>
                 <h1
-                  className="text-4xl max-w-2xl font-bold tracking-tight text-white sm:text-6xl md:text-6xl xl:text-7xl"
+                  className="text-3xl max-w-xl font-bold tracking-tight text-white sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl"
                   ref={headingRef}
                 >
                   {splitText("Let's Create ")}
@@ -237,7 +237,7 @@ export default function HeroSection({
                 </h1>
 
                 <p
-                  className="mt-6 text-lg leading-6 text-white"
+                  className="mt-6 text-sm sm:text-sm lg:text-base leading-6 text-white"
                   ref={heroTextRef}
                 >
                   Transforming Ideas into Extraordinary Digital {""}
@@ -266,13 +266,13 @@ export default function HeroSection({
           <div className="max-w-[1400px] mx-auto lg:flex lg:flex-row lg:justify-between lg:items-start flex flex-col gap-6">
             <div className="flex flex-col gap-4 lg:max-w-3xl max-w-full lg:grow">
               <h2
-                className="text-white sm:text-6xl text-4xl font-bold"
+                className="text-white xl:text-4xl lg:text-4xl md:text-4xl text-3xl font-bold"
                 ref={introHead}
               >
                 Where Digital Dreams{" "}
                 <span className="lg:block">Take Flight</span>
               </h2>
-              <p className="text-introColor lg:text-base" ref={introPara}>
+              <p className="text-introColor xl:text-sm text-sm" ref={introPara}>
                 We are your creative partner in the digital realm. We're not
                 just a company, we're a team of dreamers, creators, and
                 innovators dedicated to bringing your digital dreams to life.

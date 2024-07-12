@@ -26,8 +26,8 @@ function BeDifferent() {
       ease: "back.inOut",
       scrollTrigger: {
         trigger: dareHead.current,
-        start: "top 80%",
-        end: "top 40%",
+        start: "top 90%",
+        end: "top 60%",
         toggleActions: "play none none none",
         scrub: true,
         // markers: true,
@@ -41,8 +41,8 @@ function BeDifferent() {
       ease: "back.inOut",
       scrollTrigger: {
         trigger: darePara.current,
-        start: "top 80%",
-        end: "top 40%",
+        start: "top 90%",
+        end: "top 60%",
         toggleActions: "play none none none",
         scrub: true,
         // markers: true,
@@ -71,17 +71,14 @@ function BeDifferent() {
         <div className="flex justify-center max-w-2xl mx-auto">
           <div className="flex flex-col gap-10">
             <h3
-              className="text-white lg:text-6xl md:text-5xl sm:text-4xl text-3xl font-bold text-center"
+              className="text-white xl:text-4xl lg:text-4xl md:text-3xl sm:text-3xl text-2xl font-bold text-center"
               ref={dareHead}
             >
               {splitText("Dare To Be ")}
-              <span className="inline-block">
-                {splitText("Different ")}
-              </span>
-             
+              <span className="inline-block">{splitText("Different ")}</span>
             </h3>
             <p
-              className="text-introColor sm:text-base text-sm text-center"
+              className="text-introColor sm:text-sm text-sm text-center"
               ref={darePara}
             >
               Welcome to CollabEz, where we believe in the power of creativity,

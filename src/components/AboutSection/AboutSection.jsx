@@ -44,7 +44,7 @@ function AboutSection() {
         ease: "power1.out",
         scrollTrigger: {
           trigger: aboutImg.current,
-          start: "top 40%",
+          start: "top 30%",
           end: "top 20%",
           toggleActions: "play none none none",
           scrub: true,
@@ -59,7 +59,7 @@ function AboutSection() {
         scrollTrigger: {
           trigger: aboutImg2Ref.current,
           start: "top 90%",
-          end: "top 70%",
+          end: "top 80%",
           toggleActions: "play none none none",
           scrub: true,
           // markers: true,
@@ -73,7 +73,7 @@ function AboutSection() {
         scrollTrigger: {
           trigger: aboutPara2.current,
           start: "top 90%",
-          end: "top 70%",
+          end: "top 80%",
           toggleActions: "play none none none",
           scrub: true,
           // markers: true,
@@ -88,20 +88,20 @@ function AboutSection() {
         ref={aboutRef}
       >
         <div className="max-w-[1400px] mx-auto">
-          <div className="flex flex-col gap-28">
+          <div className="flex flex-col gap-16">
             <div className="lg:flex lg:flex-row lg:justify-between lg:items-center flex flex-col gap-12">
               <div
                 className="flex flex-col gap-3 xl:max-w-2xl lg:max-w-xl"
                 ref={firstSec}
               >
                 <p
-                  className="text-white md:text-5xl sm:text-3xl text-2xl font-bold about-anim"
+                  className="text-white xl:text-4xl lg:text-4xl md:text-3xl sm:text-3xl text-2xl font-bold about-anim"
                   ref={aboutHead}
                 >
                   We're Not Just a Company, a Creative Revolution
                 </p>
                 <p
-                  className="text-introColor sm:text-base text-sm about-anim"
+                  className="text-introColor lg:text-sm text-sm about-anim"
                   ref={aboutPara}
                 >
                   Welcome to CollabEz, where we believe in the power of
@@ -111,19 +111,29 @@ function AboutSection() {
                 </p>
               </div>
 
-              <div className="lg:block flex justify-center">
-                <img src={aboutImg1} alt="" ref={aboutImg} />
+              <div className="lg:block flex justify-center lg:w-96 ">
+                <img
+                  src={aboutImg1}
+                  alt=""
+                  ref={aboutImg}
+                  className="object-cover lg:w-full w-72"
+                />
               </div>
             </div>
 
             <div className="lg:flex lg:flex-row lg:justify-between lg:items-center flex flex-col gap-12">
-              <div className="lg:block flex justify-center">
-                <img src={aboutImg2} alt="" ref={aboutImg2Ref} />
+              <div className="lg:block flex justify-center lg:w-96 ">
+                <img
+                  src={aboutImg2}
+                  alt=""
+                  ref={aboutImg2Ref}
+                  className="object-cover lg:w-full w-72"
+                />
               </div>
 
               <div className="flex flex-col gap-3 xl:max-w-2xl lg:max-w-xl">
                 <p
-                  className="text-introColor sm:text-base text-sm"
+                  className="text-introColor sm:text-sm text-sm"
                   ref={aboutPara2}
                 >
                   CollabEz was born out of a desire to do more than just follow
@@ -139,7 +149,7 @@ function AboutSection() {
           </div>
         </div>
       </div>
-      <div className="h-[80vh] relative">
+      <div className="lg:h-[75vh] md:h-[60vh] sm:h-[50vh] h-[40vh] relative">
         <BeDifferent />
       </div>
     </>
