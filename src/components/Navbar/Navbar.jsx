@@ -159,9 +159,9 @@ function Navbar() {
         className="flex items-start justify-between py-8"
         aria-label="Global"
       >
-        <div className="flex lg:flex-1 cursor-pointer z-20" ref={headerRef}>
-          <Link to="/" className="-m-1.5 p-1.5 h-20 w-auto ">
-            <img className="object-cover" src={Logo} alt="" />
+        <div className="flex cursor-pointer  w-64 z-20" ref={headerRef}>
+          <Link to="/" className="-m-1.5 p-1.5 w-full ">
+            <img className="object-contain" src={Logo} alt="" />
           </Link>
         </div>
         <div className="flex">

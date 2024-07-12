@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
-import footerLogo from "../../assets/img/footerlogo.png";
 import { useGSAP } from "@gsap/react"; // Import useGSAP from @gsap/react
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import footerGrad from "../../assets/img/footerGrad.png";
+import Logo from "../../assets/img/logo.png";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -73,11 +73,11 @@ function Footer({ portfolioRef, featuresRef, contactRef, homeRef }) {
         </div>
       </div>
       <div className="md:grid md:grid-cols-3 md:gap-6 md:items-start grid grid-cols-1 gap-6 max-w-[1400px] mx-auto pb-24">
-        <div className="md:mx-auto w-72">
+        <div className="md:mx-auto w-64">
           <img
-            src={footerLogo}
+            src={Logo}
             alt=""
-            className="cursor-pointer object-cover"
+            className="cursor-pointer object-contain"
             onClick={() => handleHomeRedirect("/")}
           />
         </div>
