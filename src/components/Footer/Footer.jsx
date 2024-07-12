@@ -36,6 +36,7 @@ function Footer({ portfolioRef, featuresRef, contactRef, homeRef }) {
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
     { name: "About", href: "/about" },
+    { name: "Pricing", href: "/pricing" },
   ];
 
   const sections = {
@@ -57,7 +58,7 @@ function Footer({ portfolioRef, featuresRef, contactRef, homeRef }) {
   };
 
   return (
-    <div className="pt-16 max-w-full relative lg:px-8 px-4 overflow-hidden ">
+    <div className="pt-16 max-w-full mx-auto relative lg:px-8 px-4 overflow-hidden ">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-0 w-[450px] h-[300px]">
           {/* <div
@@ -72,7 +73,7 @@ function Footer({ portfolioRef, featuresRef, contactRef, homeRef }) {
         </div>
       </div>
       <div className="md:grid md:grid-cols-3 md:gap-6 md:items-start grid grid-cols-1 gap-6 max-w-[1400px] mx-auto pb-24">
-        <div className="">
+        <div className="mx-auto">
           <img
             src={footerLogo}
             alt=""

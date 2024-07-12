@@ -208,13 +208,16 @@ function Navbar() {
             className="h-full w-full absolute left-0 top-0 bg-black/50 backdrop-blur-lg z-40 opacity-0"
             ref={menuBg}
           ></div>
-          <nav className="absolute top-40 z-50 text-center opacity-0" ref={navRef}>
+          <nav
+            className="absolute top-40 z-50 text-center opacity-0"
+            ref={navRef}
+          >
             <ul className="list-none flex flex-col justify-center items-center">
               {navigation.map((item, index) => (
                 <li className="overflow-hidden mt-5 " key={index}>
                   <Link
                     // to={item.link}
-                    className="inline-block lg:text-[12vh] sm:text-[10vh] text-[6vh] text-center uppercase font-bold leading-none tracking-wide text-transparent stroke-2 stroke-white menu-item opacity-0 cursor-pointer"
+                    className="inline-block lg:text-[11vh] sm:text-[9vh] text-[6vh] text-center uppercase font-bold leading-none tracking-wide text-transparent stroke-2 stroke-white menu-item opacity-0 cursor-pointer"
                     ref={(el) => (menuItems.current[index] = el)}
                     onClick={() => handleNavClick(item.link)}
                   >
