@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
@@ -20,11 +20,9 @@ function PricingCard({ mode, price, duration, features }) {
 
   useGSAP(() => {
     gsap.from(priceCardRef.current, {
-      //   x: 0,
       opacity: 0,
       duration: 1,
       ease: "back.inOut",
-      //   stagger: 0.2,
       scrollTrigger: {
         trigger: priceCardRef.current,
         toggleActions: "play none none none",

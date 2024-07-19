@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useGSAP } from "@gsap/react"; // Import useGSAP from @gsap/react
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useNavigate } from "react-router-dom";
@@ -11,26 +11,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Footer({ portfolioRef, featuresRef, contactRef, homeRef }) {
   const currentYear = new Date().getFullYear();
-  const footerRef = useRef(null);
 
   const navigate = useNavigate();
-
-  useGSAP(() => {
-    gsap.from(footerRef.current, {
-      y: 100,
-      duration: 2,
-      stagger: 0.5,
-      opacity: 0,
-      scrollTrigger: {
-        trigger: footerRef.current,
-        start: "top 100%",
-        end: "top 90%",
-        toggleActions: "play none none none",
-        scrub: true,
-        // markers: true,
-      },
-    });
-  });
 
   const navigation = [
     { name: "Home", href: "/" },
@@ -38,13 +20,6 @@ function Footer({ portfolioRef, featuresRef, contactRef, homeRef }) {
     { name: "About", href: "/about" },
     { name: "Pricing", href: "/pricing" },
   ];
-
-  const sections = {
-    Home: homeRef,
-    Portfolio: portfolioRef,
-    Features: featuresRef,
-    Contact: contactRef,
-  };
 
   const handleNavClick = (href) => {
     navigate(href);
@@ -61,14 +36,6 @@ function Footer({ portfolioRef, featuresRef, contactRef, homeRef }) {
     <div className="pt-16 max-w-full mx-auto relative lg:px-8 px-4 overflow-hidden ">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-0 w-[450px] h-[300px]">
-          {/* <div
-            className="w-full h-full"
-            style={{
-              background:
-                "radial-gradient(circle at bottom left, #fce077, transparent 60%)",
-              opacity: "0.7",
-            }}
-          /> */}
           <img src={footerGrad} alt="" className="w-full h-full" />
         </div>
       </div>

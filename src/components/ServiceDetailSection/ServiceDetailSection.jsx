@@ -8,9 +8,9 @@ import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
 import personImg from "../../assets/img/person.png";
 import sendIcon from "../../assets/img/sendIcon.png";
-// import serviceDemo from "../../assets/img/demoService.png";
 import Slider from "react-slick";
 import { useNavigate } from "react-router-dom";
+import useFormHandler from "../../hooks/useFormHandler";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -33,33 +33,20 @@ function ServiceDetailSection({ contactRef }) {
   const { slug } = useParams();
   const navigate = useNavigate();
 
+  const { email, setEmail, errors, handleNewsLetter } = useFormHandler();
+
   useEffect(() => {
-    const service = services.find(
-      (s) =>
-        // s.title.toLowerCase().replace(/\s+/g, "-").replace(/\//g, "") === slug
-        s.slug === slug
-    );
+    const service = services.find((s) => s.slug === slug);
     setSelectedService(service);
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: "smooth" });
     // window.location.reload();
   }, [slug]);
 
-  console.log("Slug", slug);
-
   const handleTabClick = (service) => {
-    // setSelectedService(service);
-    // if (topRef.current) {
-    //   topRef.current.scrollIntoView({ behavior: "smooth" });
-    // }
-    // const serviceSlug = service.title
-    //   .toLowerCase()
-    //   .replace(/\s+/g, "-")
-    //   .replace(/\//g, "");
-
     const serviceSlug = service.slug;
     navigate(`/services/${serviceSlug}`);
-    window.scrollTo(0, 0); // Scrolls to top on tab click
-    window.location.reload(); // Forces a full page reload
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    // window.location.reload();
   };
 
   const sections = {
@@ -208,8 +195,6 @@ function ServiceDetailSection({ contactRef }) {
     }
   }, [selectedService]);
 
-  // console.log(workCardRef);
-
   var settings = {
     dots: true,
     fade: true,
@@ -256,14 +241,13 @@ function ServiceDetailSection({ contactRef }) {
 
             <div className="flex flex-col gap-4 max-w-3xl">
               <h3
-                className="xl:text-4xl lg:text-4xl md:text-4xl sm:text-3xl text-3xl text-white font-bold"
+                className="xl:text-5xl lg:text-4xl md:text-4xl sm:text-3xl text-3xl text-white font-bold"
                 ref={serviceHead}
               >
                 {selectedService?.serviceName}{" "}
                 <span className="text-heroColor">
                   {selectedService?.serviceColorName}
                 </span>
-                {/* {selectedService.title} */}
               </h3>
             </div>
           </div>
@@ -302,7 +286,6 @@ function ServiceDetailSection({ contactRef }) {
               </div>
 
               <div className="slider-container w-auto " ref={sliderRef}>
-                {/* <img src={serviceDemo} alt="" className="w-full" /> */}
                 <Slider {...settings}>
                   {selectedService.sliderImages.map((img, index) => (
                     <div
@@ -453,17 +436,30 @@ function ServiceDetailSection({ contactRef }) {
                   </h3>
                 </div>
 
-                <div className="relative flex">
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    className="p-2 bg-transparent border-b-2 border-borderColor outline-none w-full"
-                  />
-                  <img
-                    src={sendIcon}
-                    alt=""
-                    className="absolute right-2 bottom-3 w-5 cursor-pointer"
-                  />
+                <div className="">
+                  <form
+                    action=""
+                    onSubmit={handleNewsLetter}
+                    className="relative flex"
+                  >
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      className="p-2 bg-transparent border-b-2 border-borderColor outline-none w-full"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <button type="submit">
+                      <img
+                        src={sendIcon}
+                        alt=""
+                        className="absolute right-2 bottom-3 w-5 cursor-pointer"
+                      />
+                    </button>
+                  </form>
+                  {errors.email && (
+                    <p className="text-red-600 text-sm mt-2">{errors.email}</p>
+                  )}
                 </div>
 
                 <div className="flex gap-5 items-center text-white text-sm">

@@ -15,8 +15,6 @@ function ServicesSection() {
   const serviceRef = useRef(null);
   const textRef = useRef(null);
 
-  //   const serviceTime = gsap.timeline({ paused: true });
-
   useGSAP(() => {
     gsap.from(borderRef.current, {
       x: 100,
@@ -104,15 +102,7 @@ function ServicesSection() {
         <div>
           <div className="lg:grid lg:grid-cols-3 lg:gap-7 md:grid md:grid-cols-2 md:gap-7 grid grid-cols-1 gap-7 shadow-sm">
             {services.map((item, index) => (
-              <ServiceCard
-                key={index}
-                // icon={item.icon}
-                // title={item.title}
-                // description={item.description}
-                // bgStart={item.bgStart}
-                // bgEnd={item.bgEnd}
-                item={item}
-              />
+              <ServiceCard key={index} item={item} />
             ))}
           </div>
         </div>

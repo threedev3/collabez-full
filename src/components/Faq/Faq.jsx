@@ -4,6 +4,7 @@ import Accordian from "../Accordian/Accordian";
 import { useGSAP } from "@gsap/react"; // Import useGSAP from @gsap/react
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { faqs } from "../../data/data";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -31,7 +32,6 @@ function Faq() {
           start: "top 50%",
           end: "top 40%",
           scrub: true,
-          // markers: true,
         },
       })
       .from(imgRef.current, {
@@ -44,34 +44,10 @@ function Faq() {
           start: "top 50%",
           end: "top 40%",
           scrub: true,
-          // markers: true,
         },
       });
   });
 
-  const faqs = [
-    {
-      question: "Can I use the modem/router I already have?",
-      answer:
-        "Lorem ipsum dolor sit amet consectetur. Sed dignissim sit aenean orci. Mollis nunc massa molestie ut eget egestas. Ipsum platea leo euismod mauris diam nunc quis. Ac eros a arcu amet viverra elementum elit.",
-    },
-    {
-      question: "Will speeds go up and down?",
-      answer:
-        "Lorem ipsum dolor sit amet consectetur. Sed dignissim sit aenean orci. Mollis nunc massa molestie ut eget egestas. Ipsum platea leo euismod mauris diam nunc quis. Ac eros a arcu amet viverra elementum elit.",
-    },
-    {
-      question: "When will my service go live?",
-      answer:
-        "Lorem ipsum dolor sit amet consectetur. Sed dignissim sit aenean orci. Mollis nunc massa molestie ut eget egestas. Ipsum platea leo euismod mauris diam nunc quis. Ac eros a arcu amet viverra elementum elit.",
-    },
-    {
-      question: "I already have broadband, how do I switch?",
-      answer:
-        "Lorem ipsum dolor sit amet consectetur. Sed dignissim sit aenean orci. Mollis nunc massa molestie ut eget egestas. Ipsum platea leo euismod mauris diam nunc quis. Ac eros a arcu amet viverra elementum elit.",
-    },
-    // Add more FAQs as needed
-  ];
   return (
     <div className="max-w-full relative lg:py-8 py-4 lg:px-8 px-4 overflow-x-hidden">
       <div className="max-w-[1400px] mx-auto">

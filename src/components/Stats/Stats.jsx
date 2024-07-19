@@ -1,29 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { stats } from "../../data/data";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Stats({ borders }) {
-  const stats = [
-    {
-      title: "Project Done",
-      count: "220+",
-    },
-    {
-      title: "Our Team",
-      count: "110+",
-    },
-    {
-      title: "Reviewed",
-      count: "135+",
-    },
-    {
-      title: "Happy Client",
-      count: "330+",
-    },
-  ];
-
   const statRefs = useRef([]);
   statRefs.current = [];
 
@@ -40,21 +22,17 @@ function Stats({ borders }) {
         {
           innerText: 0,
           opacity: 0,
-          // y: -50,
-          // duration: 1
         },
         {
           innerText: stats[index].count,
           duration: 0.5,
           opacity: 1,
-          // y:0,
           ease: "power1.out",
           scrollTrigger: {
             trigger: el,
             start: "top 80%",
             end: "top 50%",
             toggleActions: "play none none none",
-            // markers: true,
             scrub: true,
           },
           snap: { innerText: 1 },

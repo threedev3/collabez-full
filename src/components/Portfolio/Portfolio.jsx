@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import projectImg from "../../assets/img/project3.png";
 import projectImg2 from "../../assets/img/project4.png";
-import { useGSAP } from "@gsap/react"; // Import useGSAP from @gsap/react
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger, ScrollToPlugin } from "gsap/all";
 
@@ -40,8 +40,6 @@ function Portfolio() {
       tagRefs.current.push([]);
     });
   }
-
-  console.log(projectRefs);
 
   // const { contextSafe } = useGSAP({ scope: portfolioRef });
 
@@ -96,20 +94,19 @@ function Portfolio() {
         y: 100,
         opacity: 0,
         duration: 0.5,
-        stagger: 0.3,
+        stagger: 0.2,
         ease: "power2.out",
         scrollTrigger: {
           trigger: tags[0], // Trigger based on the first tag in the current project
           start: "top 90%",
-          end: "top 70%",
+          end: "top 80%",
           toggleActions: "play none none none",
-          scrub: true,
+          // scrub: true,
         },
       });
     });
   });
 
-  // Initialize an array with false values for each project
   const [hovered, setHovered] = useState([false, false, false]);
 
   // Handler to set hover state for a specific index
@@ -201,7 +198,7 @@ function Portfolio() {
                   ref={(el) => (imgContainerRefs.current[index] = el)}
                 >
                   <img
-                    src={project.img} // Replace with your image source
+                    src={project.img}
                     alt={`Project`}
                     className="object-contain"
                   />

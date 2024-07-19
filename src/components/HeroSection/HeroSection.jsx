@@ -16,12 +16,7 @@ import TopLine from "../TopLine/TopLine";
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
-export default function HeroSection({
-  portfolioRef,
-  featuresRef,
-  contactRef,
-  homeRef,
-}) {
+export default function HeroSection({ portfolioRef, featuresRef, contactRef }) {
   const mainContainer = useRef(null);
 
   const viewAnimate = useRef(null);
@@ -30,7 +25,6 @@ export default function HeroSection({
   const introHead = useRef(null);
   const introPara = useRef(null);
   const viewBtn = useRef(null);
-  const circleRef = useRef(null);
   const roundRef1 = useRef(null);
   const roundRef2 = useRef(null);
   const viewText = useRef(null);
@@ -65,60 +59,6 @@ export default function HeroSection({
       duration: 1,
     });
   });
-  useGSAP(() => {
-    gsap.to(circleRef.current, {
-      y: 33,
-      duration: 0.5,
-      repeat: -1,
-      yoyo: true,
-      ease: "back.out",
-    });
-  });
-
-  // const viewProjText = gsap.timeline({ paused: true });
-
-  // useGSAP(() => {
-  //   viewProjText
-  //     .from(introHead.current, {
-  //       duration: 1,
-  //       opacity: 0,
-  //       y: -50,
-  //       ease: "power1.out",
-  //       scrollTrigger: {
-  //         trigger: introHead.current,
-  //         start: "top 60%",
-  //         end: "top 40%",
-  //         toggleActions: "play none none none",
-  //         scrub: true,
-  //       },
-  //     })
-  //     .from(introPara.current, {
-  //       duration: 1,
-  //       opacity: 0,
-  //       y: -50,
-  //       ease: "power1.out",
-  //       scrollTrigger: {
-  //         trigger: introPara.current,
-  //         start: "top 60%",
-  //         end: "top 40%",
-  //         toggleActions: "play none none none",
-  //         scrub: true,
-  //       },
-  //     })
-  //     .from(viewBtn.current, {
-  //       duration: 1,
-  //       opacity: 0,
-  //       y: 100,
-  //       ease: "power1.out",
-  //       scrollTrigger: {
-  //         trigger: viewBtn.current,
-  //         start: "top 60%",
-  //         end: "top 40%",
-  //         toggleActions: "play none none none",
-  //         scrub: true,
-  //       },
-  //     });
-  // });
 
   const handleNavClick = (section) => {
     const targetRef = sections[section];

@@ -11,6 +11,16 @@ import webDev2 from "../assets/img/webdev2.jpg";
 import eCommerce from "../assets/img/ecommerce.jpg";
 import smm from "../assets/img/smm.jpg";
 import marketing from "../assets/img/marketing.jpg";
+import logoIcon from "../assets/img/logoIcon.png";
+import appIcon from "../assets/img/appIcon.png";
+import webIcon from "../assets/img/webIcon.png";
+import marketingIcon from "../assets/img/marketingIcon.png";
+import member1Img from "../assets/img/member1.png";
+import member2Img from "../assets/img/member2.jpeg";
+import fb from "../assets/img/fb.png";
+import insta from "../assets/img/insta.png";
+import linkedIn from "../assets/img/linkedin.png";
+import be from "../assets/img/Be.png";
 
 export const services = [
   {
@@ -194,5 +204,176 @@ export const services = [
     ],
     sliderImages: [marketing, webDev],
     slug: "marketing-strategy",
+  },
+];
+
+export const projects = [
+  {
+    thumbnail: uiux,
+    title: "Work Dock",
+    description:
+      "Work Dock is a comprehensive Human Resource Management System (HRMS) that enables employees to view their attendance records, apply for leaves, and visualize their performance metrics. Administrators have enhanced capabilities, including detailed views of employee progress, the ability to edit attendance records, manage leave requests, and announce holidays. Work Dock streamlines HR processes, promotes transparency, and facilitates efficient management of employee data and company policies.",
+    client: "OP Company",
+    category: "Web Development",
+    startDate: "April 22, 2024",
+    endDate: "July 10, 2024",
+    webUrl: "https://work-dock.vercel.app/",
+    slug: "work-dock",
+    sliderImages: [marketing, webDev, uiux],
+  },
+  {
+    thumbnail: appDev,
+    title: "Tuition Highway",
+    description:
+      "Tuition Highway is an innovative Learning Management System (LMS) designed to enhance the educational experience. It provides students with access to course materials, assignments, and performance tracking tools. Instructors can create and manage courses, track student progress, and provide feedback. Tuition Highway streamlines the learning process, fosters interactive education, and facilitates efficient management of educational resources and student data.",
+    client: "ABC Company",
+    category: "App Development",
+    startDate: "March 12, 2024",
+    endDate: "June 05, 2024",
+    webUrl: "https://tuitionhighway.com/",
+    slug: "tuitionhighway",
+    sliderImages: [appDev, eCommerce, webDev2],
+  },
+  {
+    thumbnail: webDev,
+    title: "CollabEZ",
+    description:
+      "CollabEZ is a dynamic company website offering a wide range of services including app development, web development, UI/UX design, social media marketing, and e-commerce solutions. With a focus on collaboration and ease of use, collabEZ is dedicated to helping businesses achieve their digital goals through innovative and tailored solutions.",
+    client: "XYZ Company",
+    category: "Web Development",
+    startDate: "May 13, 2024",
+    endDate: "June 28, 2024",
+    webUrl: "https://collabez.vercel.app/",
+    slug: "collabez",
+    sliderImages: [webDev, webDev2, smm],
+  },
+];
+
+export const faqs = [
+  {
+    question: "What services does CollabEZ offer?",
+    answer:
+      "CollabEZ offers app development, web development, UI/UX design, social media marketing, and e-commerce solutions.",
+  },
+  {
+    question: "How can I get a quote for my project?",
+    answer:
+      "Fill out the contact form on our website or email us at hello@collabez.co.uk with your project details.",
+  },
+  {
+    question: "What is the typical timeline for project completion?",
+    answer:
+      "Timelines vary by project. We provide an estimated timeline after understanding your requirements.",
+  },
+  {
+    question: "How does collabEZ ensure the quality of its services?",
+    answer:
+      "We follow industry best practices and rigorous testing to ensure high-quality deliverables, keeping open communication with clients throughout.",
+  },
+];
+
+export const features = [
+  {
+    title: "Logo Design & Branding",
+    icon: logoIcon,
+    description:
+      "Your logo is more than just a symbol—it's the star that guides your brand's journey. And your branding?",
+  },
+  {
+    title: "App Development",
+    icon: appIcon,
+    description:
+      "In an increasingly mobile world, your brand needs to be where your customers are—right in the palm of their hands.",
+  },
+  {
+    title: "Website Development",
+    icon: webIcon,
+    description:
+      "In the realm of the internet, your website is your castle. It's where your brand's story unfolds and where your customers",
+  },
+  {
+    title: "Digital Marketing",
+    icon: marketingIcon,
+    description:
+      "In the digital age, having a great product or service isn't enough—you need to be heard above the noise. At CollabEz",
+  },
+];
+
+export const pricing = [
+  {
+    mode: "Basic",
+    price: "479",
+    duration: "per month",
+    features: [
+      "Customized Store Design",
+      "jQuery Rotating Banner",
+      "Interactive Menu",
+      "Inquiry Form",
+      "Responsive Design",
+    ],
+  },
+  {
+    mode: "Corporate",
+    price: "779",
+    duration: "per month",
+    features: [
+      "Basic plan",
+      "Design prototyping",
+      "Mobile Menu",
+      "Competitor analysis",
+      "Offer Pop-Up Windows",
+    ],
+  },
+  {
+    mode: "Business",
+    price: "989",
+    duration: "per month",
+    features: [
+      "Corporatre plan",
+      "Subscription Pages",
+      "Unlimited Web Space",
+      "FREE Site Building Tools",
+      "24/7 Support",
+    ],
+  },
+];
+
+export const stats = [
+  {
+    title: "Project Done",
+    count: "220+",
+  },
+  {
+    title: "Our Team",
+    count: "110+",
+  },
+  {
+    title: "Reviewed",
+    count: "135+",
+  },
+  {
+    title: "Happy Client",
+    count: "330+",
+  },
+];
+
+export const members = [
+  {
+    imgMember: member1Img,
+    name: "Tabish Dehlvi",
+    role: "Developer",
+    socialIcons: [fb, be, insta, linkedIn],
+  },
+  {
+    imgMember: member2Img,
+    name: "Zain Ahsan",
+    role: "Developer",
+    socialIcons: [fb, be, insta, linkedIn],
+  },
+  {
+    imgMember: member1Img,
+    name: "Tabish Dehlvi",
+    role: "Developer",
+    socialIcons: [fb, be, insta, linkedIn],
   },
 ];

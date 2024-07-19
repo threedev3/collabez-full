@@ -1,47 +1,16 @@
 import React, { useRef } from "react";
 import TeamCard from "../TeamCard/TeamCard";
-import member1Img from "../../assets/img/member1.png";
-import member2Img from "../../assets/img/member2.jpeg";
-import fb from "../../assets/img/fb.png";
-import insta from "../../assets/img/insta.png";
-import linkedIn from "../../assets/img/linkedin.png";
-import be from "../../assets/img/Be.png";
-import { useGSAP } from "@gsap/react"; // Import useGSAP from @gsap/react
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { members } from "../../data/data";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
-const members = [
-  {
-    imgMember: member1Img,
-    name: "Tabish Dehlvi",
-    role: "Developer",
-    socialIcons: [fb, be, insta, linkedIn],
-  },
-  {
-    imgMember: member2Img,
-    name: "Zain Ahsan",
-    role: "Developer",
-    socialIcons: [fb, be, insta, linkedIn],
-  },
-  {
-    imgMember: member1Img,
-    name: "Tabish Dehlvi",
-    role: "Developer",
-    socialIcons: [fb, be, insta, linkedIn],
-  },
-];
 function Team() {
   const teamHead = useRef(null);
   const teamPara = useRef(null);
-
-  // const heading = "OUR EXPERTS Friendly Team";
-  // const splitHeading = heading.split("");
-  // const joinHeading = splitHeading.map((item, index) => (
-  //   <span key={index} className={`inline-block ${item === " " ? "whitespace-pre" : "whitespace-normal"}`}>{item}</span>
-  // ));
 
   useGSAP(() => {
     const letters = teamHead.current.querySelectorAll("span");
@@ -57,7 +26,6 @@ function Team() {
         end: "top 40%",
         toggleActions: "play none none none",
         scrub: true,
-        // markers: true,
       },
     });
 
@@ -72,7 +40,6 @@ function Team() {
         end: "top 40%",
         toggleActions: "play none none none",
         scrub: true,
-        // markers: true,
       },
     });
   });
@@ -118,6 +85,7 @@ function Team() {
           <div className="flex flex-row justify-between items-start flex-wrap gap-5">
             {members.map((member, index) => (
               <TeamCard
+                key={index}
                 imgMember={member.imgMember}
                 name={member.name}
                 role={member.role}

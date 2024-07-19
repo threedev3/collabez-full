@@ -10,11 +10,9 @@ function SubHeroSection({ title }) {
 
   const heading = `${title}`;
   const splitHeading = heading.split("");
-  console.log(splitHeading);
   const joinHeading = splitHeading.map((char, index) => (
     <span key={index}>{char}</span>
   ));
-  console.log(joinHeading);
 
   useGSAP(() => {
     gsap.fromTo(

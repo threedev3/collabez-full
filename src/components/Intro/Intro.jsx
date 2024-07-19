@@ -12,8 +12,6 @@ function Intro({ pageTitle, mainTitle, para }) {
   const serviceRef = useRef(null);
   const textRef = useRef(null);
 
-  //   const serviceTime = gsap.timeline({ paused: true });
-
   useGSAP(() => {
     gsap.from(borderRef.current, {
       x: 100,
@@ -63,7 +61,7 @@ function Intro({ pageTitle, mainTitle, para }) {
   });
 
   return (
-    <div className="flex flex-col gap-5 mb-12">
+    <div className="flex flex-col gap-5  max-w-full">
       <div className="flex flex-row items-center gap-4">
         <div
           className="w-16 h-0 border-[1px] border-serviceText"
@@ -79,7 +77,7 @@ function Intro({ pageTitle, mainTitle, para }) {
         </div>
       </div>
 
-      <div className="flex flex-col gap-8 max-w-xl">
+      <div className="flex flex-col gap-8 max-w-full">
         <h3
           className="xl:text-5xl lg:text-4xl md:text-4xl sm:text-3xl text-3xl text-white font-bold capitalize"
           ref={serviceHead}

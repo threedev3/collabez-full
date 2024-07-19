@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react"; // Import useGSAP from @gsap/react
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import backgroundImage from "../../assets/img/contactbg.png";
+import useFormHandler from "../../hooks/useFormHandler";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -13,20 +14,21 @@ function Contact({ portfolioRef, featuresRef, contactRef, homeRef }) {
   const headContact = useRef(null);
   const textContact = useRef(null);
   const formRef = useRef(null);
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setFirstName("");
-    setLastName("");
-    setPhone("");
-    setEmail("");
-    setMessage("");
-  };
+  const {
+    firstName,
+    setFirstName,
+    lastName,
+    setLastName,
+    phone,
+    setPhone,
+    email,
+    setEmail,
+    message,
+    setMessage,
+    errors,
+    handleSubmit,
+  } = useFormHandler();
 
   const ContactText = gsap.timeline({ paused: true });
 
@@ -78,8 +80,6 @@ function Contact({ portfolioRef, featuresRef, contactRef, homeRef }) {
 
   const personRef = useRef(null);
 
-  // const featureText = gsap.timeline({ paused: true });
-
   useGSAP(() => {
     gsap.from(personRef.current, {
       duration: 0.2,
@@ -92,7 +92,6 @@ function Contact({ portfolioRef, featuresRef, contactRef, homeRef }) {
         end: "top 30%",
         toggleActions: "play none none none",
         scrub: true,
-        // markers: true
       },
     });
   });
@@ -125,26 +124,33 @@ function Contact({ portfolioRef, featuresRef, contactRef, homeRef }) {
                   First Name
                 </label>
                 <input
-                  required
+                  name="first-name"
                   type="text"
-                  className="p-3 rounded-lg bg-transparent border-2 border-heroColor text-white placeholder:text-sm text-sm"
+                  className="p-3 rounded-lg bg-transparent border-2 border-heroColor text-white placeholder:text-sm text-sm focus:outline-none"
                   placeholder="Your First Name"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                 />
+                {errors.firstName && (
+                  <p className="text-red-600 text-sm mt-2">
+                    {errors.firstName}
+                  </p>
+                )}
               </div>
               <div className="flex flex-col gap-3 w-full">
                 <label htmlFor="" className="text-white text-base">
                   Last Name
                 </label>
                 <input
-                  required
                   type="text"
-                  className="p-3 rounded-lg bg-transparent border-2 border-heroColor text-white placeholder:text-sm text-sm"
+                  className="p-3 rounded-lg bg-transparent border-2 border-heroColor text-white placeholder:text-sm text-sm focus:outline-none"
                   placeholder="Your Last Name"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
                 />
+                {errors.lastName && (
+                  <p className="text-red-600 text-sm mt-2">{errors.lastName}</p>
+                )}
               </div>
             </div>
             <div className="lg:flex lg:flex-row lg:justify-between lg:gap-10 flex flex-col gap-8 max-w-full text-white">
@@ -153,26 +159,30 @@ function Contact({ portfolioRef, featuresRef, contactRef, homeRef }) {
                   Phone
                 </label>
                 <input
-                  required
                   type="number"
-                  className="p-3 rounded-lg bg-transparent border-2 border-heroColor text-white remove-arrow placeholder:text-sm text-sm"
+                  className="p-3 rounded-lg bg-transparent border-2 border-heroColor text-white remove-arrow placeholder:text-sm text-sm focus:outline-none"
                   placeholder="+11 8282 xxx"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                 />
+                {errors.phone && (
+                  <p className="text-red-600 text-sm mt-2">{errors.phone}</p>
+                )}
               </div>
               <div className="flex flex-col gap-3 w-full">
                 <label htmlFor="" className="text-white text-base">
                   Email
                 </label>
                 <input
-                  required
                   type="email"
-                  className="p-3 rounded-lg bg-transparent border-2 border-heroColor text-white placeholder:text-sm text-sm"
+                  className="p-3 rounded-lg bg-transparent border-2 border-heroColor text-white placeholder:text-sm text-sm focus:outline-none"
                   placeholder="email@domain.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
+                {errors.email && (
+                  <p className="text-red-600 text-sm mt-2">{errors.email}</p>
+                )}
               </div>
             </div>
             <div className="lg:flex lg:flex-row lg:justify-between lg:gap-4 max-w-full">
@@ -181,14 +191,16 @@ function Contact({ portfolioRef, featuresRef, contactRef, homeRef }) {
                   Message
                 </label>
                 <textarea
-                  required
                   rows={10}
                   type="text"
-                  className="p-3 rounded-lg bg-transparent border-2 border-heroColor text-white placeholder:text-sm text-sm"
+                  className="p-3 rounded-lg bg-transparent border-2 border-heroColor text-white placeholder:text-sm text-sm focus:outline-none"
                   placeholder="Your Message"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
+                {errors.message && (
+                  <p className="text-red-600 text-sm mt-2">{errors.message}</p>
+                )}
               </div>
             </div>
 

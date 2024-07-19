@@ -14,7 +14,6 @@ function ServiceCard({ item }) {
   const navigate = useNavigate();
   const [isHovered, setisHovered] = useState(false);
 
-  // const slug = item.title.toLowerCase().replace(/\s+/g, "-").replace(/\//g, "");
   const slug = item.slug;
 
   useEffect(() => {

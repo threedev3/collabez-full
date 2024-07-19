@@ -13,6 +13,7 @@ const navigation = [
   { name: "Services", link: "/services" },
   { name: "About", link: "/about" },
   { name: "Pricing", link: "/pricing" },
+  { name: "Portfolio", link: "/portfolio" },
 ];
 
 function Navbar() {
@@ -136,7 +137,7 @@ function Navbar() {
     navTl.reverse();
     menuBar.reverse();
 
-    document.body.style.overflow = ""; // Restore scrolling
+    document.body.style.overflow = "";
 
     setTimeout(() => {
       navigate(link);
@@ -216,8 +217,7 @@ function Navbar() {
               {navigation.map((item, index) => (
                 <li className="overflow-hidden mt-5 " key={index}>
                   <Link
-                    // to={item.link}
-                    className="inline-block lg:text-[10vh] sm:text-[9vh] text-[6vh] text-center uppercase font-bold leading-none tracking-wide text-transparent stroke-2 stroke-white menu-item opacity-0 cursor-pointer"
+                    className="inline-block xl:text-[10vh] lg:text-[8vh] sm:text-[7vh] text-[6vh] text-center uppercase font-bold leading-none tracking-wide text-transparent stroke-2 stroke-white menu-item opacity-0 cursor-pointer"
                     ref={(el) => (menuItems.current[index] = el)}
                     onClick={() => handleNavClick(item.link)}
                   >

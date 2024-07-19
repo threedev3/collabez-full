@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { useGSAP } from "@gsap/react"; // Import useGSAP from @gsap/react
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 gsap.registerPlugin(useGSAP);
@@ -7,40 +7,39 @@ gsap.registerPlugin(useGSAP);
 function FeatureCard({ title, icon, description }) {
   const [isHovered, setIsHovered] = useState(false);
 
-    const featureAnimate = useRef(null)
-    const iconRef = useRef(null)
+  const featureAnimate = useRef(null);
+  const iconRef = useRef(null);
 
   const { contextSafe } = useGSAP({ scope: featureAnimate });
 
   const animateViewEnter = contextSafe(() => {
-
     const cardWidth = featureAnimate.current.getBoundingClientRect().width;
 
-    gsap.to(featureAnimate.current, { 
+    gsap.to(featureAnimate.current, {
       duration: 0.3,
       borderTop: "12px solid #FFAE00",
-      ease: "back.inOut"
+      ease: "back.inOut",
     });
 
     gsap.to(iconRef.current, {
-        duration: 0.3,
-        x: cardWidth - 140,
-        y: 30,
-        scale: 2
-    })
+      duration: 0.3,
+      x: cardWidth - 140,
+      y: 30,
+      scale: 2,
+    });
   });
   const animateViewLeave = contextSafe(() => {
-    gsap.to(featureAnimate.current, {     
+    gsap.to(featureAnimate.current, {
       duration: 0.3,
-      borderTop: "none"
+      borderTop: "none",
     });
 
     gsap.to(iconRef.current, {
-        duration: 0.3,
-        x: 0,
-        y: 0,
-        scale: 1
-    })
+      duration: 0.3,
+      x: 0,
+      y: 0,
+      scale: 1,
+    });
   });
 
   return (

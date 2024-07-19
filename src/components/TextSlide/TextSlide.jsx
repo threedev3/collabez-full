@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import Contact from "../Contact/Contact";
-import { useGSAP } from "@gsap/react"; // Import useGSAP from @gsap/react
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 

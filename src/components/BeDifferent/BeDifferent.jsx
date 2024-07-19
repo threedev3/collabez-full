@@ -10,12 +10,6 @@ function BeDifferent() {
   const dareHead = useRef(null);
   const darePara = useRef(null);
 
-  // const heading = "Dare to Be Different";
-  // const splitHeading = heading.split("");
-  // const joinHeading = splitHeading.map((item, index) => (
-  //   <span key={index} className={`inline-block ${item === " " ? "whitespace-pre" : "whitespace-normal"}`}>{item}</span>
-  // ));
-
   useGSAP(() => {
     const letters = dareHead.current.querySelectorAll("span");
     gsap.from(letters, {
@@ -30,7 +24,6 @@ function BeDifferent() {
         end: "top 60%",
         toggleActions: "play none none none",
         scrub: true,
-        // markers: true,
       },
     });
 
@@ -45,7 +38,6 @@ function BeDifferent() {
         end: "top 60%",
         toggleActions: "play none none none",
         scrub: true,
-        // markers: true,
       },
     });
   });

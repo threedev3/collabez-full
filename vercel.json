@@ -17,6 +17,14 @@
       "destination": "/index.html"
     },
     {
+      "source": "/portfolio",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/portfolio/:slug",
+      "destination": "/index.html"
+    },
+    {
       "source": "/:path*",
       "destination": "/index.html"
     }

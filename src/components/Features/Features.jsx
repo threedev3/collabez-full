@@ -1,13 +1,11 @@
 import React, { useRef, useState } from "react";
 import personImg from "../../assets/img/person.png";
-import logoIcon from "../../assets/img/logoIcon.png";
-import appIcon from "../../assets/img/appIcon.png";
-import webIcon from "../../assets/img/webIcon.png";
-import marketingIcon from "../../assets/img/marketingIcon.png";
+
 import FeatureCard from "../FeatureCard/FeatureCard";
 import { useGSAP } from "@gsap/react"; // Import useGSAP from @gsap/react
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { features } from "../../data/data";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -32,7 +30,6 @@ function Features() {
           end: "top 30%",
           toggleActions: "play none none none",
           scrub: true,
-          // markers: true,
         },
       })
       .from(textRef.current, {
@@ -46,7 +43,6 @@ function Features() {
           end: "top 30%",
           toggleActions: "play none none none",
           scrub: true,
-          // markers: true,
         },
       })
 
@@ -63,33 +59,6 @@ function Features() {
         },
       });
   });
-
-  const features = [
-    {
-      title: "Logo Design & Branding",
-      icon: logoIcon,
-      description:
-        "Your logo is more than just a symbol—it's the star that guides your brand's journey. And your branding?",
-    },
-    {
-      title: "App Development",
-      icon: appIcon,
-      description:
-        "In an increasingly mobile world, your brand needs to be where your customers are—right in the palm of their hands.",
-    },
-    {
-      title: "Website Development",
-      icon: webIcon,
-      description:
-        "In the realm of the internet, your website is your castle. It's where your brand's story unfolds and where your customers",
-    },
-    {
-      title: "Digital Marketing",
-      icon: marketingIcon,
-      description:
-        "In the digital age, having a great product or service isn't enough—you need to be heard above the noise. At CollabEz",
-    },
-  ];
 
   return (
     <div className="lg:py-16 lg:px-8 px-4 py-8 max-w-full overflow-x-hidden">

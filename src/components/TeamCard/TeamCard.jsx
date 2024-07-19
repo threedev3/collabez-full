@@ -31,7 +31,7 @@ function TeamCard({ imgMember, name, role, socialIcons }) {
     });
 
     card.addEventListener("mouseleave", () => {
-      gsap.to(teamRef.current, { height: "443px", duration: 0.5 });
+      gsap.to(teamRef.current, { height: "463px", duration: 0.5 });
       gsap.to(img, {
         height: "350px",
         borderBottomLeftRadius: "9999px",
@@ -61,7 +61,6 @@ function TeamCard({ imgMember, name, role, socialIcons }) {
         end: "top 40%",
         toggleActions: "play none none none",
         scrub: true,
-        // markers: true,
       },
     });
   });
@@ -74,7 +73,6 @@ function TeamCard({ imgMember, name, role, socialIcons }) {
       <div ref={cardRef} className="">
         <div
           ref={imgRef}
-          // className={`absolute inset-0 bg-[url('/src/assets/img/${imgMember}')] bg-no-repeat bg-cover bg-top w-full h-[350px] rounded-full `}
           style={{
             backgroundImage: `url(${imgMember})`,
             backgroundSize: "cover",
@@ -99,9 +97,9 @@ function TeamCard({ imgMember, name, role, socialIcons }) {
             <h3 className="text-3xl font-bold">{name}</h3>
             <p className="text-base">{role}</p>
             <div className="flex justify-center space-x-4 mt-2">
-              {socialIcons.map((icon) => (
-                <div>
-                  <img src={icon} alt="" className="h-8 w-8" />
+              {socialIcons.map((icon, index) => (
+                <div key={index}>
+                  <img src={icon} alt="" className="h-8 w-8 cursor-pointer" />
                 </div>
               ))}
             </div>

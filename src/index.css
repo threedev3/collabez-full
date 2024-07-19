@@ -13,6 +13,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom scrollbar for WebKit-based browsers */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #888;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #000;
+  }
+}
+
+/* Custom scrollbar for Firefox */
+@-moz-document url-prefix() {
+  html,
+  .cust-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #000 #888;
+  }
+}
+
 @layer utilities {
   .stroke-2 {
     -webkit-text-stroke: 2px #fff;
@@ -142,7 +166,7 @@ option {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to bottom, #493b1c, #080a1200 );
+  background-image: linear-gradient(to bottom, #493b1c, #080a1200);
   z-index: 1;
   transition: transform 0.8s ease;
   transform: translateY(-100%);
