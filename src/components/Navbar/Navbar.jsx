@@ -160,7 +160,7 @@ function Navbar() {
         className="flex items-start justify-between py-8"
         aria-label="Global"
       >
-        <div className="flex cursor-pointer  w-64 z-20" ref={headerRef}>
+        <div className="flex cursor-pointer  sm:w-64 w-48 z-20" ref={headerRef}>
           <Link to="/" className="-m-1.5 p-1.5 w-full ">
             <img className="object-contain" src={Logo} alt="" />
           </Link>
