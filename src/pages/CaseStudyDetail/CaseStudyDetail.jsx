@@ -4,21 +4,21 @@ import SubHeroSection from "../../components/SubHeroSection/SubHeroSection";
 import CaseSection from "../../components/CaseSection/CaseSection";
 import { useParams } from "react-router-dom";
 import { projects } from "../../data/data";
+import NotFoundPage from "../../components/NotFoundPage/NotFoundPage";
 
 function CaseStudyDetail() {
   const contactRef = useRef(null);
   const { slug } = useParams();
 
-  let projectTitle;
+  const project = projects.find((p) => p.slug === slug);
 
-  if (slug) {
-    const project = projects.find((p) => p.slug === slug);
-    projectTitle = project?.title;
+  if (!project) {
+    return <NotFoundPage />;
   }
 
   return (
     <div className="bg-wholeBg">
-      <SubHeroSection title={`${projectTitle}`} />
+      <SubHeroSection title={project.title} />
       <CaseSection contactRef={contactRef} />
       <div ref={contactRef}>
         <Contact contactRef={contactRef} />

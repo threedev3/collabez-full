@@ -164,7 +164,7 @@ export default function HeroSection({ portfolioRef, featuresRef, contactRef }) {
             <div className="max-w-[1400px] mx-auto px-3 pt-32 sm:pt-32 lg:pt-32 lg:flex lg:flex-row lg:justify-between">
               <div>
                 <h1
-                  className="text-3xl max-w-xl font-bold tracking-tight text-white sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl"
+                  className="text-3xl max-w-xl font-bold tracking-tight sm:tracking-wider text-white sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl"
                   ref={headingRef}
                 >
                   {splitText("Let's Create ")}

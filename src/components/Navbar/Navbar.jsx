@@ -217,11 +217,14 @@ function Navbar() {
               {navigation.map((item, index) => (
                 <li className="overflow-hidden mt-5 " key={index}>
                   <Link
-                    className="inline-block xl:text-[10vh] lg:text-[8vh] sm:text-[7vh] text-[6vh] text-center uppercase font-bold leading-none tracking-wide text-transparent stroke-2 stroke-white menu-item opacity-0 cursor-pointer"
+                    className="inline-block xl:text-[10vh] lg:text-[8vh] sm:text-[7vh] text-[6vh] text-center uppercase  leading-none tracking-wide text-transparent stroke-2 stroke-white menu-item opacity-0 cursor-pointer "
                     ref={(el) => (menuItems.current[index] = el)}
                     onClick={() => handleNavClick(item.link)}
                   >
-                    <span className="relative block " data-clip={item.name}>
+                    <span
+                      className="relative block bold-font"
+                      data-clip={item.name}
+                    >
                       {item.name}
                     </span>
                   </Link>

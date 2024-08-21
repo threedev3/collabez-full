@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import projectImg from "../../assets/img/project3.png";
-import projectImg2 from "../../assets/img/project4.png";
+import alphaImg from "../../assets/img/alpha.png";
+import lingoImg from "../../assets/img/lingo.png";
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger, ScrollToPlugin } from "gsap/all";
@@ -23,14 +25,14 @@ function Portfolio() {
       img: projectImg,
     },
     {
-      title: "CollabEZ",
+      title: "Alpha Hiring Solutions",
       tags: ["NextJS", "ReactJS", "Tailwind CSS", "GSAP"],
-      img: projectImg,
+      img: alphaImg,
     },
     {
-      title: "Tuition Highway",
+      title: "Lingo Highway",
       tags: ["ReactJS", "NodeJS", "ExpressJS", "MongoDB"],
-      img: projectImg,
+      img: lingoImg,
     },
   ];
 
@@ -127,7 +129,7 @@ function Portfolio() {
   };
 
   // Handler to reset hover state for a specific index
-  const handleMouseLeave = () => {
+  const handleMouseLeave = (index) => {
     setHovered([false, false, false]); // Reset all to false
 
     // Stop the auto-scroll animation

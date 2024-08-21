@@ -43,6 +43,18 @@ const useFormHandler = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    // Store form data
+    const formData = {
+      firstName,
+      lastName,
+      phone,
+      email,
+      message,
+    };
+
+    // Log form data to the console
+    console.log("Form Submitted: ", formData);
+
     if (validateForm()) {
       setFirstName("");
       setLastName("");

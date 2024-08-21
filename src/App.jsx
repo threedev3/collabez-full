@@ -9,6 +9,7 @@ import ServiceDetails from "./pages/ServiceDetails/ServiceDetails";
 import Pricing from "./pages/Pricing/Pricing";
 import CaseStudy from "./pages/CaseStudy/CaseStudy";
 import CaseStudyDetail from "./pages/CaseStudyDetail/CaseStudyDetail";
+import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/portfolio" element={<CaseStudy />} />
           <Route path="/portfolio/:slug" element={<CaseStudyDetail />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <ScrollToTop />
       </Router>
