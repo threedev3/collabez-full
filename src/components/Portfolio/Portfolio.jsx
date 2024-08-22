@@ -17,6 +17,7 @@ function Portfolio() {
   const tagRefs = useRef([]);
   const projectRefs = useRef([]);
   const imgContainerRefs = useRef([]);
+  const scrollTweenRefs = useRef([]);
 
   const projects = [
     {
@@ -117,8 +118,14 @@ function Portfolio() {
     newHovered[index] = true; // Set only the hovered index to true
     setHovered(newHovered);
 
+    // Reset scroll position and kill any existing tween for this index
+    if (scrollTweenRefs.current[index]) {
+      scrollTweenRefs.current[index].kill();
+    }
+    imgContainerRefs.current[index].scrollTop = 0; // Reset scroll position to top
+
     // Auto-scroll the image
-    gsap.to(imgContainerRefs.current[index], {
+    scrollTweenRefs.current[index] = gsap.to(imgContainerRefs.current[index], {
       scrollTo: { y: "max" },
       delay: 1.3,
       duration: 5,
@@ -132,8 +139,34 @@ function Portfolio() {
   const handleMouseLeave = (index) => {
     setHovered([false, false, false]); // Reset all to false
 
-    // Stop the auto-scroll animation
-    gsap.killTweensOf(imgContainerRefs.current[index]);
+    // Restart the auto-scroll animation when hover is removed
+    if (scrollTweenRefs.current[index]) {
+      scrollTweenRefs.current[index].kill(); // Kill existing tween
+      scrollTweenRefs.current[index] = gsap.to(
+        imgContainerRefs.current[index],
+        {
+          scrollTo: { y: "max" },
+          duration: 5,
+          ease: "linear",
+          repeat: -1,
+          yoyo: true,
+        }
+      );
+    }
+  };
+
+  // Handler to stop auto-scroll when hovering over the image
+  const handleImageMouseEnter = (index) => {
+    if (scrollTweenRefs.current[index]) {
+      scrollTweenRefs.current[index].pause(); // Pause the auto-scroll
+    }
+  };
+
+  // Handler to resume auto-scroll when leaving the image hover
+  const handleImageMouseLeave = (index) => {
+    if (scrollTweenRefs.current[index]) {
+      scrollTweenRefs.current[index].resume(); // Resume the auto-scroll
+    }
   };
 
   return (
@@ -198,6 +231,8 @@ function Portfolio() {
                     hovered[index] ? "scale-200" : "scale-0"
                   }`}
                   ref={(el) => (imgContainerRefs.current[index] = el)}
+                  onMouseEnter={() => handleImageMouseEnter(index)}
+                  onMouseLeave={() => handleImageMouseLeave(index)}
                 >
                   <img
                     src={project.img}

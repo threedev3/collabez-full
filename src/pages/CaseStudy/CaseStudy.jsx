@@ -6,7 +6,7 @@ import CaseSlider from "../../components/CaseSlider/CaseSlider";
 function CaseStudy() {
   return (
     <div className="bg-wholeBg">
-      <SubHeroSection title="Portfolio" />
+      <SubHeroSection title="Case Study" />
       <CaseSlider />
       <Contact />
     </div>

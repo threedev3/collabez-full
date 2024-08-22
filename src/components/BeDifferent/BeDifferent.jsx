@@ -70,7 +70,7 @@ function BeDifferent() {
               <span className="inline-block">{splitText("Different ")}</span>
             </h3>
             <p
-              className="text-introColor sm:text-sm text-sm text-center"
+              className="text-introColor lg:text-base text-sm text-center"
               ref={darePara}
             >
               Welcome to CollabEz, where we believe in the power of creativity,

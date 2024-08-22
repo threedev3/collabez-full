@@ -101,7 +101,7 @@ function AboutSection() {
                   We're Not Just a Company, a Creative Revolution
                 </p>
                 <p
-                  className="text-introColor lg:text-sm text-sm about-anim"
+                  className="text-introColor lg:text-base text-sm about-anim"
                   ref={aboutPara}
                 >
                   Welcome to CollabEz, where we believe in the power of
@@ -133,7 +133,7 @@ function AboutSection() {
 
               <div className="flex flex-col gap-3 xl:max-w-2xl lg:max-w-xl">
                 <p
-                  className="text-introColor sm:text-sm text-sm"
+                  className="text-introColor lg:text-base text-sm"
                   ref={aboutPara2}
                 >
                   CollabEz was born out of a desire to do more than just follow

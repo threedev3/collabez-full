@@ -19,6 +19,7 @@ function Footer({ portfolioRef, featuresRef, contactRef, homeRef }) {
     { name: "Services", href: "/services" },
     { name: "About", href: "/about" },
     { name: "Pricing", href: "/pricing" },
+    { name: "Case Study", href: "/portfolio" },
   ];
 
   const handleNavClick = (href) => {
@@ -33,7 +34,7 @@ function Footer({ portfolioRef, featuresRef, contactRef, homeRef }) {
   };
 
   return (
-    <div className="pt-16 max-w-full mx-auto relative lg:px-8 px-4 overflow-hidden ">
+    <div className="pt-16 max-w-full mx-auto relative lg:px-8 px-4 overflow-hidden bg-[url('/src/assets/img/workingBg.png')] bg-no-repeat bg-cover bg-top">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-0 w-[450px] h-[300px]">
           <img src={footerGrad} alt="" className="w-full h-full" />

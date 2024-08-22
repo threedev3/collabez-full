@@ -77,7 +77,12 @@ function Features() {
               </p>
             </div>
             <div className="lg:block flex justify-end">
-              <img src={personImg} alt="" ref={imageRef} />
+              <img
+                src={personImg}
+                alt=""
+                ref={imageRef}
+                className="w-auto object-contain"
+              />
             </div>
           </div>
 

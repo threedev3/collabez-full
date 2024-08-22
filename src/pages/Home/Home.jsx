@@ -4,6 +4,7 @@ import Stats from "../../components/Stats/Stats";
 import Portfolio from "../../components/Portfolio/Portfolio";
 import Features from "../../components/Features/Features";
 import TextSlide from "../../components/TextSlide/TextSlide";
+import Footer from "../../components/Footer/Footer";
 
 function Home() {
   const homeRef = useRef(null);
@@ -33,6 +34,14 @@ function Home() {
           homeRef={homeRef}
         />
       </div>
+      {/* <div>
+        <Footer
+          portfolioRef={portfolioRef}
+          featuresRef={featuresRef}
+          contactRef={contactRef}
+          homeRef={homeRef}
+        />
+      </div> */}
     </div>
   );
 }

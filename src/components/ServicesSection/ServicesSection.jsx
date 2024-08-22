@@ -64,7 +64,8 @@ function ServicesSection() {
   });
 
   return (
-    <div className="max-w-full relative lg:py-8 py-4 lg:px-8 px-4 overflow-x-hidden overflow-y-hidden">
+    <div className="max-w-full relative lg:py-8 py-4 lg:px-8 px-4 overflow-x-hidden overflow-y-hidden ">
+      {/* <div className="bg-[url('/src/assets/img/workingBg.png')] bg-no-repeat bg-cover bg-top absolute h-screen w-full z-10"></div> */}
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-col gap-5 mb-12">
           <div className="flex flex-row items-center gap-4">
@@ -100,7 +101,7 @@ function ServicesSection() {
           </div>
         </div>
         <div>
-          <div className="lg:grid lg:grid-cols-3 lg:gap-7 md:grid md:grid-cols-2 md:gap-7 grid grid-cols-1 gap-7 shadow-sm">
+          <div className="lg:grid lg:grid-cols-3 lg:gap-0 md:grid md:grid-cols-2 md:gap-7 grid grid-cols-1 gap-7 shadow-sm ">
             {services.map((item, index) => (
               <ServiceCard key={index} item={item} />
             ))}
