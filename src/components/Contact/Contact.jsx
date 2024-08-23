@@ -88,11 +88,20 @@ function Contact({ portfolioRef, featuresRef, contactRef, homeRef }) {
       ease: "power1.out",
       scrollTrigger: {
         trigger: personRef.current,
-        start: "top 60%",
+        start: "top 65%",
         end: "top 30%",
         toggleActions: "play none none none",
         scrub: true,
       },
+    });
+
+    // Floating animation for the image
+    gsap.to(personRef.current, {
+      y: -15, // Adjust the value to control the movement range
+      duration: 2, // Duration of the up-down movement
+      ease: "sine.inOut", // Smooth easing function
+      repeat: -1, // Infinite loop
+      yoyo: true, // Reverse the animation
     });
   });
 

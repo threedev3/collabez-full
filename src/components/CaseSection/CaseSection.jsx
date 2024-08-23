@@ -97,7 +97,7 @@ function CaseSection({ contactRef }) {
 
   const handleTabClick = (project) => {
     const projectSlug = project.slug;
-    navigate(`/portfolio/${projectSlug}`);
+    navigate(`/casestudy/${projectSlug}`);
     window.scrollTo({ top: 0, behavior: "smooth" }); // Scrolls to top on tab click
     // window.location.reload(); // Forces a full page reload
   };

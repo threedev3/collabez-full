@@ -25,7 +25,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #000;
+    background: #ffae00;
   }
 }
 
@@ -34,7 +34,7 @@
   html,
   .cust-scroll {
     scrollbar-width: thin;
-    scrollbar-color: #000 #888;
+    scrollbar-color: #ffae00 #888;
   }
 }
 

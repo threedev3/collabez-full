@@ -71,21 +71,22 @@ function SubHeroSection({ title }) {
       <TopLine />
       <Navbar />
 
-      <div className="flex-1 relative flex items-center justify-center lg:justify-center px-4 lg:px-8 max-w-full">
+      <div className="flex-1 relative flex flex-col items-center justify-center px-4 lg:px-8 max-w-ful space-y-6">
         {/* Centered Heading */}
         <h1
           ref={headRef}
-          className="text-3xl lg:max-w-2xl text-center font-bold tracking-tight text-white sm:text-4xl md:text-4xl xl:text-5xl uppercase absolute lg:static"
+          className="text-3xl lg:max-w-2xl text-center font-bold tracking-tight text-white sm:text-4xl md:text-4xl xl:text-5xl uppercase "
         >
           {joinHeading}
         </h1>
 
         {/* HeroCircle component on the right side */}
-        <div className="absolute right-[10%] bottom-0 transform translate-y-[-50%] lg:translate-y-0 lg:flex lg:justify-end">
+        <div className="absolute zl:right-[10%] md:right-[5%] right[50%] bottom-0 transform  translate-y-0 flex justify-end lg:w-[450px] md:w-[300px] w-[250px]">
           <HeroCircle
             text="Agency Creative Design Service"
             rotateAngle={11.5}
             starSize="280px"
+            smallStarSize="240px"
             textSizeWidth="w-40"
             textSizeHeight="h-40"
             top="top-2"

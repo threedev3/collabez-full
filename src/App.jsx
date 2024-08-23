@@ -22,8 +22,8 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/services/:slug" element={<ServiceDetails />} />
           <Route path="/pricing" element={<Pricing />} />
-          <Route path="/portfolio" element={<CaseStudy />} />
-          <Route path="/portfolio/:slug" element={<CaseStudyDetail />} />
+          <Route path="/casestudy" element={<CaseStudy />} />
+          <Route path="/casestudy/:slug" element={<CaseStudyDetail />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <ScrollToTop />

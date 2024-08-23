@@ -13,7 +13,7 @@ const navigation = [
   { name: "Services", link: "/services" },
   { name: "About", link: "/about" },
   { name: "Pricing", link: "/pricing" },
-  { name: "Case Study", link: "/portfolio" },
+  { name: "Case Study", link: "/casestudy" },
 ];
 
 function Navbar() {

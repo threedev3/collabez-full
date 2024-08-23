@@ -27,7 +27,7 @@ function CaseCard({ item }) {
 
   const handleCaseClick = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    navigate(`/portfolio/${slug}`);
+    navigate(`/casestudy/${slug}`);
   };
 
   useGSAP(() => {

@@ -17,11 +17,11 @@
       "destination": "/index.html"
     },
     {
-      "source": "/portfolio",
+      "source": "/casestudy",
       "destination": "/index.html"
     },
     {
-      "source": "/portfolio/:slug",
+      "source": "/casestudy/:slug",
       "destination": "/index.html"
     },
     {

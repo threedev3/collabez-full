@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import footerGrad from "../../assets/img/footerGrad.png";
 import Logo from "../../assets/img/logo.png";
 
@@ -13,13 +13,14 @@ function Footer({ portfolioRef, featuresRef, contactRef, homeRef }) {
   const currentYear = new Date().getFullYear();
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   const navigation = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
     { name: "About", href: "/about" },
     { name: "Pricing", href: "/pricing" },
-    { name: "Case Study", href: "/portfolio" },
+    { name: "Case Study", href: "/casestudy" },
   ];
 
   const handleNavClick = (href) => {
@@ -55,7 +56,15 @@ function Footer({ portfolioRef, featuresRef, contactRef, homeRef }) {
             {navigation.map((item, index) => (
               <button
                 key={index}
-                className="block"
+                className={`block ${
+                  item.href === "/"
+                    ? location.pathname === "/"
+                      ? "text-heroColor"
+                      : ""
+                    : location.pathname.startsWith(item.href)
+                    ? "text-heroColor"
+                    : ""
+                }`}
                 onClick={() => {
                   handleNavClick(item.href);
                 }}

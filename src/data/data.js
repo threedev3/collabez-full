@@ -15,8 +15,9 @@ import logoIcon from "../assets/img/logoIcon.png";
 import appIcon from "../assets/img/appIcon.png";
 import webIcon from "../assets/img/webIcon.png";
 import marketingIcon from "../assets/img/marketingIcon.png";
-import member1Img from "../assets/img/member1.png";
-import member2Img from "../assets/img/member2.jpeg";
+import person1Img from "../assets/img/person1.jpg";
+import person2Img from "../assets/img/person2.jpg";
+import person3Img from "../assets/img/person3.jpg";
 import fb from "../assets/img/fb.png";
 import insta from "../assets/img/insta.png";
 import linkedIn from "../assets/img/linkedin.png";
@@ -359,19 +360,19 @@ export const stats = [
 
 export const members = [
   {
-    imgMember: member1Img,
+    imgMember: person1Img,
     name: "Tabish Dehlvi",
     role: "Developer",
     socialIcons: [fb, be, insta, linkedIn],
   },
   {
-    imgMember: member2Img,
+    imgMember: person2Img,
     name: "Zain Ahsan",
     role: "Developer",
     socialIcons: [fb, be, insta, linkedIn],
   },
   {
-    imgMember: member1Img,
+    imgMember: person3Img,
     name: "Tabish Dehlvi",
     role: "Developer",
     socialIcons: [fb, be, insta, linkedIn],
