@@ -21,12 +21,12 @@ function PricingCard({ mode, price, duration, features }) {
   useGSAP(() => {
     gsap.from(priceCardRef.current, {
       opacity: 0,
-      duration: 1,
+      duration: 0.5,
       ease: "back.inOut",
       scrollTrigger: {
         trigger: priceCardRef.current,
         toggleActions: "play none none none",
-        start: "top 70%",
+        start: "top 80%",
         end: "top 50%",
       },
     });

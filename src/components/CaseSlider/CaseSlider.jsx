@@ -13,6 +13,11 @@ const CaseSlider = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,
+    swipeToSlide: true,
+    autoplay: true,
+    speed: 1000,
+    autoplaySpeed: 3000,
+    cssEase: "ease",
     responsive: [
       {
         breakpoint: 1024,
@@ -36,12 +41,12 @@ const CaseSlider = () => {
   };
 
   return (
-    <div className="lg:py-24 lg:px-8 py-16 px-8 overflow-hidden">
+    <div className="max-w-full relative lg:py-8 py-8 lg:px-8 px-4 overflow-hidden">
       <div className="max-w-[1400px] mx-auto">
         <Intro
-          pageTitle="portfolio"
+          pageTitle="case study"
           mainTitle="Our Projects"
-          para="We always try to implement our creative ideas at the highest level. You can see it by looking at our portfolio."
+          para="We always try to implement our creative ideas at the highest level. You can see it by looking at our case study."
         />
         <div className="slider-container w-auto  ">
           <Slider {...settings}>

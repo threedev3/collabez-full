@@ -211,9 +211,9 @@ export const services = [
 export const projects = [
   {
     thumbnail: uiux,
-    title: "Work Dock",
+    title: "The Oasis",
     description:
-      "Work Dock is a comprehensive Human Resource Management System (HRMS) that enables employees to view their attendance records, apply for leaves, and visualize their performance metrics. Administrators have enhanced capabilities, including detailed views of employee progress, the ability to edit attendance records, manage leave requests, and announce holidays. Work Dock streamlines HR processes, promotes transparency, and facilitates efficient management of employee data and company policies.",
+      "Welcome to The Oasis Academy, a beacon of academic excellence for expatriate families in the heart of the Arabian Peninsula. Founded in 2017, we have become a trusted online tutoring service for students across Saudi Arabia, Qatar, and Oman. Our dedication to quality education stems from a deep understanding of the challenges and aspirations of the expat community.",
     client: "OP Company",
     category: "Web Development",
     startDate: "April 22, 2024",
@@ -237,9 +237,9 @@ export const projects = [
   },
   {
     thumbnail: webDev,
-    title: "CollabEZ",
+    title: "Lingo Highway",
     description:
-      "CollabEZ is a dynamic company website offering a wide range of services including app development, web development, UI/UX design, social media marketing, and e-commerce solutions. With a focus on collaboration and ease of use, collabEZ is dedicated to helping businesses achieve their digital goals through innovative and tailored solutions.",
+      "Welcome to Lingo Highway, your gateway to mastering English. As an online academy, we strive to provide an accessible and enriching English learning experience, reaching out to individuals across the globe.",
     client: "XYZ Company",
     category: "Web Development",
     startDate: "May 13, 2024",
@@ -300,6 +300,33 @@ export const features = [
   },
 ];
 
+export const testimonials = [
+  {
+    id: 1,
+    company: "Google",
+    review:
+      "CollabEZ exceeded our expectations with their exceptional web development services. Our site looks fantastic and performs flawlessly.",
+    name: "Ahmed M.",
+    location: "Dubai",
+  },
+  {
+    id: 2,
+    company: "Facebook",
+    review:
+      "Working with CollabEZ was a seamless experience. Their team understood our needs perfectly and delivered a website that not only looks great but also performs exceptionally well. Highly recommended!",
+    name: "Fatima S.",
+    location: "Abu Dhabi",
+  },
+  {
+    id: 3,
+    company: "Google",
+    review:
+      "CollabEZ's web development services have transformed our online presence. The new website has significantly improved our customer engagement and sales. Their support and professionalism are top-notch.",
+    name: "Khalid A.",
+    location: "Riyadh",
+  },
+];
+
 export const pricing = [
   {
     mode: "Basic",
@@ -341,19 +368,23 @@ export const pricing = [
 
 export const stats = [
   {
-    title: "Project Done",
+    firstTitle: "Project",
+    secondTitle: "Done",
     count: "220+",
   },
   {
-    title: "Our Team",
+    firstTitle: "Our",
+    secondTitle: "Team",
     count: "110+",
   },
   {
-    title: "Reviewed",
+    firstTitle: "Reviewed",
+    secondTitle: "Projects",
     count: "135+",
   },
   {
-    title: "Happy Client",
+    firstTitle: "Happy",
+    secondTitle: "Client",
     count: "330+",
   },
 ];

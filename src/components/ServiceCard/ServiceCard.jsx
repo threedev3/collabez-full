@@ -54,7 +54,7 @@ function ServiceCard({ item }) {
       scrollTrigger: {
         trigger: serviceCard.current,
         toggleActions: "play none none none",
-        start: "top 70%",
+        start: "top 80%",
         end: "top 40%",
       },
     });
@@ -126,6 +126,12 @@ function ServiceCard({ item }) {
             <div className="">
               <p className="text-center text-white text-lg">{item.title}</p>
             </div>
+
+            <Link to={`/services/${slug}`}>
+              <button className="text-center text-heroColor uppercase border-b-2 border-heroColor cursor-pointer text-sm">
+                Read More
+              </button>
+            </Link>
           </div>
 
           {/* Hover content */}

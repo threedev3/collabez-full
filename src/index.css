@@ -1,10 +1,12 @@
 @font-face {
   font-family: "Poppins";
   src: url("/src/assets/font/Poppins-Regular.ttf");
+  font-display: swap;
 }
 @font-face {
   font-family: "Poppins-bold";
   src: url("/src/assets/font/Poppins-ExtraBold.ttf");
+  font-display: swap;
 }
 * {
   font-family: "Poppins";
@@ -113,6 +115,7 @@
 .slick-dots li button:before {
   font-size: 12px;
   opacity: 1;
+  margin-bottom: 10px;
 }
 
 .slick-dots li.slick-active button:before {

@@ -5,6 +5,7 @@ import Portfolio from "../../components/Portfolio/Portfolio";
 import Features from "../../components/Features/Features";
 import TextSlide from "../../components/TextSlide/TextSlide";
 import Footer from "../../components/Footer/Footer";
+import Testimonials from "../../components/Testimonials/Testimonials";
 
 function Home() {
   const homeRef = useRef(null);
@@ -26,6 +27,7 @@ function Home() {
       <div ref={featuresRef}>
         <Features />
       </div>
+      {/* <Testimonials /> */}
       <div ref={contactRef}>
         <TextSlide
           portfolioRef={portfolioRef}

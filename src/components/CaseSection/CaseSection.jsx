@@ -127,7 +127,7 @@ function CaseSection({ contactRef }) {
   useEffect(() => {
     if (selectedProject) {
       gsap.from(sliderRef.current, {
-        y: -200,
+        y: -50,
         opacity: 0,
         duration: 1,
         scrollTrigger: {
@@ -262,12 +262,12 @@ function CaseSection({ contactRef }) {
   }, [selectedProject]);
 
   return (
-    <div className="lg:py-24 lg:px-8 py-16 px-8 overflow-hidden bg-[url('/src/assets/img/caseBg.png')] bg-no-repeat bg-cover bg-bottom max-w-full relative">
+    <div className="lg:py-8 py-4 lg:px-8 px-4 overflow-x-hidden bg-[url('/src/assets/img/caseBg.png')] bg-no-repeat bg-cover bg-bottom max-w-full relative">
       <div className="max-w-[1400px] mx-auto">
-        <Intro pageTitle="portfolio" mainTitle={`${selectedProject?.title}`} />
-        <div className="lg:flex lg:flex-row lg:justify-between lg:item-center lg:gap-2 flex flex-col gap-8">
+        <Intro pageTitle="case study" mainTitle={`${selectedProject?.title}`} />
+        <div className="lg:flex lg:flex-row lg:justify-between lg:item-center lg:gap-6 flex flex-col gap-8">
           {selectedProject && (
-            <div className="flex flex-col gap-12 flex-1 lg:max-w-[70%] max-w-[100%]">
+            <div className="flex flex-col gap-12 flex-1 xl:max-w-[70%] lg:max-w-[65%] max-w-[100%]">
               <div className="lg:hidden block w-full bg-transparent ">
                 <select
                   id="country"
@@ -292,7 +292,7 @@ function CaseSection({ contactRef }) {
                 <Slider {...settings}>
                   {selectedProject?.sliderImages.map((img, index) => (
                     <div
-                      className="lg:h-[600px] md:h-[500px] sm:h-[400px] h-[270px] w-full focus:outline-none"
+                      className="xl:h-[600px] lg:h-[500px] md:h-[500px] sm:h-[400px] h-[270px] w-full focus:outline-none"
                       key={index}
                     >
                       <img
@@ -380,7 +380,7 @@ function CaseSection({ contactRef }) {
           )}
           <div className="lg:flex lg:flex-col lg:gap-8 lg:max-w-[30%] flex flex-col justify-start items-center gap-5 max-w-[100%]">
             <div
-              className="bg-tabsColor py-16 px-6 rounded-lg lg:w-72 w-full h-[600px] lg:block hidden text-white"
+              className="bg-tabsColor py-16 px-6 rounded-lg lg:w-72 w-full xl:h-[600px] h-[500px] lg:block hidden text-white"
               ref={tabsRef}
             >
               <h2 className="mb-6 text-xl font-semibold">Related Projects</h2>

@@ -152,7 +152,7 @@ export default function HeroSection({ portfolioRef, featuresRef, contactRef }) {
   return (
     <>
       <div
-        className="bg-[url('/src/assets/img/herobg2.png')] bg-no-repeat bg-cover bg-moveup max-w-full relative overflow-hidden"
+        className="bg-[url('/src/assets/img/herobg2.png')] bg-no-repeat bg-cover bg-bottom max-w-full relative overflow-hidden"
         ref={mainContainer}
       >
         <div className="bg-[url('/src/assets/img/herolines.png')] bg-no-repeat bg-cover bg-center w-full h-full">
@@ -160,11 +160,11 @@ export default function HeroSection({ portfolioRef, featuresRef, contactRef }) {
 
           <Navbar />
 
-          <div className="relative isolate px-4 pt-14 py-8  lg:px-8 max-w-full ">
-            <div className="max-w-[1400px] mx-auto px-3 pt-32 sm:pt-32 lg:pt-32 lg:flex lg:flex-row lg:justify-between">
+          <div className="relative isolate px-4 xl:py-32 sm:py-28 py-24 lg:px-8 max-w-full ">
+            <div className="max-w-[1400px] mx-auto xl:pt-28 sm:pt-28 lg:pt-28 pt-24 lg:flex lg:flex-row lg:justify-between">
               <div>
                 <h1
-                  className="text-3xl max-w-xl font-bold tracking-tight sm:tracking-wider text-white sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl"
+                  className="text-3xl max-w-xl font-extrabold  tracking-tight sm:tracking-wider text-white sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl"
                   ref={headingRef}
                 >
                   {splitText("Let's Create ")}
@@ -184,7 +184,7 @@ export default function HeroSection({ portfolioRef, featuresRef, contactRef }) {
                   <span className="inline-block">Experiences</span>
                 </p>
               </div>
-              <HeroCircle
+              {/* <HeroCircle
                 text="Branding Creative Design Logo"
                 rotateAngle={12}
                 starSize="450px"
@@ -197,58 +197,58 @@ export default function HeroSection({ portfolioRef, featuresRef, contactRef }) {
                 innerPadding="p-8"
                 smallCircleSizeWidth="w-8"
                 smallCircleSizeHeight="h-8"
-              />
+              /> */}
             </div>
           </div>
           <div className="w-full h-[10px] bg-heroColor"></div>
         </div>
-        <div className="max-w-full lg:py-20 px-4 lg:px-8 py-10">
-          <div className="max-w-[1400px] mx-auto lg:flex lg:flex-row lg:justify-between lg:items-start flex flex-col gap-6">
-            <div className="flex flex-col gap-4 lg:max-w-3xl max-w-full lg:grow">
-              <h2
-                className="text-white xl:text-4xl lg:text-4xl md:text-4xl text-3xl font-bold"
-                ref={introHead}
-              >
-                Where Digital Dreams{" "}
-                <span className="lg:block">Take Flight</span>
-              </h2>
-              <p className="text-introColor xl:text-sm text-sm" ref={introPara}>
-                We are your creative partner in the digital realm. We're not
-                just a company, we're a team of dreamers, creators, and
-                innovators dedicated to bringing your digital dreams to life.
-              </p>
-            </div>
+      </div>
 
+      <div className="max-w-full lg:py-20 px-4 lg:px-8 py-10 overflow-x-hidden">
+        <div className="max-w-[1400px] mx-auto lg:flex lg:flex-row lg:justify-between lg:items-start flex flex-col gap-3">
+          <div className="flex flex-col gap-4 lg:max-w-3xl max-w-full lg:grow">
+            <h2
+              className="text-white xl:text-4xl lg:text-4xl md:text-4xl text-3xl font-bold"
+              ref={introHead}
+            >
+              Where Digital Dreams <span className="lg:block">Take Flight</span>
+            </h2>
+            <p className="text-introColor xl:text-sm text-sm" ref={introPara}>
+              We are your creative partner in the digital realm. We're not just
+              a company, we're a team of dreamers, creators, and innovators
+              dedicated to bringing your digital dreams to life.
+            </p>
+          </div>
+
+          <div
+            className="lg:w-[270px] w-full relative flex gap-12 items-center cursor-pointer"
+            onClick={() => handleNavClick("Portfolio")}
+            ref={viewBtn}
+          >
             <div
-              className="lg:w-[270px] w-full relative flex gap-12 items-center cursor-pointer"
-              onClick={() => handleNavClick("Portfolio")}
-              ref={viewBtn}
+              className="relative"
+              onMouseEnter={animateViewEnter}
+              onMouseLeave={animateViewLeave}
             >
               <div
-                className="relative"
-                onMouseEnter={animateViewEnter}
-                onMouseLeave={animateViewLeave}
-              >
-                <div
-                  className="w-20 h-20 border-2 border-borderColor rounded-full"
-                  ref={roundRef1}
-                />
-                <div
-                  className="w-20 h-20 border-2 border-borderColor rounded-full absolute top-0 left-0"
-                  ref={roundRef2}
-                />
-              </div>
+                className="w-20 h-20 border-2 border-borderColor rounded-full"
+                ref={roundRef1}
+              />
               <div
-                className="absolute left-6 flex justify-start gap-6 w-full"
-                ref={viewAnimate}
-                onMouseEnter={animateViewEnter}
-                onMouseLeave={animateViewLeave}
-              >
-                <p className="text-viewProj text-xs" ref={viewText}>
-                  View All Projects
-                </p>
-                <img src={arrowImg} alt="" className="" />
-              </div>
+                className="w-20 h-20 border-2 border-borderColor rounded-full absolute top-0 left-0"
+                ref={roundRef2}
+              />
+            </div>
+            <div
+              className="absolute left-6 flex justify-start gap-2 w-full"
+              ref={viewAnimate}
+              onMouseEnter={animateViewEnter}
+              onMouseLeave={animateViewLeave}
+            >
+              <p className="text-viewProj text-xs" ref={viewText}>
+                View All Projects
+              </p>
+              <img src={arrowImg} alt="" className="w-16 object-contain" />
             </div>
           </div>
         </div>

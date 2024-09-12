@@ -14,7 +14,7 @@ function PricingComp() {
         />
 
         <div className="mt-12">
-          <div className="lg:grid lg:grid-cols-3  md:grid md:grid-cols-2  grid grid-cols-1  shadow-sm">
+          <div className="lg:grid lg:grid-cols-3 gap-3  md:grid md:grid-cols-2  grid grid-cols-1  shadow-sm">
             {pricing.map((item, index) => (
               <PricingCard
                 key={index}

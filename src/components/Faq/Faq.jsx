@@ -18,34 +18,34 @@ function Faq() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const faqAnimation = gsap.timeline({ paused: true });
+  // const faqAnimation = gsap.timeline({ paused: true });
 
   useGSAP(() => {
-    faqAnimation
-      .from(faqHead.current, {
-        opacity: 0,
-        y: -100,
-        duration: 0.5,
-        scrollTrigger: {
-          trigger: faqHead.current,
-          toggleActions: "play none none none",
-          start: "top 50%",
-          end: "top 40%",
-          scrub: true,
-        },
-      })
-      .from(imgRef.current, {
-        opacity: 0,
-        x: -100,
-        duration: 0.5,
-        scrollTrigger: {
-          trigger: imgRef.current,
-          toggleActions: "play none none none",
-          start: "top 50%",
-          end: "top 40%",
-          scrub: true,
-        },
-      });
+    // faqAnimation
+    // .from(faqHead.current, {
+    //   opacity: 0,
+    //   y: -100,
+    //   duration: 0.5,
+    //   scrollTrigger: {
+    //     trigger: faqHead.current,
+    //     toggleActions: "play none none none",
+    //     start: "top 50%",
+    //     end: "top 40%",
+    //     scrub: true,
+    //   },
+    // })
+    gsap.from(imgRef.current, {
+      opacity: 0,
+      x: -100,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: imgRef.current,
+        toggleActions: "play none none none",
+        start: "top 50%",
+        end: "top 40%",
+        once: true,
+      },
+    });
   });
 
   return (

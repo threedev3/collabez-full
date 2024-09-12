@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import projectImg from "../../assets/img/project3.png";
 import alphaImg from "../../assets/img/alpha.png";
 import lingoImg from "../../assets/img/lingo.png";
+import oasisImg from "../../assets/img/oasis.png";
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -21,9 +22,9 @@ function Portfolio() {
 
   const projects = [
     {
-      title: "Work Dock",
+      title: "The Oasis",
       tags: ["NextJS", "ReactJS", "NodeJS", "ExpressJS", "MongoDB"],
-      img: projectImg,
+      img: oasisImg,
     },
     {
       title: "Alpha Hiring Solutions",
@@ -46,34 +47,34 @@ function Portfolio() {
 
   // const { contextSafe } = useGSAP({ scope: portfolioRef });
 
-  const portText = gsap.timeline({ paused: true });
+  // const portText = gsap.timeline({ paused: true });
 
   useGSAP(() => {
-    portText
-      .from(portHeading.current, {
-        duration: 1,
-        opacity: 0,
-        y: -50,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: portHeading.current,
-          start: "top 80%",
-          toggleActions: "play none none none",
-          scrub: true,
-        },
-      })
-      .from(portPara.current, {
-        duration: 1,
-        opacity: 0,
-        y: -50,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: portPara.current,
-          start: "top 80%",
-          toggleActions: "play none none none",
-          scrub: true,
-        },
-      });
+    // portText
+    //   .from(portHeading.current, {
+    //     duration: 1,
+    //     // opacity: 0,
+    //     y: -10,
+    //     ease: "power1.out",
+    //     scrollTrigger: {
+    //       trigger: portHeading.current,
+    //       start: "top 80%",
+    //       toggleActions: "play none none none",
+    //       scrub: false,
+    //     },
+    //   })
+    //   .from(portPara.current, {
+    //     duration: 1,
+    //     opacity: 0,
+    //     y: -50,
+    //     ease: "power1.out",
+    //     scrollTrigger: {
+    //       trigger: portPara.current,
+    //       start: "top 80%",
+    //       toggleActions: "play none none none",
+    //       scrub: true,
+    //     },
+    //   });
 
     projectRefs.current.forEach((ref, index) => {
       gsap.from(ref, {
@@ -87,7 +88,7 @@ function Portfolio() {
           start: "top 90%",
           end: "top 60%",
           toggleActions: "play resume none none",
-          scrub: true,
+          // scrub: true,
         },
       });
     });
@@ -175,7 +176,7 @@ function Portfolio() {
       ref={portfolioRef}
     >
       <div className="max-w-[1400px] mx-auto">
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-12">
           <div className="flex flex-col gap-5">
             <h3
               className="xl:text-4xl lg:text-4xl md:text-3xl text-3xl text-white font-bold"

@@ -14,6 +14,7 @@ const navigation = [
   { name: "About", link: "/about" },
   { name: "Pricing", link: "/pricing" },
   { name: "Case Study", link: "/casestudy" },
+  { name: "Portfolio", link: "/casestudy" },
 ];
 
 function Navbar() {
@@ -157,10 +158,13 @@ function Navbar() {
   return (
     <header className="absolute inset-x-0 top-0 max-w-[1400px] mx-auto pt-8 px-4">
       <nav
-        className="flex items-start justify-between py-8"
+        className="flex items-start justify-between sm:py-8 py-4"
         aria-label="Global"
       >
-        <div className="flex cursor-pointer  sm:w-64 w-48 z-20" ref={headerRef}>
+        <div
+          className="flex cursor-pointer  xl:w-64 lg:w-56 w-48 z-20"
+          ref={headerRef}
+        >
           <Link to="/" className="-m-1.5 p-1.5 w-full ">
             <img className="object-contain" src={Logo} alt="" />
           </Link>
@@ -210,7 +214,7 @@ function Navbar() {
             ref={menuBg}
           ></div>
           <nav
-            className="absolute top-40 z-50 text-center opacity-0"
+            className="absolute top-24 z-50 text-center opacity-0"
             ref={navRef}
           >
             <ul className="list-none flex flex-col justify-center items-center">

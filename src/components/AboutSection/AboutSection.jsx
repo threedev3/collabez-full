@@ -18,42 +18,40 @@ function AboutSection() {
   const aboutImg2Ref = useRef(null);
   const firstSec = useRef(null);
 
-  const aboutSection = gsap.timeline({ paused: true });
+  // const aboutSection = gsap.timeline({ paused: true });
 
   useGSAP(() => {
-    aboutSection
+    gsap
       .from(".about-anim", {
         duration: 0.5,
         opacity: 0,
         y: -100,
-        stagger: 0.5,
+        stagger: 0.2,
         ease: "power1.out",
         scrollTrigger: {
           trigger: firstSec.current,
-          start: "top 70%",
+          start: "top 90%",
           end: "top 30%",
           toggleActions: "play none none none",
-          scrub: true,
-          // markers: true,
+          once: true,
         },
       })
-      .from(aboutImg.current, {
+      gsap.from(aboutImg.current, {
         duration: 1,
         opacity: 0,
-        y: -300,
+        y: -100,
         ease: "power1.out",
         scrollTrigger: {
           trigger: aboutImg.current,
-          start: "top 30%",
-          end: "top 20%",
+          start: "top 70%",
+          end: "top 30%",
           toggleActions: "play none none none",
-          scrub: true,
-          // markers: true,
+          once: true,
         },
       })
-      .from(aboutImg2Ref.current, {
+      gsap.from(aboutImg2Ref.current, {
         duration: 0.3,
-        x: 200,
+        x: 100,
         opacity: 0,
         ease: "power1.out",
         scrollTrigger: {
@@ -61,11 +59,10 @@ function AboutSection() {
           start: "top 90%",
           end: "top 80%",
           toggleActions: "play none none none",
-          scrub: true,
-          // markers: true,
+          once: true,
         },
       })
-      .from(aboutPara2.current, {
+      gsap.from(aboutPara2.current, {
         duration: 0.3,
         x: -300,
         opacity: 0,
@@ -75,8 +72,7 @@ function AboutSection() {
           start: "top 90%",
           end: "top 80%",
           toggleActions: "play none none none",
-          scrub: true,
-          // markers: true,
+          once: true,
         },
       });
   });

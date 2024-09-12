@@ -66,22 +66,22 @@ function SubHeroSection({ title }) {
     //   </div>
     // </div>
 
-    <div className="bg-wholeBg bg-[url('/src/assets/img/subheroBg.png')] bg-no-repeat bg-cover bg-bottom max-w-full relative overflow-hidden min-h-[60vh] flex flex-col justify-between">
-      <div className="bg-[url('/src/assets/img/subherolines.png')] bg-no-repeat bg-cover bg-center w-full min-h-[70vh] absolute top-0"></div>
+    <div className="bg-wholeBg bg-[url('/src/assets/img/subheroBg.png')] bg-no-repeat bg-cover bg-bottom max-w-full relative overflow-hidden lg:min-h-[60vh] min-h-[50vh] flex flex-col justify-between">
+      <div className="bg-[url('/src/assets/img/subherolines.png')] bg-no-repeat bg-cover bg-center w-full lg:min-h-[65vh] min-h-[55vh] absolute top-0"></div>
       <TopLine />
       <Navbar />
 
-      <div className="flex-1 relative flex flex-col items-center justify-center px-4 lg:px-8 max-w-ful space-y-6">
+      <div className="relative flex flex-col items-center justify-center px-4 lg:px-8 max-w-ful space-y-6">
         {/* Centered Heading */}
         <h1
           ref={headRef}
-          className="text-3xl lg:max-w-2xl text-center font-bold tracking-tight text-white sm:text-4xl md:text-4xl xl:text-5xl uppercase "
+          className="text-3xl lg:max-w-2xl text-center font-bold tracking-tight text-white sm:text-4xl md:text-4xl xl:text-5xl uppercase mt-10"
         >
           {joinHeading}
         </h1>
 
         {/* HeroCircle component on the right side */}
-        <div className="absolute zl:right-[10%] md:right-[5%] right[50%] bottom-0 transform  translate-y-0 flex justify-end lg:w-[450px] md:w-[300px] w-[250px]">
+        {/* <div className="absolute zl:right-[10%] md:right-[5%] right[50%] bottom-0 transform  translate-y-0 flex justify-end lg:w-[450px] md:w-[300px] w-[250px]">
           <HeroCircle
             text="Agency Creative Design Service"
             rotateAngle={11.5}
@@ -97,7 +97,7 @@ function SubHeroSection({ title }) {
             smallCircleSizeWidth="w-6"
             smallCircleSizeHeight="h-6"
           />
-        </div>
+        </div> */}
       </div>
 
       <div className="w-full h-[10px] bg-heroColor"></div>

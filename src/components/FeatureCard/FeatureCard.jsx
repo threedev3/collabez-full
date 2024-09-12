@@ -17,21 +17,21 @@ function FeatureCard({ title, icon, description }) {
 
     gsap.to(featureAnimate.current, {
       duration: 0.3,
-      borderTop: "12px solid #FFAE00",
+      borderTopColor: "#FFAE00",
       ease: "back.inOut",
     });
 
     gsap.to(iconRef.current, {
       duration: 0.3,
       x: cardWidth - 140,
-      y: 30,
-      scale: 2,
+      y: 20,
+      scale: 1.5,
     });
   });
   const animateViewLeave = contextSafe(() => {
     gsap.to(featureAnimate.current, {
       duration: 0.3,
-      borderTop: "none",
+      borderTopColor: "transparent",
     });
 
     gsap.to(iconRef.current, {
@@ -43,21 +43,31 @@ function FeatureCard({ title, icon, description }) {
   });
 
   return (
-    <div
-      className={`p-8 rounded-lg shadow-2xl min-w-32 hover:bg-heroColor/5 box-border`}
-      ref={featureAnimate}
-      onMouseEnter={animateViewEnter}
-      onMouseLeave={animateViewLeave}
-    >
-      <div className="flex flex-col gap-4">
-        <div className="relative min-h-28 h-12 w-12">
-          <img src={icon} alt="" className={`'}`} ref={iconRef} />
-        </div>
-        <div className="text-white text-lg font-bold">
-          <h3>{title}</h3>
-        </div>
-        <div className="text-introColor text-sm">
-          <p>{description}</p>
+    <div className="box-border">
+      <div
+        className={`p-8 rounded-lg shadow-2xl min-w-32 xl:min-h-[333px] lg:min-h-[385px] hover:bg-heroColor/5  relative`}
+        ref={featureAnimate}
+        onMouseEnter={animateViewEnter}
+        onMouseLeave={animateViewLeave}
+        style={{
+          borderTop: "12px solid transparent", // Add a transparent top border initially
+        }}
+      >
+        <div className="flex flex-col gap-4">
+          <div className="relative min-h-24 ">
+            <img
+              src={icon}
+              alt=""
+              className="h-12 w-12 object-contain"
+              ref={iconRef}
+            />
+          </div>
+          <div className="text-white text-lg font-bold mt-1">
+            <h3 className="xl:min-h-0 lg:min-h-14">{title}</h3>
+          </div>
+          <div className="text-introColor text-sm">
+            <p>{description}</p>
+          </div>
         </div>
       </div>
     </div>

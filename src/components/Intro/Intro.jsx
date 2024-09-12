@@ -16,22 +16,22 @@ function Intro({ pageTitle, mainTitle, para }) {
     gsap.from(borderRef.current, {
       x: 100,
       opacity: 0,
-      duration: 0.5,
+      duration: 1,
       scrollTrigger: {
         trigger: borderRef.current,
         toggleActions: "play none none none",
-        start: "top 50%",
+        start: "top 70%",
         end: "top 30%",
       },
     });
     gsap.from(serviceRef.current, {
       x: -100,
       opacity: 0,
-      duration: 0.5,
+      duration: 1,
       scrollTrigger: {
         trigger: serviceRef.current,
         toggleActions: "play none none none",
-        start: "top 50%",
+        start: "top 70%",
         end: "top 30%",
       },
     });
@@ -39,22 +39,22 @@ function Intro({ pageTitle, mainTitle, para }) {
     gsap.from(serviceHead.current, {
       y: -100,
       opacity: 0,
-      duration: 0.5,
+      duration: 1,
       scrollTrigger: {
         trigger: serviceHead.current,
         toggleActions: "play none none none",
-        start: "top 50%",
+        start: "top 70%",
         end: "top 30%",
       },
     });
     gsap.from(textRef.current, {
       y: 100,
       opacity: 0,
-      duration: 0.5,
+      duration: 1,
       scrollTrigger: {
         trigger: textRef.current,
         toggleActions: "play none none none",
-        start: "top 50%",
+        start: "top 110%",
         end: "top 30%",
       },
     });

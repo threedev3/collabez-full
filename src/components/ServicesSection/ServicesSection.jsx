@@ -23,7 +23,7 @@ function ServicesSection() {
       scrollTrigger: {
         trigger: borderRef.current,
         toggleActions: "play none none none",
-        start: "top 50%",
+        start: "top 70%",
         end: "top 30%",
       },
     });
@@ -34,7 +34,7 @@ function ServicesSection() {
       scrollTrigger: {
         trigger: serviceRef.current,
         toggleActions: "play none none none",
-        start: "top 50%",
+        start: "top 70%",
         end: "top 30%",
       },
     });
@@ -46,7 +46,7 @@ function ServicesSection() {
       scrollTrigger: {
         trigger: serviceHead.current,
         toggleActions: "play none none none",
-        start: "top 50%",
+        start: "top 70%",
         end: "top 30%",
       },
     });
@@ -57,7 +57,7 @@ function ServicesSection() {
       scrollTrigger: {
         trigger: textRef.current,
         toggleActions: "play none none none",
-        start: "top 50%",
+        start: "top 110%",
         end: "top 30%",
       },
     });
@@ -67,7 +67,7 @@ function ServicesSection() {
     <div className="max-w-full relative lg:py-8 py-4 lg:px-8 px-4 overflow-x-hidden overflow-y-hidden ">
       {/* <div className="bg-[url('/src/assets/img/workingBg.png')] bg-no-repeat bg-cover bg-top absolute h-screen w-full z-10"></div> */}
       <div className="max-w-[1400px] mx-auto">
-        <div className="flex flex-col gap-5 mb-12">
+        <div className="flex flex-col gap-2 mb-12">
           <div className="flex flex-row items-center gap-4">
             <div
               className="w-16 h-0 border-[1px] border-serviceText"

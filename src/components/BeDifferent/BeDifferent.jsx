@@ -14,30 +14,30 @@ function BeDifferent() {
     const letters = dareHead.current.querySelectorAll("span");
     gsap.from(letters, {
       opacity: 0,
-      y: -100,
-      duration: 1,
-      stagger: 0.2,
+      y: -50,
+      duration: 0.5,
+      stagger: 0.05,
       ease: "back.inOut",
       scrollTrigger: {
         trigger: dareHead.current,
         start: "top 90%",
         end: "top 60%",
         toggleActions: "play none none none",
-        scrub: true,
+        // scrub: true,
       },
     });
 
     gsap.from(darePara.current, {
       opacity: 0,
-      y: 100,
-      duration: 0.5,
+      y: 50,
+      duration: 1,
       ease: "back.inOut",
       scrollTrigger: {
         trigger: darePara.current,
         start: "top 90%",
         end: "top 60%",
         toggleActions: "play none none none",
-        scrub: true,
+        // scrub: true,
       },
     });
   });

@@ -25,7 +25,7 @@ function Stats({ borders }) {
         },
         {
           innerText: stats[index].count,
-          duration: 0.5,
+          duration: 2,
           opacity: 1,
           ease: "power1.out",
           scrollTrigger: {
@@ -33,7 +33,7 @@ function Stats({ borders }) {
             start: "top 80%",
             end: "top 50%",
             toggleActions: "play none none none",
-            scrub: true,
+            // scrub: true,
           },
           snap: { innerText: 1 },
           stagger: 0.2,
@@ -50,15 +50,22 @@ function Stats({ borders }) {
       className={`lg:py-12 lg:px-8 px-4 sm:py-8 py-3 max-w-full ${borders} overflow-x-hidden`}
     >
       <div className="max-w-[1400px] mx-auto">
-        <div className="max-w-full lg:flex lg:flex-row lg:justify-between flex flex-row justify-center flex-wrap ">
+        <div className="max-w-full sm:grid sm:grid-cols-4 xl:gap-16 lg:gap-12 md:gap-6 grid grid-cols-2 gap-4 place-content-between ">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="flex flex-col gap-7 sm:p-5 p-2 text-center min-w-[250px]"
+              className="flex flex-col items-center gap-7 sm:p-5 p-2 text-center"
             >
-              <h3 className="text-white sm:text-2xl text-2xl">{stat.title}</h3>
+              <div className="flex flex-col">
+                <h3 className="text-white sm:text-2xl text-xl">
+                  {stat.firstTitle}
+                </h3>
+                <h3 className="text-white sm:text-2xl text-xl">
+                  {stat.secondTitle}
+                </h3>
+              </div>
               <p
-                className="text-heroColor lg:text-5xl md:text-4xl text-3xl font-bold"
+                className="text-heroColor lg:text-5xl md:text-4xl text-4xl font-bold"
                 ref={addToRefs}
               >
                 0+

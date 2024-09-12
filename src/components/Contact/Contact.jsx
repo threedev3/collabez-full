@@ -30,52 +30,52 @@ function Contact({ portfolioRef, featuresRef, contactRef, homeRef }) {
     handleSubmit,
   } = useFormHandler();
 
-  const ContactText = gsap.timeline({ paused: true });
+  // const ContactText = gsap.timeline({ paused: true });
 
   useGSAP(() => {
-    ContactText.from(headContact.current, {
+    // ContactText
+    // .from(headContact.current, {
+    //   duration: 0.5,
+    //   opacity: 0,
+    //   y: -100,
+    //   ease: "power1.out",
+    //   scrollTrigger: {
+    //     trigger: headContact.current,
+    //     start: "top 70%",
+    //     end: "top 30%",
+    //     toggleActions: "play none none none",
+    //     // scrub: true,
+    //     // markers: true,
+    //   },
+    // })
+    //   .from(textContact.current, {
+    //     duration: 0.5,
+    //     opacity: 0,
+    //     y: -300,
+    //     ease: "power1.out",
+    //     scrollTrigger: {
+    //       trigger: textContact.current,
+    //       start: "top 70%",
+    //       end: "top 30%",
+    //       toggleActions: "play none none none",
+    //       // scrub: true,
+    //       // markers: true,
+    //     },
+    //   })
+    gsap.from(formRef.current, {
       duration: 0.5,
+      y: 100,
       opacity: 0,
-      y: -100,
       ease: "power1.out",
+      stagger: 0.5,
       scrollTrigger: {
-        trigger: headContact.current,
-        start: "top 70%",
-        end: "top 30%",
-        toggleActions: "play none none none",
-        scrub: true,
-        // markers: true,
+        trigger: formRef.current,
+        start: "top 70%", // Adjust the trigger position
+        end: "top 30%", // This sets the end point of the trigger
+        toggleActions: "play none none none", // Form will appear once when scrolling down
+        once: true, // Ensure the animation happens only once
       },
-    })
-      .from(textContact.current, {
-        duration: 0.5,
-        opacity: 0,
-        y: -300,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: textContact.current,
-          start: "top 70%",
-          end: "top 30%",
-          toggleActions: "play none none none",
-          scrub: true,
-          // markers: true,
-        },
-      })
-      .from(formRef.current, {
-        duration: 0.5,
-        y: 100,
-        opacity: 0,
-        ease: "power1.out",
-        stagger: 0.5,
-        scrollTrigger: {
-          trigger: formRef.current,
-          start: "top 70%",
-          end: "top 30%",
-          toggleActions: "play none none none",
-          scrub: true,
-          // markers: true,
-        },
-      });
+    });
   });
 
   const personRef = useRef(null);
@@ -84,20 +84,21 @@ function Contact({ portfolioRef, featuresRef, contactRef, homeRef }) {
     gsap.from(personRef.current, {
       duration: 0.2,
       opacity: 0,
-      y: 100,
+      y: 30,
       ease: "power1.out",
       scrollTrigger: {
         trigger: personRef.current,
         start: "top 65%",
         end: "top 30%",
         toggleActions: "play none none none",
-        scrub: true,
+        // scrub: true,
+        once: true,
       },
     });
 
     // Floating animation for the image
     gsap.to(personRef.current, {
-      y: -15, // Adjust the value to control the movement range
+      y: 10, // Adjust the value to control the movement range
       duration: 2, // Duration of the up-down movement
       ease: "sine.inOut", // Smooth easing function
       repeat: -1, // Infinite loop
@@ -237,11 +238,11 @@ function Contact({ portfolioRef, featuresRef, contactRef, homeRef }) {
           </form>
         </div>
 
-        <div className="absolute top-0 right-10 w-80 h-80 z-30 opacity-60 sm:block hidden">
+        <div className="absolute top-0 right-10  z-30 opacity-60 lg:block hidden">
           <img
             src={personTable}
             alt=""
-            className="w-full h-full"
+            className="w-72 object-contain"
             ref={personRef}
           />
         </div>

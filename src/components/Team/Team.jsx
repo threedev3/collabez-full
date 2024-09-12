@@ -4,11 +4,41 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { members } from "../../data/data";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
 function Team() {
+  const sliderSettings = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    slidesToShow: 2, // Default show 2 slides for lg
+    slidesToScroll: 1,
+    swipeToSlide: true,
+    autoplay: true,
+    speed: 1000,
+    autoplaySpeed: 3000,
+    cssEase: "ease",
+    responsive: [
+      {
+        breakpoint: 1024, // lg screen size
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 767, // md screen size
+        settings: {
+          slidesToShow: 1, // 1 slide for smaller screens
+        },
+      },
+    ],
+  };
+
   const teamHead = useRef(null);
   const teamPara = useRef(null);
 
@@ -16,30 +46,30 @@ function Team() {
     const letters = teamHead.current.querySelectorAll("span");
     gsap.from(letters, {
       opacity: 0,
-      y: -100,
-      duration: 1,
-      stagger: 0.2,
+      y: -50,
+      duration: 0.5,
+      stagger: 0.05,
       ease: "circ.inOut",
       scrollTrigger: {
         trigger: teamHead.current,
         start: "top 80%",
         end: "top 40%",
         toggleActions: "play none none none",
-        scrub: true,
+        // scrub: true,
       },
     });
 
     gsap.from(teamPara.current, {
       opacity: 0,
-      y: 100,
-      duration: 0.5,
+      y: 50,
+      duration: 1,
       ease: "back.inOut",
       scrollTrigger: {
         trigger: teamPara.current,
         start: "top 80%",
         end: "top 40%",
         toggleActions: "play none none none",
-        scrub: true,
+        // scrub: true,
       },
     });
   });
@@ -60,7 +90,7 @@ function Team() {
   };
 
   return (
-    <div className="lg:py-12 lg:px-8 py-8 px-4 max-w-full min-h-[78vh]">
+    <div className="lg:py-12 lg:px-8 py-8 px-4 max-w-full ">
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-col gap-12">
           <div className="flex flex-col gap-3">
@@ -82,7 +112,22 @@ function Team() {
             </p>
           </div>
 
-          <div className="flex flex-row justify-between items-start flex-wrap gap-5">
+          <div className="block lg:hidden">
+            <Slider {...sliderSettings}>
+              {members.map((member, index) => (
+                <div key={index}>
+                  <TeamCard
+                    imgMember={member.imgMember}
+                    name={member.name}
+                    role={member.role}
+                    socialIcons={member.socialIcons}
+                  />
+                </div>
+              ))}
+            </Slider>
+          </div>
+
+          <div className="lg:grid lg:grid-cols-3 lg:gap-3 sm:grid-cols-2 gap-3 place-content-center hidden">
             {members.map((member, index) => (
               <TeamCard
                 key={index}

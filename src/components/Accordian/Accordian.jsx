@@ -19,37 +19,36 @@ function Accordian({ question, answer, isOpen, onClick }) {
     }
   }, [isOpen]);
 
-  const accordTime = gsap.timeline({ paused: true });
+  // const accordTime = gsap.timeline({ paused: true });
 
   useGSAP(() => {
-    accordTime
-      .from(accordianRef.current, {
-        opacity: 0,
-        y: 100,
-        duration: 0.5,
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: accordianRef.current,
-          toggleActions: "play none none none",
-          start: "top 80%",
-          end: "top 60%",
-          scrub: true,
-          //   markers: true,
-        },
-      })
-      .from(quesRef.current, {
-        opacity: 0,
-        x: 100,
-        duration: 0.5,
-        scrollTrigger: {
-          trigger: accordianRef.current,
-          toggleActions: "play none none none",
-          start: "top 85%",
-          end: "top 60%",
-          scrub: true,
-          // markers: true
-        },
-      });
+    gsap.from(accordianRef.current, {
+      opacity: 0,
+      y: 100,
+      duration: 0.5,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: accordianRef.current,
+        toggleActions: "play none none none",
+        start: "top 80%",
+        end: "top 60%",
+        once: true,
+        //   markers: true,
+      },
+    });
+    gsap.from(quesRef.current, {
+      opacity: 0,
+      x: 100,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: accordianRef.current,
+        toggleActions: "play none none none",
+        start: "top 85%",
+        end: "top 60%",
+        once: true,
+        // markers: true
+      },
+    });
   });
 
   return (

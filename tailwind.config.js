@@ -28,7 +28,9 @@ export default {
         serviceCardTwoTo: "#080a1200",
         tabsColor: "#111319",
         tabsText: "#88898c",
-        priceBg: "#493b1c"
+        priceBg: "#493b1c",
+        testStart: "#5901B1",
+        testEnd: "#FF73B6",
       },
       backgroundSize: {
         auto: "auto",
@@ -52,8 +54,12 @@ export default {
       },
 
       animation: {
-        "spinSlow": "spinSlow 10s linear infinite",
+        spinSlow: "spinSlow 10s linear infinite",
       },
+      // backgroundImage: {
+      //   "custom-radial":
+      //     "radial-gradient(circle, #0F0F0F 100%, rgba(21,21,21) 100%)",
+      // },
     },
   },
   plugins: [],

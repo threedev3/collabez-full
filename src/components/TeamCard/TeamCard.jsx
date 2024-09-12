@@ -60,14 +60,14 @@ function TeamCard({ imgMember, name, role, socialIcons }) {
         start: "top 80%",
         end: "top 40%",
         toggleActions: "play none none none",
-        scrub: true,
+        once: true,
       },
     });
   });
 
   return (
     <div
-      className="relative w-80 h-[463px] mx-auto overflow-hidden rounded-full shadow-lg bg-teamBg "
+      className="relative xl:w-80 lg:w-72 w-72 h-[463px] mx-auto overflow-hidden rounded-full shadow-lg bg-teamBg "
       ref={teamRef}
     >
       <div ref={cardRef} className="">
