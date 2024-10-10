@@ -14,7 +14,6 @@ const navigation = [
   { name: "About", link: "/about" },
   { name: "Pricing", link: "/pricing" },
   { name: "Case Study", link: "/casestudy" },
-  { name: "Portfolio", link: "/casestudy" },
 ];
 
 function Navbar() {
