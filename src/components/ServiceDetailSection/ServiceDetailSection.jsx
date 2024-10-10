@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
-import personImg from "../../assets/img/person.png";
+import personImg from "../../assets/img/personImg.png";
 import sendIcon from "../../assets/img/sendIcon.png";
 import Slider from "react-slick";
 import { useNavigate } from "react-router-dom";

@@ -1,10 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { Dialog, DialogPanel } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import Logo from "../../assets/img/logo.png";
-import starImg from "../../assets/img/star.png";
-import circleImg from "../../assets/img/circleimg.png";
-import ellipseImg from "../../assets/img/ellipse.png";
 import arrowImg from "../../assets/img/arrow.png";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -28,6 +22,7 @@ export default function HeroSection({ portfolioRef, featuresRef, contactRef }) {
   const roundRef1 = useRef(null);
   const roundRef2 = useRef(null);
   const viewText = useRef(null);
+  const animatedLogoRef = useRef(null);
 
   const sections = {
     Home: mainContainer,
@@ -58,6 +53,19 @@ export default function HeroSection({ portfolioRef, featuresRef, contactRef }) {
       opacity: 0,
       duration: 1,
     });
+  });
+  useGSAP(() => {
+    // Animate the logo
+    gsap.fromTo(
+      animatedLogoRef.current,
+      { scale: 0, rotation: -180 },
+      {
+        scale: 1,
+        rotation: 0,
+        duration: 1.5,
+        ease: "elastic.out(1, 0.3)",
+      }
+    );
   });
 
   const handleNavClick = (section) => {
@@ -160,8 +168,8 @@ export default function HeroSection({ portfolioRef, featuresRef, contactRef }) {
 
           <Navbar />
 
-          <div className="relative isolate px-4 xl:py-32 sm:py-28 py-24 lg:px-8 max-w-full ">
-            <div className="max-w-[1400px] mx-auto xl:pt-28 sm:pt-28 lg:pt-28 pt-24 lg:flex lg:flex-row lg:justify-between">
+          <div className="relative isolate px-4 xl:py-22 sm:py-20 py-20 lg:px-8 max-w-full ">
+            <div className="max-w-[1400px] mx-auto xl:pt-28 sm:pt-28 lg:pt-28 pt-24 lg:flex lg:flex-row lg:justify-between lg:items-center">
               <div>
                 <h1
                   className="text-3xl max-w-xl font-extrabold  tracking-tight sm:tracking-wider text-white sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl"
@@ -184,20 +192,42 @@ export default function HeroSection({ portfolioRef, featuresRef, contactRef }) {
                   <span className="inline-block">Experiences</span>
                 </p>
               </div>
-              {/* <HeroCircle
+              <HeroCircle
                 text="Branding Creative Design Logo"
                 rotateAngle={12}
-                starSize="450px"
-                textSizeWidth="w-60"
-                textSizeHeight="h-60"
-                top="top-5"
-                originSize="100px"
-                innerSizeWidth="w-32"
-                innerSizeHeight="h-32"
+                starSize="400px"
+                textSizeWidth="w-52"
+                textSizeHeight="h-52"
+                top="top-4"
+                originSize="87px"
+                innerSizeWidth="w-28"
+                innerSizeHeight="h-28"
                 innerPadding="p-8"
                 smallCircleSizeWidth="w-8"
                 smallCircleSizeHeight="h-8"
-              /> */}
+              />
+              {/* <div className="mt-10 lg:mt-0 lg:ml-10" ref={animatedLogoRef}>
+                <svg
+                  className="w-64 h-64 text-yellow-400"
+                  viewBox="0 0 200 200"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="100"
+                    cy="100"
+                    r="80"
+                    stroke="currentColor"
+                    strokeWidth="20"
+                  />
+                  <path
+                    d="M65 65L135 135M65 135L135 65"
+                    stroke="currentColor"
+                    strokeWidth="20"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div> */}
             </div>
           </div>
           <div className="w-full h-[10px] bg-heroColor"></div>

@@ -23,7 +23,7 @@ function HeroCircle({
       <img
         src={starImg}
         alt="Star"
-        className={`lg:w-[${starSize}] w-[${smallStarSize}] lg:h-[${starSize}] h-[${smallStarSize}] animate-spin`}
+        className={`lg:w-[${starSize}] w-[${smallStarSize}] lg:h-[${starSize}] h-[${smallStarSize}] animate-spinSlow`}
       />
       <div className={`absolute ${textSizeHeight} ${textSizeWidth}`}>
         <div className="h-full w-full border-2 border-heroColor rounded-full p-8 flex justify-center items-center animate-spinSlow">

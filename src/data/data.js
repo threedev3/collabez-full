@@ -22,6 +22,9 @@ import fb from "../assets/img/fb.png";
 import insta from "../assets/img/insta.png";
 import linkedIn from "../assets/img/linkedin.png";
 import be from "../assets/img/Be.png";
+import thThumbnail from "../assets/img/thThumbnail.png";
+import lingoThumbnail from "../assets/img/lingoThumbnail.png";
+import oasisThumbnail from "../assets/img/oasisThumbnail.png";
 
 export const services = [
   {
@@ -210,7 +213,7 @@ export const services = [
 
 export const projects = [
   {
-    thumbnail: uiux,
+    thumbnail: oasisThumbnail,
     title: "The Oasis",
     description:
       "Welcome to The Oasis Academy, a beacon of academic excellence for expatriate families in the heart of the Arabian Peninsula. Founded in 2017, we have become a trusted online tutoring service for students across Saudi Arabia, Qatar, and Oman. Our dedication to quality education stems from a deep understanding of the challenges and aspirations of the expat community.",
@@ -218,12 +221,12 @@ export const projects = [
     category: "Web Development",
     startDate: "April 22, 2024",
     endDate: "July 10, 2024",
-    webUrl: "https://work-dock.vercel.app/",
-    slug: "work-dock",
+    webUrl: "#",
+    slug: "oasis",
     sliderImages: [marketing, webDev, uiux],
   },
   {
-    thumbnail: appDev,
+    thumbnail: thThumbnail,
     title: "Tuition Highway",
     description:
       "Tuition Highway is an innovative Learning Management System (LMS) designed to enhance the educational experience. It provides students with access to course materials, assignments, and performance tracking tools. Instructors can create and manage courses, track student progress, and provide feedback. Tuition Highway streamlines the learning process, fosters interactive education, and facilitates efficient management of educational resources and student data.",
@@ -231,12 +234,12 @@ export const projects = [
     category: "App Development",
     startDate: "March 12, 2024",
     endDate: "June 05, 2024",
-    webUrl: "https://tuitionhighway.com/",
+    webUrl: "#",
     slug: "tuitionhighway",
     sliderImages: [appDev, eCommerce, webDev2],
   },
   {
-    thumbnail: webDev,
+    thumbnail: lingoThumbnail,
     title: "Lingo Highway",
     description:
       "Welcome to Lingo Highway, your gateway to mastering English. As an online academy, we strive to provide an accessible and enriching English learning experience, reaching out to individuals across the globe.",
@@ -244,8 +247,8 @@ export const projects = [
     category: "Web Development",
     startDate: "May 13, 2024",
     endDate: "June 28, 2024",
-    webUrl: "https://collabez.vercel.app/",
-    slug: "collabez",
+    webUrl: "#",
+    slug: "lingohighway",
     sliderImages: [webDev, webDev2, smm],
   },
 ];

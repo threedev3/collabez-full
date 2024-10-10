@@ -27,7 +27,7 @@ function Home() {
       <div ref={featuresRef}>
         <Features />
       </div>
-      {/* <Testimonials /> */}
+      <Testimonials />
       <div ref={contactRef}>
         <TextSlide
           portfolioRef={portfolioRef}

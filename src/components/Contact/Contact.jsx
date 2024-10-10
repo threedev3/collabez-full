@@ -238,7 +238,7 @@ function Contact({ portfolioRef, featuresRef, contactRef, homeRef }) {
           </form>
         </div>
 
-        <div className="absolute top-0 right-10  z-30 opacity-60 lg:block hidden">
+        <div className="absolute top-0 right-10  z-30  lg:block hidden">
           <img
             src={personTable}
             alt=""

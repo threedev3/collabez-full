@@ -22,6 +22,16 @@ function Portfolio() {
 
   const projects = [
     {
+      title: "Collab Dash",
+      tags: ["NextJS", "Typescript", "NodeJS", "ExpressJS", "MongoDB"],
+      img: lingoImg,
+    },
+    {
+      title: "Collab LMS",
+      tags: ["NextJS", "Typescript", "NodeJS", "ExpressJS", "MongoDB"],
+      img: lingoImg,
+    },
+    {
       title: "The Oasis",
       tags: ["NextJS", "ReactJS", "NodeJS", "ExpressJS", "MongoDB"],
       img: oasisImg,
@@ -30,11 +40,6 @@ function Portfolio() {
       title: "Alpha Hiring Solutions",
       tags: ["NextJS", "ReactJS", "Tailwind CSS", "GSAP"],
       img: alphaImg,
-    },
-    {
-      title: "Lingo Highway",
-      tags: ["ReactJS", "NodeJS", "ExpressJS", "MongoDB"],
-      img: lingoImg,
     },
   ];
 

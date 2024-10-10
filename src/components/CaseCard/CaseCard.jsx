@@ -61,7 +61,7 @@ function CaseCard({ item }) {
       <img
         src={item.thumbnail}
         alt="sliderImg"
-        className="h-full w-full object-cover transition-transform duration-300"
+        className="h-full w-full object-contain transition-transform duration-300"
       />
       <div className="absolute inset-0 px-12 py-8 bg-black bg-opacity-0 hover:bg-opacity-60 transition-all duration-300 flex items-end justify-start text-white opacity-0 hover:opacity-100 p-4">
         <div className="flex flex-col gap-3">

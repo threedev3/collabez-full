@@ -367,14 +367,17 @@ function CaseSection({ contactRef }) {
 
                 <hr className="my-8 border-borderColor" ref={lineRef2} />
 
-                <Link to={selectedProject?.webUrl} target="__blank">
-                  <button
-                    className="py-3 px-6 border-2 border-heroColor rounded-full text-white text-base"
-                    ref={webRef}
-                  >
-                    Visit Website
-                  </button>
-                </Link>
+                {/* <Link to={selectedProject?.webUrl} target="__blank"> */}
+                <div>
+                  <Link>
+                    <button
+                      className="py-3 px-6 border-2 border-heroColor rounded-full text-white text-base"
+                      ref={webRef}
+                    >
+                      Visit Website
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           )}
